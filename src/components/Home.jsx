@@ -9,7 +9,7 @@ function Home() {
         <div className="hero-text">
           <p className="intro">HI THERE,</p>
           <h1>
-            I Am <span className="highlight">Trustan Price</span>
+            My name is <span className="highlight">Trustan Price</span>
           </h1>
           <p className="description">
           I’m a Statistics major with minors in Computer Science and Data Science at the University of Illinois Urbana-Champaign. My near-term goal is to become a data scientist focused on predictive analytics, risk modeling, fraud detection, and forecasting. Over time, I plan to move into building machine learning models end-to-end for development and deployment.
