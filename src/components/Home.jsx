@@ -16,7 +16,7 @@ function Home() {
           </p>
           <div className="buttons">
             <a href="mailto:trustanprice@gmail.com" className="btn primary">
-              Contact Me
+              trustanprice@gmail.com
             </a>
             <a href="/home/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn secondary">
               View Resume
