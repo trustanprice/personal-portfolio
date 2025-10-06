@@ -1,0 +1,73 @@
+/* ==============================
+   NAVBAR STYLING
+============================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4f6f9;
+    padding: 15px 40px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2c7a7b;
+    text-decoration: none;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #2c7a7b;
+  }
+  
+  /* Divider below navbar */
+  .navbar::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: #ddd;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* ==============================
+     NAVBAR RESPONSIVENESS
+  ============================== */
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;  /* stacks logo and links */
+      align-items: center;
+      text-align: center;
+      padding: 15px 10px;
+    }
+  
+    .navbar ul {
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 10px;
+    }
+  
+    .navbar .logo {
+      font-size: 1.25rem;
+    }
+  }
+  
