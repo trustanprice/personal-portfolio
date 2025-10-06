@@ -2,25 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- Favicon (logo in the browser tab) -->
-    <link rel="icon" href="%PUBLIC_URL%/website-logo.png" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Viewport for Mobile Scaling -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Browser Theme -->
     <meta name="theme-color" content="#000000" />
+
+    <!-- Description for SEO -->
     <meta
       name="description"
       content="Trustan Price's personal portfolio showcasing projects, skills, and experience."
     />
 
-    <!-- Apple Touch Icon (for iOS home screen shortcut) -->
+    <!-- Favicon (browser tab icon) -->
+    <link rel="icon" href="%PUBLIC_URL%/website-logo.png" />
+
+    <!-- Apple Touch Icon (for iOS home screen) -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
-    <!-- PWA Manifest -->
+    <!-- Progressive Web App Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <!-- Page Title -->
+    <!-- Title -->
     <title>trustanprice.io</title>
+
+    <!-- Basic Mobile Tweaks -->
+    <style>
+      /* Prevent horizontal scrolling */
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Improve tap responsiveness */
+      * {
+        touch-action: manipulation;
+        box-sizing: border-box;
+      }
+
+      /* Ensure text doesn’t get squished */
+      img,
+      video,
+      canvas {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
