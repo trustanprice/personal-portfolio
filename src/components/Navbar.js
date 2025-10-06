@@ -8,9 +8,9 @@ function Navbar() {
       <h2 className="logo">trustanprice.io</h2>
       <ul>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/projects">All Projects</Link></li>
+        <li><Link to="/projects">Projects</Link></li>
         <li><Link to="/experiences">Experiences</Link></li>
-        <li><Link to="/club">Club</Link></li>
+        <li><Link to="/club">Clubs</Link></li>
         <li><Link to="/semipro">Semi-Pro</Link></li>
       </ul>
     </nav>
