@@ -8,7 +8,7 @@ function Projects() {
             <section className="projects-hero">
                 <div className="projects-hero-content">
                     <div className="projects-hero-text">
-                        <h1>Projects Portfolio</h1>
+                        <h1>Personal Projects</h1>
                         <div className="divider"></div>
                         <p>
                             Explore my collection of data-driven and software engineering projects! From predictive
@@ -20,7 +20,7 @@ function Projects() {
 
                     <div className="projects-hero-image">
                         <img
-                            src="/projects/projetcs-header.png"
+                            src="/projects/projetcs-hero.png"
                             alt="Projects Overview"
                         />
                     </div>
@@ -132,7 +132,7 @@ function Projects() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            View Paper →
+                            View Presentation →
                         </a>
                     </div>
                 </div>
