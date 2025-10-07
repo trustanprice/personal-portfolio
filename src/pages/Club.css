@@ -1,0 +1,276 @@
+/* ------------------------------
+   BASE STYLES
+------------------------------ */
+.clubs-page {
+    background-color: #f7f9fb;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding-bottom: 60px;
+  }
+  
+  /* ------------------------------
+     HERO SECTION (SIDE-BY-SIDE)
+  ------------------------------ */
+  .clubs-hero {
+    background-color: #f4f6f9;
+    padding: 80px 60px 100px; /* Extra bottom spacing for separation */
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .clubs-hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    width: 100%;
+    gap: 50px;
+  }
+  
+  .clubs-hero-text {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .clubs-hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e4d4f;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .clubs-hero-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-top: 10px;
+    max-width: 600px;
+  }
+  
+  /* Divider */
+  .divider {
+    width: 80px;
+    height: 4px;
+    background-color: #2c7a7b;
+    border-radius: 4px;
+    margin: 15px 0 25px 0;
+  }
+  
+  /* Hero Image */
+  .clubs-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .clubs-hero-image img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .clubs-hero-image img:hover {
+    transform: scale(1.03);
+  }
+  
+  /* ------------------------------
+     CLUBS LIST SECTION
+  ------------------------------ */
+  .clubs-list {
+    background-color: #fff;
+    text-align: center;
+    padding: 100px 60px 60px; /* Extra top padding for separation */
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.03);
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e4d4f;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  .section-accent {
+    color: #2c7a7b;
+  }
+  
+  /* ------------------------------
+     CLUB CARDS
+  ------------------------------ */
+  .club-card {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 30px auto;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 20px;
+  }
+  
+  .club-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  }
+  
+  .club-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: #f4f6f9;
+    padding: 8px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .club-header h3 {
+    color: #1e4d4f;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  
+  .role {
+    display: block;
+    font-weight: 600;
+    color: #2c7a7b;
+    margin-bottom: 5px;
+  }
+  
+  .date {
+    font-size: 0.95rem;
+    color: #777;
+  }
+  
+  .club-desc {
+    margin-top: 15px;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  /* ------------------------------
+     RESPONSIVE DESIGN
+  ------------------------------ */
+  
+  /* Tablet adjustments */
+  @media (max-width: 1024px) {
+    .clubs-hero {
+      padding: 60px 40px 80px;
+    }
+  
+    .clubs-list {
+      padding: 80px 40px 50px;
+    }
+  
+    .club-card {
+      width: 95%;
+      padding: 25px;
+    }
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    /* Stack hero content */
+    .clubs-hero-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
+  
+    .clubs-hero-text {
+      text-align: center;
+      max-width: 100%;
+    }
+  
+    .clubs-hero-image {
+      margin-top: 20px;
+    }
+  
+    /* Clubs list */
+    .clubs-list {
+      padding: 50px 20px;
+    }
+  
+    /* Stack club cards */
+    .club-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      padding: 20px;
+      gap: 15px;
+    }
+  
+    .club-logo {
+      margin-bottom: 10px;
+      width: 70px;
+      height: 70px;
+    }
+  
+    .club-info {
+      text-align: center;
+    }
+  
+    .club-header h3 {
+      font-size: 1.2rem;
+    }
+  
+    .role {
+      font-size: 0.95rem;
+    }
+  
+    .club-desc {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  }
+  
+  /* Extra-small screens */
+  @media (max-width: 480px) {
+    .clubs-hero-text h1 {
+      font-size: 1.8rem;
+    }
+  
+    .section-title {
+      font-size: 1.5rem;
+    }
+  
+    .club-card {
+      padding: 15px;
+    }
+  
+    .club-desc {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Fix stray teal line alignment */
+  .clubs-list .divider {
+    margin: 0 auto 40px auto;
+    display: block;
+  }
+
+  .back-home-container {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+  
+  

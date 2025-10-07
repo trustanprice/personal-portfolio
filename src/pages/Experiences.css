@@ -271,3 +271,10 @@
   margin: 0 auto 40px auto; /* centers it perfectly */
   display: block;
 }
+
+.back-home-container {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+

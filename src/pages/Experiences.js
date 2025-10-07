@@ -130,8 +130,11 @@ function Experiences() {
                             <span className="date">Aug 2023 - Present</span>
                         </div>
                         <p className="experience-desc">
-                            [until next time...]
+                            • Scouted and tracked live basketball and football data using the company’s proprietary in-game analytics application.<br />
+                            • Attended Division I events, including UIUC football and March Madness basketball games, to record real-time player and team performance metrics.<br />
+                            • Contributed to high-accuracy datasets used by Sports Info Solutions’ clients for performance evaluation, predictive modeling, and strategic decision-making.
                         </p>
+
                     </div>
                 </div>
 
@@ -149,11 +152,20 @@ function Experiences() {
                             <span className="date">Summer 2024</span>
                         </div>
                         <p className="experience-desc">
-                            [until next time...]
+                            • Selected as one of 8–12 undergraduate scholars for an eight-week research program focused on advancing knowledge in statistics, data science, and mathematics.<br />
+                            • Conducted faculty-guided research within the Department of Statistics at the University of Illinois Urbana-Champaign, culminating in a final presentation at the Illinois Summer Research Symposium.<br />
+                            • Received a $5,000 research scholarship and participated in graduate school preparation workshops, networking events, and professional development sessions.
                         </p>
+
                     </div>
                 </div>
             </section>
+
+            <div className="back-home-container">
+                <a href="/" className="btn see-all">
+                    ← Back to Home
+                </a>
+            </div>
         </div>
     );
 }
