@@ -92,7 +92,7 @@ git clone https://github.com/trustanprice/personal-portfolio.git
 cd personal-portfolio
 ```
 
-### **Install Dependencies
+### Install Dependencies
 ```bash
 npm install
 ```
