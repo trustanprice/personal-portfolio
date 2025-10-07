@@ -1,5 +1,5 @@
 import React from "react";
-import "./SemiPro.css";
+import "../styles/SemiPro.css";
 
 function SemiPro() {
   return (
@@ -75,13 +75,6 @@ function SemiPro() {
           </div>
         </div>
       </section>
-
-      {/* Back to Home Button */}
-      <div className="back-home-container">
-        <a href="/" className="btn see-all">
-          ← Back to Home
-        </a>
-      </div>
     </div>
   );
 }

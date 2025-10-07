@@ -1,5 +1,5 @@
 import React from "react";
-import "./Experiences.css";
+import "../styles/Experiences.css";
 
 function Experiences() {
     return (
@@ -160,12 +160,6 @@ function Experiences() {
                     </div>
                 </div>
             </section>
-
-            <div className="back-home-container">
-                <a href="/" className="btn see-all">
-                    ← Back to Home
-                </a>
-            </div>
         </div>
     );
 }

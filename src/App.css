@@ -28,6 +28,19 @@
   color: #61dafb;
 }
 
+:root {
+  --bg-color: #f4f6f9;
+  --text-color: #333;
+  --accent-color: #2c7a7b;
+}
+
+body.dark-mode {
+  --bg-color: #0f171a;
+  --text-color: #eaf8f9;
+  --accent-color: #00ffc6; /* teal glow for dark mode */
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

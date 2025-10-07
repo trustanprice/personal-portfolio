@@ -1,5 +1,5 @@
 import React from "react";
-import "./Projects.css";
+import "../styles/Projects.css";
 
 function Projects() {
     return (
@@ -140,12 +140,6 @@ function Projects() {
                     </div>
                 </div>
             </section>
-
-            <div className="back-home-container">
-                <a href="/" className="btn see-all">
-                    ← Back to Home
-                </a>
-            </div>
 
         </div>
     );

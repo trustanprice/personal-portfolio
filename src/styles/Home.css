@@ -3,8 +3,47 @@
 ============================== */
 .home {
   font-family: Arial, sans-serif;
-  color: #333;
+  color: var(--text-color);
+  background-color: var(--bg-color);
   overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+
+/* ==============================
+   HERO SECTION
+============================== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 60px 80px 30px;
+  background: var(--bg-color);
+  transition: background 0.4s ease;
+}
+
+.intro {
+  color: var(--accent-color);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn.primary {
+  background: var(--accent-color);
+  color: white;
+}
+
+.btn.secondary {
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.links a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 /* ==============================
@@ -140,6 +179,66 @@
   background: #000;
   margin: 60px 0;
   opacity: 0.1;
+}
+
+.links {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.icon-link {
+  color: #1e4d4f;
+  font-size: 28px;
+  background: linear-gradient(145deg, #f0f4f8, #d9e4ec);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+.icon-link:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(30, 77, 79, 0.25);
+  background: linear-gradient(145deg, #1e4d4f, #2f6f72);
+  color: #ffffff;
+}
+
+.icon-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-link::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  transform: translateX(-100%) translateY(-100%);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.icon-link:hover::after {
+  opacity: 1;
+  animation: flow 1.2s ease-out forwards;
+}
+
+@keyframes flow {
+  0% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%);
+  }
 }
 
 /* Animation for fade-in */
@@ -336,3 +435,4 @@
     font-size: 0.9rem;
   }
 }
+

@@ -86,7 +86,7 @@ personal-portfolio/
 
 ## 🚀 Running Locally
 
-### **1️⃣ Clone the Repository**
+### Clone the Repository
 ```bash
 git clone https://github.com/trustanprice/personal-portfolio.git
 cd personal-portfolio

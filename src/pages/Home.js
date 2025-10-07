@@ -1,5 +1,7 @@
 import React from "react";
-import "./Home.css";
+import "../styles/Home.css";
+import { FaLinkedin, FaGithub, FaEnvelope, FaFileAlt } from "react-icons/fa";
+
 
 function Home() {
   return (
@@ -19,39 +21,41 @@ function Home() {
             to move into building machine learning models end-to-end for
             development and deployment.
           </p>
-          <div className="buttons">
+          <div className="links">
             <a
-              href="mailto:trustanprice@gmail.com?subject=Let's%20Connect!&body=Hi%20Trustan%2C%0A%0AI%20just%20visited%20your%20portfolio%20and%20wanted%20to%20reach%20out..."
-              className="btn primary"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=trustanprice@gmail.com&su=Let's%20Connect!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon-link"
             >
-              Contact: trustanprice@gmail.com
+              <FaEnvelope size={28} />
             </a>
             <a
               href="/home/trustanprice-resume2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn secondary"
+              className="icon-link"
             >
-              View Resume
+              <FaFileAlt size={28} />
             </a>
-          </div>
-          <div className="links">
             <a
               href="https://www.linkedin.com/in/trustan-price-69bb17269/"
               target="_blank"
               rel="noopener noreferrer"
+              className="icon-link"
             >
-              LinkedIn
+              <FaLinkedin size={28} />
             </a>
-            {" | "}
             <a
               href="https://github.com/trustanprice"
               target="_blank"
               rel="noopener noreferrer"
+              className="icon-link"
             >
-              GitHub
+              <FaGithub size={28} />
             </a>
           </div>
+
         </div>
 
         <div className="hero-image">
@@ -136,9 +140,9 @@ function Home() {
           <div className="feature-info">
             <h3>Caterpillar Inc. — Chicago, IL</h3>
             <p>
-            Worked on the Analytics & Executions team under Paul Brown, 
-            building CI/CD pipelines, developing tests for AWS Lambda functions, 
-            integrating AWS CloudWatch with Grafana dashboards, and improving audit logging solutions.
+              Worked on the Analytics & Executions team under Paul Brown,
+              building CI/CD pipelines, developing tests for AWS Lambda functions,
+              integrating AWS CloudWatch with Grafana dashboards, and improving audit logging solutions.
             </p>
           </div>
         </div>

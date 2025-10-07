@@ -1,5 +1,5 @@
 import React from "react";
-import "./Club.css";
+import "../styles/Club.css";
 
 function Club() {
   return (
@@ -117,12 +117,6 @@ function Club() {
           </div>
         </div>
       </section>
-
-      <div className="back-home-container">
-        <a href="/" className="btn see-all">
-          ← Back to Home
-        </a>
-      </div>
 
     </div>
   );
