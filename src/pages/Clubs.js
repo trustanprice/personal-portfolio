@@ -1,10 +1,12 @@
 import React from "react";
-import "../styles/Club.css";
+import "../styles/Clubs.css";
 
-function Club() {
+function Clubs() {
   return (
     <div className="clubs-page">
-      {/* Hero Section */}
+      {/* ------------------------------
+          HERO SECTION
+      ------------------------------ */}
       <section className="clubs-hero">
         <div className="clubs-hero-content">
           <div className="clubs-hero-text">
@@ -19,14 +21,16 @@ function Club() {
 
           <div className="clubs-hero-image">
             <img
-              src="/club/club-hero.png"
+              src="/clubs/clubs-hero.png"
               alt="Campus Involvement"
             />
           </div>
         </div>
       </section>
 
-      {/* Club Cards */}
+      {/* ------------------------------
+          CLUBS SECTION
+      ------------------------------ */}
       <section className="clubs-list">
         <h2 className="section-title">
           <span className="section-accent">Highlighted</span> Organizations
@@ -35,11 +39,13 @@ function Club() {
 
         {/* Sports Analytics Society */}
         <div className="club-card">
-          <img
-            src="/clubs/sas-logo.png"
-            alt="Sports Analytics Society Logo"
-            className="club-logo"
-          />
+          <div className="club-logo">
+            <img
+              src="/clubs/sas-logo.png"
+              alt="Sports Analytics Society Logo"
+              style={{ width: "60px", height: "60px" }}
+            />
+          </div>
           <div className="club-info">
             <div className="club-header">
               <h3>Sports Analytics Society</h3>
@@ -49,22 +55,24 @@ function Club() {
             <p className="club-desc">
               • Lead predictive modeling initiatives and data engineering pipelines for sports data projects.<br />
               • Mentor students on implementing regression, clustering, and ML-based forecasting models.<br />
-              • Support the development of interactive dashboards for an NFL Sports Betting Predictions.
+              • Support the development of interactive dashboards for an NFL Sports Betting Predictions project.
             </p>
           </div>
         </div>
 
         {/* B[U]ILT */}
         <div className="club-card">
-          <img
-            src="/clubs/built-logo.png"
-            alt="B[U]ILT Logo"
-            className="club-logo"
-          />
+          <div className="club-logo">
+            <img
+              src="/clubs/built-logo.png"
+              alt="B[U]ILT Logo"
+              style={{ width: "60px", height: "60px" }}
+            />
+          </div>
           <div className="club-info">
             <div className="club-header">
               <h3>B[U]ILT (Black, Indigenous, and Latino in Tech)</h3>
-              <span className="role">Member</span>
+              <span className="role">Tech Committee Member</span>
               <span className="date">Fall 2024 – Present</span>
             </div>
             <p className="club-desc">
@@ -77,11 +85,13 @@ function Club() {
 
         {/* NSBE */}
         <div className="club-card">
-          <img
-            src="/clubs/nsbe-logo.png"
-            alt="National Society of Black Engineers Logo"
-            className="club-logo"
-          />
+          <div className="club-logo">
+            <img
+              src="/clubs/nsbe-logo.png"
+              alt="National Society of Black Engineers Logo"
+              style={{ width: "60px", height: "60px" }}
+            />
+          </div>
           <div className="club-info">
             <div className="club-header">
               <h3>National Society of Black Engineers (NSBE)</h3>
@@ -98,11 +108,13 @@ function Club() {
 
         {/* Sports Analytics by Minorities */}
         <div className="club-card">
-          <img
-            src="/clubs/sam-logo.png"
-            alt="Sports Analytics by Minorities Logo"
-            className="club-logo"
-          />
+          <div className="club-logo">
+            <img
+              src="/clubs/sam-logo.png"
+              alt="Sports Analytics by Minorities Logo"
+              style={{ width: "60px", height: "60px" }}
+            />
+          </div>
           <div className="club-info">
             <div className="club-header">
               <h3>Sports Analytics by Minorities</h3>
@@ -117,9 +129,8 @@ function Club() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }
 
-export default Club;
+export default Clubs;

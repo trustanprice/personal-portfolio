@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Experiences from "./pages/Experiences";
-import Clubs from "./pages/Club";
+import Clubs from "./pages/Clubs";
 import SemiPro from "./pages/SemiPro";
 import Footer from "./components/Footer";
 
@@ -16,7 +16,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/experiences" element={<Experiences />} />
-        <Route path="/club" element={<Clubs />} />
+        <Route path="/clubs" element={<Clubs />} />
         <Route path="/semipro" element={<SemiPro />} />
       </Routes>
       <Footer />
