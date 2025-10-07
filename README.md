@@ -1,70 +1,143 @@
-# Getting Started with Create React App
+# Trustan Price — Personal Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the source code for my **personal portfolio website**, built using **React.js**.  
+It showcases my **projects, professional experiences, club leadership roles, and semi-professional interests** — all designed to provide a clear, interactive view of my journey as a developer and data scientist.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🧠 Overview
 
-### `npm start`
+The portfolio consists of five primary sections:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🏠 Home
+- Serves as the main landing page with a short introduction, hero image, and quick contact links.  
+- Highlights featured projects and professional experiences.  
+- Includes consistent “See All” and “Back to Home” navigation buttons for seamless routing.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 💻 Projects
+- Displays my key technical projects such as:
+  - **E-Commerce BI Warehouse (Coming Soon)** — a dbt + DuckDB + Metabase project exploring fintech analytics.  
+  - **NBA Win Predictions App** — machine learning model using Elastic Net & KNN for team win predictions.  
+  - **AI Academic Advisor** — NLP-based React + Flask app for student major and schedule recommendations.
+- Each project card includes a description, thumbnail, and direct link to either a deployed demo or GitHub repo.
 
-### `npm test`
+### 🧰 Experiences
+- Features my professional roles including:
+  - **Caterpillar Inc.** – MLOps & Applied Analytics Intern (CI/CD pipelines, Grafana dashboards, AWS monitoring).  
+  - **State Farm** – Software Engineer Intern (CNN model for image classification and data pipeline development).  
+  - **HXRI Lab** – AI & Mixed Reality Research Assistant (Unity, MRTK3, computer vision for procedural tracking).
+- Consistent formatting across all roles, including logos, dates, and descriptive bullet points.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🏫 Clubs & Organizations
+- Highlights campus involvement and leadership roles:
+  - **Sports Analytics by Minorities** – Founder & President, promoting minority engagement in sports analytics through podcasts and athlete interviews.  
+  - **B[U]ILT Tech Committee** – Member supporting UIUC’s Black and Latinx engineers in tech initiatives.  
+  - **Sigpwny** – Participant in UIUC’s ethical hacking and cybersecurity organization.
 
-### `npm run build`
+### ⚾ Semi-Pro
+- A creative section focused on life outside of work.  
+- Highlights hobbies such as **sports storytelling, fitness, mentorship, and community engagement** — reflecting how personal growth enhances professional success.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧩 Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Category | Technologies |
+|-----------|---------------|
+| **Frontend** | React.js, HTML5, CSS3, JavaScript (ES6+) |
+| **Deployment** | Vercel |
+| **Data Visualization** | Streamlit, Grafana, Power BI |
+| **Analytics/ML Tools** | Python, Pandas, NumPy, Scikit-learn, TensorFlow |
+| **DevOps & Infra** | Azure DevOps, AWS CloudWatch, Docker, CI/CD Pipelines |
+| **Version Control** | Git + GitHub |
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📁 Folder Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+personal-portfolio/
+├── src/
+│ ├── components/
+│ │ └── Navbar.js
+│ ├── pages/
+│ │ ├── Home.js
+│ │ ├── Projects.js
+│ │ ├── Experiences.js
+│ │ ├── Clubs.js
+│ │ └── SemiPro.js
+│ ├── styles/
+│ │ ├── Home.css
+│ │ ├── Projects.css
+│ │ ├── Experiences.css
+│ │ ├── Clubs.css
+│ │ └── SemiPro.css
+│ └── App.js
+├── public/
+│ └── images/
+│ ├── home/
+│ ├── projects/
+│ ├── experiences/
+│ ├── clubs/
+│ └── semipro/
+└── README.md
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🚀 Running Locally
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **1️⃣ Clone the Repository**
+```bash
+git clone https://github.com/trustanprice/personal-portfolio.git
+cd personal-portfolio
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **Install Dependencies
+```bash
+npm install
+```
 
-### Code Splitting
+### Start the Developmet Server
+```bash
+npm start
+```
+Open http://localhost:3000
+ to view it in your browser.
+The app will reload when you make edits.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🧱 Build for Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### To build an optimized production version:
+```bash
+npm run build
+```
+This creates a /build directory containing minified, optimized static assets ready for deployment to platforms like Vercel or Netlify.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🌐 Deployment
 
-### Advanced Configuration
+This portfolio is deployed using Vercel.
+For manual deployment, follow Vercel’s React deployment guide:
+👉 https://vercel.com/docs/deploying-react
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+✅ Fully responsive layout (mobile, tablet, desktop)
+✅ Unified color scheme & typography across all sections
+✅ Smooth navigation using React Router
+✅ “Back to Home” and “See All” buttons for consistent UX
+✅ Modular and easily extensible design for adding new projects or experiences
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📬 Contact
+
+Trustan Price
+📧 Email: trustanprice@gmail.com
+💼 LinkedIn: linkedin.com/in/trustan-price-69bb17269
+🐙 GitHub: github.com/trustanprice
