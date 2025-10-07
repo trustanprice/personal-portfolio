@@ -1,5 +1,5 @@
 /* ------------------------------
-   Base Styles
+   BASE STYLES
 ------------------------------ */
 .experiences-page {
   background-color: #f7f9fb;
@@ -9,13 +9,15 @@
 }
 
 /* ------------------------------
-   Hero Section (Side-by-Side)
+   HERO SECTION (SIDE-BY-SIDE)
 ------------------------------ */
 .experiences-hero {
   background-color: #f4f6f9;
-  padding: 80px 60px;
+  padding: 80px 60px 100px; /* Extra bottom spacing for separation */
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .experiences-hero-content {
@@ -54,11 +56,11 @@
   width: 80px;
   height: 4px;
   background-color: #2c7a7b;
-  margin: 15px 0 25px 0;
   border-radius: 4px;
+  margin: 15px 0 25px 0;
 }
 
-/* Right Image */
+/* Hero Image */
 .experiences-hero-image {
   flex: 1;
   display: flex;
@@ -78,11 +80,15 @@
 }
 
 /* ------------------------------
-   Experiences List
+   EXPERIENCES LIST SECTION
 ------------------------------ */
 .experiences-list {
+  background-color: #fff;
   text-align: center;
-  padding: 60px 80px;
+  padding: 100px 60px 60px; /* Extra top padding for separation */
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.03);
 }
 
 .section-title {
@@ -99,7 +105,7 @@
 }
 
 /* ------------------------------
-   Experience Cards
+   EXPERIENCE CARDS
 ------------------------------ */
 .experience-card {
   display: flex;
@@ -121,7 +127,24 @@
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 }
 
-/* Header + Info */
+.experience-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #f4f6f9;
+  padding: 8px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Slight HXRI logo adjustment */
+.experience-logo[alt="HXRI Lab Logo"] {
+  scale: 0.85;
+}
+
 .experience-header h3 {
   color: #1e4d4f;
   font-size: 1.4rem;
@@ -147,37 +170,18 @@
   line-height: 1.6;
 }
 
-/* Company Logos */
-.experience-logo {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  border-radius: 8px;
-  background-color: #f4f6f9;
-  padding: 8px;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Adjust HXRI size slightly */
-.experience-logo[alt="HXRI Lab Logo"] {
-  scale: 0.85;
-}
-
 /* ------------------------------
-   Responsive Design
+   RESPONSIVE DESIGN
 ------------------------------ */
 
 /* Tablet adjustments */
 @media (max-width: 1024px) {
   .experiences-hero {
-    padding: 60px 40px;
+    padding: 60px 40px 80px;
   }
 
   .experiences-list {
-    padding: 40px 40px;
+    padding: 80px 40px 50px;
   }
 
   .experience-card {
@@ -188,7 +192,7 @@
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  /* Hero section stacks */
+  /* Stack hero content */
   .experiences-hero-content {
     flex-direction: column;
     text-align: center;
@@ -206,10 +210,10 @@
 
   /* Experience list */
   .experiences-list {
-    padding: 30px 20px;
+    padding: 50px 20px;
   }
 
-  /* Experience cards stack logo above text */
+  /* Stack experience cards */
   .experience-card {
     flex-direction: column;
     align-items: center;
@@ -260,4 +264,10 @@
   .experience-desc {
     font-size: 0.9rem;
   }
+}
+
+/* Fix stray teal line alignment */
+.experiences-list .divider {
+  margin: 0 auto 40px auto; /* centers it perfectly */
+  display: block;
 }
