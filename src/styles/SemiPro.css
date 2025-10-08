@@ -2,259 +2,281 @@
    BASE STYLES
 ------------------------------ */
 .semi-page {
-    background-color: #f7f9fb;
-    font-family: Arial, sans-serif;
-    color: #333;
-    padding-bottom: 60px;
-  }
-  
-  /* ------------------------------
-     HERO SECTION (SIDE-BY-SIDE)
-  ------------------------------ */
+  background-color: var(--bg-color);
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  padding-bottom: 60px;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ------------------------------
+   HERO SECTION (SIDE-BY-SIDE)
+------------------------------ */
+.semi-hero {
+  background-color: var(--bg-color);
+  padding: 80px 60px 100px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.semi-hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 100%;
+  gap: 50px;
+}
+
+.semi-hero-text {
+  flex: 1;
+  text-align: left;
+}
+
+.semi-hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.4s ease;
+}
+
+.semi-hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-top: 10px;
+  max-width: 600px;
+  transition: color 0.4s ease;
+}
+
+/* Divider */
+.divider {
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  margin: 15px 0 25px 0;
+}
+
+/* Hero Image */
+.semi-hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.semi-hero-image img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.semi-hero-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Dark Mode Enhancements */
+body.dark-mode .semi-hero-image img {
+  box-shadow: 0 8px 20px rgba(0, 255, 198, 0.15);
+}
+
+/* ------------------------------
+   SEMI-PRO LIST SECTION
+------------------------------ */
+.semi-list {
+  background-color: var(--bg-color);
+  text-align: center;
+  padding: 100px 60px 60px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.03);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  transition: color 0.4s ease;
+}
+
+.section-accent {
+  color: var(--accent-color);
+}
+
+/* ------------------------------
+   SEMI-PRO CARDS
+------------------------------ */
+.semi-card {
+  display: flex;
+  align-items: flex-start;
+  background-color: var(--bg-color);
+  border-radius: 12px;
+  padding: 30px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 30px auto;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease;
+  gap: 20px;
+}
+
+.semi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(44, 122, 123, 0.15);
+}
+
+/* Dark Mode */
+body.dark-mode .semi-card {
+  background-color: #101a1d;
+  box-shadow: 0 6px 18px rgba(0, 255, 198, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.semi-img {
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: var(--bg-color);
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.4s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .semi-img {
+  background-color: #0f171a;
+  box-shadow: 0 3px 14px rgba(0, 255, 198, 0.1);
+}
+
+.semi-info h3 {
+  color: var(--text-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  transition: color 0.4s ease;
+}
+
+.semi-info p {
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 1rem;
+  transition: color 0.4s ease;
+}
+
+/* ------------------------------
+   BACK HOME BUTTON
+------------------------------ */
+.back-home-container {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.btn.see-all {
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  background: transparent;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn.see-all:hover {
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(44, 122, 123, 0.3);
+}
+
+/* ------------------------------
+   RESPONSIVE DESIGN
+------------------------------ */
+@media (max-width: 1024px) {
   .semi-hero {
-    background-color: #f4f6f9;
-    padding: 80px 60px 100px;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
+    padding: 60px 40px 80px;
   }
-  
-  .semi-hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
-    width: 100%;
-    gap: 50px;
-  }
-  
-  .semi-hero-text {
-    flex: 1;
-    text-align: left;
-  }
-  
-  .semi-hero-text h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #1e4d4f;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .semi-hero-text p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #555;
-    margin-top: 10px;
-    max-width: 600px;
-  }
-  
-  /* Divider */
-  .divider {
-    width: 80px;
-    height: 4px;
-    background-color: #2c7a7b;
-    border-radius: 4px;
-    margin: 15px 0 25px 0;
-  }
-  
-  /* Hero Image */
-  .semi-hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .semi-hero-image img {
-    width: 100%;
-    max-width: 480px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-  }
-  
-  .semi-hero-image img:hover {
-    transform: scale(1.03);
-  }
-  
-  /* ------------------------------
-     SEMI-PRO LIST SECTION
-  ------------------------------ */
+
   .semi-list {
-    background-color: #fff;
-    text-align: center;
-    padding: 100px 60px 60px;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.03);
+    padding: 80px 40px 50px;
   }
-  
-  .section-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1e4d4f;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  
-  .section-accent {
-    color: #2c7a7b;
-  }
-  
-  /* ------------------------------
-     SEMI-PRO CARDS
-  ------------------------------ */
+
   .semi-card {
-    display: flex;
-    align-items: flex-start;
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 30px;
-    width: 100%;
-    max-width: 1400px;
-    margin: 30px auto;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    gap: 20px;
+    width: 95%;
+    padding: 25px;
   }
-  
-  .semi-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-  }
-  
-  .semi-img {
-    width: 220px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    background-color: #f4f6f9;
-    flex-shrink: 0;
-  }
-  
-  .semi-info h3 {
-    color: #1e4d4f;
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  
-  .semi-info p {
-    color: #444;
-    line-height: 1.6;
-    font-size: 1rem;
-  }
-  
-  /* ------------------------------
-     BACK HOME BUTTON
-  ------------------------------ */
-  .back-home-container {
+}
+
+@media (max-width: 768px) {
+  .semi-hero-content {
+    flex-direction: column;
     text-align: center;
-    margin-top: 60px;
+    gap: 30px;
   }
-  
-  .btn.see-all {
-    border: 2px solid #2c7a7b;
-    color: #2c7a7b;
-    background: transparent;
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+
+  .semi-hero-text {
+    text-align: center;
+    max-width: 100%;
   }
-  
-  .btn.see-all:hover {
-    background: #2c7a7b;
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(44, 122, 123, 0.3);
+
+  .semi-hero-image {
+    margin-top: 20px;
   }
-  
-  /* ------------------------------
-     RESPONSIVE DESIGN
-  ------------------------------ */
-  
-  /* Tablets */
-  @media (max-width: 1024px) {
-    .semi-hero {
-      padding: 60px 40px 80px;
-    }
-  
-    .semi-list {
-      padding: 80px 40px 50px;
-    }
-  
-    .semi-card {
-      width: 95%;
-      padding: 25px;
-    }
+
+  .semi-list {
+    padding: 50px 20px;
   }
-  
-  /* Mobile */
-  @media (max-width: 768px) {
-    .semi-hero-content {
-      flex-direction: column;
-      text-align: center;
-      gap: 30px;
-    }
-  
-    .semi-hero-text {
-      text-align: center;
-      max-width: 100%;
-    }
-  
-    .semi-hero-image {
-      margin-top: 20px;
-    }
-  
-    .semi-list {
-      padding: 50px 20px;
-    }
-  
-    .semi-card {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      width: 100%;
-      padding: 20px;
-      gap: 15px;
-    }
-  
-    .semi-img {
-      width: 100%;
-      height: auto;
-    }
-  
-    .semi-info {
-      text-align: center;
-    }
+
+  .semi-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    gap: 15px;
   }
-  
-  /* Small Screens */
-  @media (max-width: 480px) {
-    .semi-hero-text h1 {
-      font-size: 1.8rem;
-    }
-  
-    .section-title {
-      font-size: 1.5rem;
-    }
-  
-    .semi-card {
-      padding: 15px;
-    }
-  
-    .semi-info p {
-      font-size: 0.9rem;
-    }
+
+  .semi-img {
+    width: 100%;
+    height: auto;
   }
-  
-  /* Fix divider alignment */
-  .semi-list .divider {
-    margin: 0 auto 40px auto;
-    display: block;
+
+  .semi-info {
+    text-align: center;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .semi-hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .semi-card {
+    padding: 15px;
+  }
+
+  .semi-info p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Fix divider alignment */
+.semi-list .divider {
+  margin: 0 auto 40px auto;
+  display: block;
+}

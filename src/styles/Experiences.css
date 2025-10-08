@@ -2,22 +2,24 @@
    BASE STYLES
 ------------------------------ */
 .experiences-page {
-  background-color: #f7f9fb;
+  background-color: var(--bg-color);
   font-family: Arial, sans-serif;
-  color: #333;
+  color: var(--text-color);
   padding-bottom: 60px;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* ------------------------------
    HERO SECTION (SIDE-BY-SIDE)
 ------------------------------ */
 .experiences-hero {
-  background-color: #f4f6f9;
-  padding: 80px 60px 100px; /* Extra bottom spacing for separation */
+  background-color: var(--bg-color);
+  padding: 80px 60px 100px;
   display: flex;
   justify-content: center;
   position: relative;
   z-index: 1;
+  transition: background-color 0.4s ease;
 }
 
 .experiences-hero-content {
@@ -37,7 +39,7 @@
 .experiences-hero-text h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1e4d4f;
+  color: var(--accent-color);
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -46,7 +48,7 @@
 .experiences-hero-text p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #555;
+  color: var(--text-color);
   margin-top: 10px;
   max-width: 600px;
 }
@@ -55,7 +57,7 @@
 .divider {
   width: 80px;
   height: 4px;
-  background-color: #2c7a7b;
+  background-color: var(--accent-color);
   border-radius: 4px;
   margin: 15px 0 25px 0;
 }
@@ -72,36 +74,42 @@
   max-width: 480px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .experiences-hero-image img:hover {
   transform: scale(1.03);
 }
 
+/* Dark Mode Enhancements for Image */
+body.dark-mode .experiences-hero-image img {
+  box-shadow: 0 8px 20px rgba(0, 255, 198, 0.15);
+}
+
 /* ------------------------------
    EXPERIENCES LIST SECTION
 ------------------------------ */
 .experiences-list {
-  background-color: #fff;
+  background-color: var(--bg-color);
   text-align: center;
-  padding: 100px 60px 60px; /* Extra top padding for separation */
+  padding: 100px 60px 60px;
   position: relative;
   z-index: 2;
   box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.03);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .section-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #1e4d4f;
+  color: var(--accent-color);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 
 .section-accent {
-  color: #2c7a7b;
+  color: var(--accent-color);
 }
 
 /* ------------------------------
@@ -110,7 +118,7 @@
 .experience-card {
   display: flex;
   align-items: flex-start;
-  background-color: #fff;
+  background-color: var(--bg-color);
   border-radius: 12px;
   padding: 30px;
   width: 100%;
@@ -118,35 +126,51 @@
   margin: 30px auto;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
   text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease;
   gap: 20px;
 }
 
 .experience-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 22px rgba(44, 122, 123, 0.15);
 }
 
+/* Dark Mode */
+body.dark-mode .experience-card {
+  background-color: #101a1d;
+  box-shadow: 0 6px 18px rgba(0, 255, 198, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Company Logo */
 .experience-logo {
   width: 80px;
   height: 80px;
   object-fit: contain;
   border-radius: 8px;
-  background-color: #f4f6f9;
+  background-color: var(--bg-color);
   padding: 8px;
   flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.4s ease, box-shadow 0.3s ease;
 }
 
-/* Slight HXRI logo adjustment */
+body.dark-mode .experience-logo {
+  background-color: #0f171a;
+  box-shadow: 0 0 10px rgba(0, 255, 198, 0.1);
+}
+
+/* HXRI logo special sizing */
 .experience-logo[alt="HXRI Lab Logo"] {
   scale: 0.85;
 }
 
+/* Experience Header */
 .experience-header h3 {
-  color: #1e4d4f;
+  color: var(--text-color);
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 5px;
@@ -155,26 +179,26 @@
 .role {
   display: block;
   font-weight: 600;
-  color: #2c7a7b;
+  color: var(--accent-color);
   margin-bottom: 5px;
 }
 
 .date {
   font-size: 0.95rem;
-  color: #777;
+  color: var(--text-color);
+  opacity: 0.8;
 }
 
 .experience-desc {
   margin-top: 15px;
-  color: #444;
+  color: var(--text-color);
   line-height: 1.6;
+  transition: color 0.4s ease;
 }
 
 /* ------------------------------
    RESPONSIVE DESIGN
 ------------------------------ */
-
-/* Tablet adjustments */
 @media (max-width: 1024px) {
   .experiences-hero {
     padding: 60px 40px 80px;
@@ -190,9 +214,7 @@
   }
 }
 
-/* Mobile adjustments */
 @media (max-width: 768px) {
-  /* Stack hero content */
   .experiences-hero-content {
     flex-direction: column;
     text-align: center;
@@ -208,12 +230,10 @@
     margin-top: 20px;
   }
 
-  /* Experience list */
   .experiences-list {
     padding: 50px 20px;
   }
 
-  /* Stack experience cards */
   .experience-card {
     flex-direction: column;
     align-items: center;
@@ -247,7 +267,6 @@
   }
 }
 
-/* Extra-small screens */
 @media (max-width: 480px) {
   .experiences-hero-text h1 {
     font-size: 1.8rem;
@@ -266,15 +285,15 @@
   }
 }
 
-/* Fix stray teal line alignment */
+/* Center divider alignment */
 .experiences-list .divider {
-  margin: 0 auto 40px auto; /* centers it perfectly */
+  margin: 0 auto 40px auto;
   display: block;
 }
 
+/* Back to home container */
 .back-home-container {
   text-align: center;
   margin-top: 60px;
   margin-bottom: 40px;
 }
-

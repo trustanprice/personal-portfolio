@@ -153,6 +153,62 @@ function Home() {
             See All Experiences →
           </a>
         </div>
+
+
+        <div className="section-divider"></div>
+
+        {/* ✅ Featured Clubs Section */}
+        <h2 className="section-title">Featured Clubs</h2>
+
+        {/* SAS */}
+        <div className="feature-card">
+          <img
+            src="/clubs/sas-logo.png"
+            alt="Sports Analytics Society"
+            className="feature-img"
+          />
+          <div className="feature-info">
+            <h3>Sports Analytics Society (SAS)</h3>
+            <p>
+              Serve as the Lead Machine Learning Engineer for a sports betting
+              app project. Develop predictive models, manage the ML pipeline,
+              and lead data preprocessing efforts to improve forecast accuracy
+              and feature importance insights.
+            </p>
+            <a href="https://illinoissportsanalytics.com/" className="btn learn-more">
+              Learn More →
+            </a>
+          </div>
+        </div>
+
+        {/* SAM */}
+        <div className="feature-card">
+          <img
+            src="/clubs/sam-logo.png"
+            alt="Sports Analytics by Minorities"
+            className="feature-img"
+          />
+          <div className="feature-info">
+            <h3>Sports Analytics by Minorities (SAM)</h3>
+            <p>
+              Founded and led an organization empowering underrepresented
+              students in sports analytics. Managed workshops, collaborative
+              projects, and mentorship programs to build data literacy and
+              provide professional development in analytics careers.
+            </p>
+            <a href="/clubs" className="btn learn-more">
+              Learn More →
+            </a>
+          </div>
+        </div>
+
+        {/* See All Clubs */}
+        <div className="see-all-container">
+          <a href="/clubs" className="btn see-all">
+            See All Clubs →
+          </a>
+        </div>
+
       </section>
 
     </div>  /* ✅ Close the .home wrapper */

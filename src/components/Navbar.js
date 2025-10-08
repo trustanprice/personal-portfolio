@@ -1,36 +1,33 @@
 import React, { useState, useEffect } from "react";
-import "./Navbar.css";
-import { FaSun, FaMoon } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { FaSun, FaMoon } from "react-icons/fa";
+import "./Navbar.css";
 
 function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Dark Mode Toggle
+  // Initialize dark mode preference
   useEffect(() => {
-    const savedTheme = localStorage.getItem("darkMode") === "true";
-    setDarkMode(savedTheme);
-    document.body.classList.toggle("dark-mode", savedTheme);
+    const savedMode = localStorage.getItem("darkMode") === "true";
+    setDarkMode(savedMode);
+    document.body.classList.toggle("dark-mode", savedMode);
   }, []);
 
+  // Toggle theme
   const toggleTheme = () => {
-    const newTheme = !darkMode;
-    setDarkMode(newTheme);
-    document.body.classList.toggle("dark-mode", newTheme);
-    localStorage.setItem("darkMode", newTheme);
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    document.body.classList.toggle("dark-mode", newMode);
+    localStorage.setItem("darkMode", newMode);
   };
 
-  // Hide Navbar on Scroll Down
+  // Navbar hide/show on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setIsVisible(false); // scrolling down
-      } else {
-        setIsVisible(true); // scrolling up
-      }
+      setIsVisible(currentScrollY <= lastScrollY || currentScrollY < 50);
       setLastScrollY(currentScrollY);
     };
 
@@ -40,11 +37,11 @@ function Navbar() {
 
   return (
     <nav className={`navbar ${isVisible ? "show" : "hide"}`}>
-      <a href="/" className="logo">
+      <Link to="/" className="logo">
         trustanprice.io
-      </a>
+      </Link>
 
-      <ul>
+      <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/projects">Projects</Link></li>
         <li><Link to="/experiences">Experiences</Link></li>
@@ -52,7 +49,7 @@ function Navbar() {
         <li><Link to="/semipro">SemiPro</Link></li>
       </ul>
 
-      <button className="theme-toggle" onClick={toggleTheme}>
+      <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle dark mode">
         {darkMode ? <FaSun size={18} /> : <FaMoon size={18} />}
       </button>
     </nav>

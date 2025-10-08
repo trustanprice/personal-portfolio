@@ -1,51 +1,88 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
+/* ------------------------------
+   Global Theme Variables
+------------------------------ */
 :root {
   --bg-color: #f4f6f9;
-  --text-color: #333;
+  --text-color: #222;
   --accent-color: #2c7a7b;
 }
 
 body.dark-mode {
   --bg-color: #0f171a;
   --text-color: #eaf8f9;
-  --accent-color: #00ffc6; /* teal glow for dark mode */
+  --accent-color: #00ffc6;
 }
 
+/* ------------------------------
+   Global Styles
+------------------------------ */
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+.App {
+  text-align: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 1rem 2rem;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .navbar {
+  background-color: #1a2b2f;
+}
+
+/* Toggle Button */
+.dark-toggle {
+  background: none;
+  border: 1px solid var(--accent-color);
+  color: var(--text-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dark-toggle:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode footer {
+  background-color: #1a2b2f;
+}
+
+/* Logo and Text */
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+/* Optional: Smooth logo animation */
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
