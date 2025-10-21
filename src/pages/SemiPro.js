@@ -30,47 +30,53 @@ function SemiPro() {
         </h2>
         <div className="divider"></div>
 
-        {/* Example Card 1 */}
+        {/* Card 1 — 7Brew Work */}
         <div className="semi-card">
           <img
-            src="/logo192.png"
-            alt="Podcasting"
+            src="/semipro/7brew-logo.png"
+            alt="7Brew Barista"
             className="semi-img"
           />
           <div className="semi-info">
-            <h3>TBA</h3>
+            <h3>Barista at 7Brew</h3>
             <p>
-              ...
+              I currently work at <strong>7Brew Coffee</strong> in between classes, serving up drinks 
+              and good energy every shift. It’s a fast-paced environment that keeps me grounded, helps 
+              me keep my mind in a professional space, and upholds my sense of responsibility.
             </p>
           </div>
         </div>
 
-        {/* Example Card 2 */}
+        {/* Card 2 — Basketball */}
         <div className="semi-card">
           <img
-            src="/logo192.png"
-            alt="Fitness and Team Sports"
+            src="/semipro/basketball.png"
+            alt="Basketball"
             className="semi-img"
           />
           <div className="semi-info">
-            <h3>TBA</h3>
+            <h3>Recreation Basketball</h3>
             <p>
-             ...
+              In my free time I love playing <strong>basketball</strong> at the campus rec center. 
+              It’s my way to stay active, clear my head, and fuel my competitive spirit while keeping 
+              that teamwork mindset sharp.
             </p>
           </div>
         </div>
 
-        {/* Example Card 3 */}
+        {/* Card 3 — Anime */}
         <div className="semi-card">
           <img
-            src="/logo192.png"
-            alt="Community Work"
+            src="/semipro/anime.png"
+            alt="Anime"
             className="semi-img"
           />
           <div className="semi-info">
-            <h3>TBA</h3>
+            <h3>Anime</h3>
             <p>
-              ...
+              In my downtime, I’ve been keeping up with <strong>My Hero Academia</strong>, 
+              <strong> Dan Da Dan</strong>, and <strong>Dr. Stone</strong>. These are a few of the 
+              shows I enjoy watching in my leisure time.
             </p>
           </div>
         </div>
