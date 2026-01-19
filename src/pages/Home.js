@@ -31,7 +31,7 @@ function Home() {
               <FaEnvelope size={28} />
             </a>
             <a
-              href="/home/trustanprice-resume2025.pdf"
+              href="/home/trustanprice-cv2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="icon-link"
