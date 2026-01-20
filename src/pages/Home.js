@@ -69,6 +69,34 @@ function Home() {
       <section className="featured">
         <h2 className="section-title">Featured Projects</h2>
 
+        {/* LedgerOne – E-commerce Financial Ledger */}
+        <div className="feature-card">
+          <img
+            src="/home/ecommerce-thumbnail.png"
+            alt="LedgerOne E-commerce Financial Ledger"
+            className="feature-img"
+          />
+          <div className="feature-info">
+            <h3>LedgerOne: E-Commerce Financial Ledger & Analytics</h3>
+            <p>
+              A fintech-focused e-commerce analytics project centered on building a
+              double-entry financial ledger from raw transactional events. LedgerOne
+              models orders, payments, refunds, fees, and payouts as immutable financial
+              events, transforms them with dbt and DuckDB, and exposes clean,
+              auditable metrics for revenue recognition, cash flow, and platform
+              performance through BI dashboards.
+            </p>
+            <a
+              href="https://github.com/trustanprice/ledgerone"
+              className="btn learn-more"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn More →
+            </a>
+          </div>
+        </div>
+
         {/* NBA Predictions Project */}
         <div className="feature-card">
           <img
@@ -94,30 +122,6 @@ function Home() {
             </a>
           </div>
         </div>
-
-        {/* E-commerce BI Warehouse Project */}
-        <div className="feature-card">
-          <img
-            src="/home/ecommerce-thumbnail.png"
-            alt="E-commerce BI Warehouse Project"
-            className="feature-img"
-          />
-          <div className="feature-info">
-            <h3>E-Commerce BI Warehouse (Coming Soon)</h3>
-            <p>
-              An upcoming project to explore fintech analytics by building a data warehouse for e-commerce data using dbt, DuckDB, and Metabase.
-            </p>
-            <a
-              href="https://github.com/trustanprice/ecom-bi-duckdb-dbt"
-              className="btn learn-more"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn More →
-            </a>
-          </div>
-        </div>
-
 
         {/* See All Projects */}
         <div className="see-all-container">
