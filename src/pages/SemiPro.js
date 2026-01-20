@@ -8,11 +8,11 @@ function SemiPro() {
       <section className="semi-hero">
         <div className="semi-hero-content">
           <div className="semi-hero-text">
-            <h1>Life Outside of Work</h1>
+            <h1>Life Outside of Tech</h1>
             <div className="divider"></div>
             <p>
-              The semi-pro side of me — interests, hobbies, and experiences that shape who I am 
-              beyond coding and data. Whether it’s sports, creativity, or community, these moments 
+              The semi-pro side of me! This page contains interests, hobbies, and experiences that shape who I am
+              beyond coding and data. Whether it’s sports, creativity, or community, these moments
               remind me that personal growth fuels professional growth.
             </p>
           </div>
@@ -40,8 +40,8 @@ function SemiPro() {
           <div className="semi-info">
             <h3>Barista at 7Brew</h3>
             <p>
-              I currently work at <strong>7Brew Coffee</strong> in between classes, serving up drinks 
-              and good energy every shift. It’s a fast-paced environment that keeps me grounded, helps 
+              I currently work at <strong>7Brew Coffee</strong> in between classes, serving up drinks
+              and good energy every shift. It’s a fast-paced environment that keeps me grounded, helps
               me keep my mind in a professional space, and upholds my sense of responsibility.
             </p>
           </div>
@@ -57,8 +57,8 @@ function SemiPro() {
           <div className="semi-info">
             <h3>Recreation Basketball</h3>
             <p>
-              In my free time I love playing <strong>basketball</strong> at the campus rec center. 
-              It’s my way to stay active, clear my head, and fuel my competitive spirit while keeping 
+              In my free time I love playing <strong>basketball</strong> at the campus rec center.
+              It’s my way to stay active, clear my head, and fuel my competitive spirit while keeping
               that teamwork mindset sharp.
             </p>
           </div>
@@ -74,9 +74,8 @@ function SemiPro() {
           <div className="semi-info">
             <h3>Anime</h3>
             <p>
-              In my downtime, I’ve been keeping up with <strong>My Hero Academia</strong>, 
-              <strong> Dan Da Dan</strong>, and <strong>Dr. Stone</strong>. These are a few of the 
-              shows I enjoy watching in my leisure time.
+              In my downtime, I’ve been keeping up with <strong>Jujutsu Kaisen</strong> and <strong>Gachiakuta</strong>, and I also enjoy playing <strong>NBA 2K26</strong>.
+              These are a few of the ways I like to unwind in my leisure time.
             </p>
           </div>
         </div>
