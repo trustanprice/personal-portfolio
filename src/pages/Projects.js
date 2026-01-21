@@ -37,28 +37,30 @@ function Projects() {
                 <div className="underline teal"></div>
 
                 <div className="projects-list">
-                    {/* E-commerce BI Warehouse */}
-                    <div className="project-card">
+                    {/* LedgerOne – E-commerce Financial Ledger */}
+                    <div className="feature-card">
                         <img
                             src="/home/ecommerce-thumbnail.png"
-                            alt="E-commerce BI Warehouse"
-                            className="project-img"
+                            alt="LedgerOne E-commerce Financial Ledger"
+                            className="feature-img"
                         />
-                        <div className="project-info">
-                            <h3>E-Commerce BI Warehouse (Coming Soon)</h3>
+                        <div className="feature-info">
+                            <h3>LedgerOne: E-Commerce Financial Ledger & Analytics</h3>
                             <p>
-                                A business intelligence pipeline designed to explore the intersection
-                                of data analytics and fintech. This project will model marketplace
-                                data with dbt + DuckDB and visualize KPIs in Metabase. I’m building it
-                                to learn about data modeling, warehouse design, and fintech analytics.
+                                A fintech-focused e-commerce analytics project centered on building a
+                                double-entry financial ledger from raw transactional events. LedgerOne
+                                models orders, payments, refunds, fees, and payouts as immutable financial
+                                events, transforms them with dbt and DuckDB, and exposes clean,
+                                auditable metrics for revenue recognition, cash flow, and platform
+                                performance through BI dashboards.
                             </p>
                             <a
-                                href="https://github.com/trustanprice/ecom-bi-duckdb-dbt"
-                                className="learn-more"
+                                href="https://github.com/trustanprice/ledgerone"
+                                className="btn learn-more"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                View Repository →
+                                Learn More →
                             </a>
                         </div>
                     </div>
