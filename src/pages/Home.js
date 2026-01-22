@@ -15,10 +15,11 @@ function Home() {
           </h1>
           <p className="description">
             I am currently a Computer Science master’s student at the University of
-            Illinois Urbana-Champaign. I have graduated with a degree in Statistics from
-            UIUC, and my interests center on predictive analytics, risk modeling, fraud
-            detection, and forecasting, with a growing focus on building and deploying
-            end-to-end machine learning systems.
+            Illinois Urbana-Champaign, and I have graduated with a degree in Statistics
+            from UIUC. My near-term goal is to become a data scientist focused on
+            predictive analytics, risk modeling, fraud detection, and forecasting. Over
+            time, I plan to move into building machine learning models end-to-end for
+            development and deployment.
           </p>
           <div className="links">
             <a
