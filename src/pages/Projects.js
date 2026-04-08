@@ -37,6 +37,37 @@ function Projects() {
                 <div className="underline teal"></div>
 
                 <div className="projects-list">
+                    
+                    {/* UIUC Statistics Datathon – Call Center Forecasting */}
+                    <div className="feature-card">
+                        <img
+                            src="/home/datathon-thumbnail.png"
+                            alt="UIUC Statistics Datathon 2026 Project"
+                            className="feature-img"
+                        />
+                        <div className="feature-info">
+                            <h3>UIUC Statistics Datathon 2026 – 2nd Place (200+ Teams)</h3>
+                            <p>
+                                A competitive analytics project where I served as Project Lead, bringing together
+                                a team of minority students to compete in the UIUC Statistics Datathon. Our goal
+                                was not only to perform at a high level, but to represent students who are often
+                                underrepresented in spaces like this. Over a fast-paced development cycle, we
+                                built a forecasting solution to help predict call center demand and support
+                                better operational decision-making. Our work earned 2nd place out of 200+ teams
+                                and gave us the opportunity to present our solution to industry leaders at
+                                Synchrony.
+                            </p>
+                            <a
+                                href="https://github.com/trustangabrielprice/illinois-datathon-team015"
+                                className="btn learn-more"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Learn More →
+                            </a>
+                        </div>
+                    </div>
+
                     {/* LedgerOne – E-commerce Financial Ledger */}
                     <div className="feature-card">
                         <img

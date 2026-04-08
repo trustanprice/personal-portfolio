@@ -69,25 +69,22 @@ function Home() {
       <section className="featured">
         <h2 className="section-title">Featured Projects</h2>
 
-        {/* LedgerOne – E-commerce Financial Ledger */}
+        {/* UIUC Statistics Datathon – Call Center Forecasting */}
         <div className="feature-card">
           <img
-            src="/home/ecommerce-thumbnail.png"
-            alt="LedgerOne E-commerce Financial Ledger"
+            src="/home/datathon-thumbnail.png"
+            alt="UIUC Statistics Datathon 2026 Project"
             className="feature-img"
           />
           <div className="feature-info">
-            <h3>LedgerOne: E-Commerce Financial Ledger & Analytics</h3>
+            <h3>UIUC Statistics Datathon 2026 – 2nd Place (200+ Teams)</h3>
             <p>
-              A fintech-focused e-commerce analytics project centered on building a
-              double-entry financial ledger from raw transactional events. LedgerOne
-              models orders, payments, refunds, fees, and payouts as immutable financial
-              events, transforms them with dbt and DuckDB, and exposes clean,
-              auditable metrics for revenue recognition, cash flow, and platform
-              performance through BI dashboards.
+              Served as Project Lead for a team competing in the UIUC Statistics Datathon 2026, where we
+              built a forecasting solution to support call center operations. Our work placed 2nd out of 200+ teams and
+              was presented to industry leaders at Synchrony.
             </p>
             <a
-              href="https://github.com/trustanprice/ledgerone"
+              href="https://github.com/trustangabrielprice/illinois-datathon-team015"
               className="btn learn-more"
               target="_blank"
               rel="noopener noreferrer"
