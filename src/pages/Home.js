@@ -89,7 +89,7 @@ function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Learn More →
+              View Presentation →
             </a>
           </div>
         </div>
