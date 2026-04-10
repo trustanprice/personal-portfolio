@@ -37,7 +37,7 @@ function Projects() {
                 <div className="underline teal"></div>
 
                 <div className="projects-list">
-                    
+
                     {/* UIUC Statistics Datathon – Call Center Forecasting */}
                     <div className="feature-card">
                         <img
@@ -167,7 +167,7 @@ function Projects() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                View Paper →
+                                View Presentation →
                             </a>
                         </div>
                     </div>
