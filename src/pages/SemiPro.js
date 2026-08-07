@@ -30,51 +30,52 @@ function SemiPro() {
         </h2>
         <div className="divider"></div>
 
-        {/* Card 1 — 7Brew Work */}
+        {/* Card 1 — MCU: Doomsday Prep */}
         <div className="semi-card">
           <img
-            src="/semipro/7brew-logo.png"
-            alt="7Brew Barista"
+            src="/semipro/mcu-doomsday.png"
+            alt="MCU Doomsday Prep"
             className="semi-img"
           />
           <div className="semi-info">
-            <h3>Barista at 7Brew</h3>
+            <h3>MCU: Doomsday Prep</h3>
             <p>
-              I currently work at <strong>7Brew Coffee</strong> in between classes, serving up drinks
-              and good energy every shift. It’s a fast-paced environment that keeps me grounded, helps
-              me keep my mind in a professional space, and upholds my sense of responsibility.
+              I’m gearing up for <strong>Avengers: Doomsday</strong> by working through a watchlist of
+              every MCU movie I need to revisit so I walk in with the right perspective and background
+              on the story — no surprises when I hit the theater.
             </p>
           </div>
         </div>
 
-        {/* Card 2 — Basketball */}
+        {/* Card 2 — Recreational Sports */}
         <div className="semi-card">
           <img
-            src="/semipro/basketball.png"
-            alt="Basketball"
+            src="/semipro/futbol.png"
+            alt="Recreational Sports"
             className="semi-img"
           />
           <div className="semi-info">
-            <h3>Recreation Basketball</h3>
+            <h3>Recreational Sports</h3>
             <p>
-              In my free time I love playing <strong>basketball</strong> at the campus rec center.
-              It’s my way to stay active, clear my head, and fuel my competitive spirit while keeping
-              that teamwork mindset sharp.
+              I’ve been playing more <strong>soccer</strong> since the World Cup sparked my interest,
+              on top of <strong>basketball</strong>, which I’ve always loved. It’s my way to stay active,
+              clear my head, and fuel my competitive spirit while keeping that teamwork mindset sharp.
             </p>
           </div>
         </div>
 
-        {/* Card 3 — Anime */}
+        {/* Card 3 — Manga & Comics */}
         <div className="semi-card">
           <img
-            src="/semipro/anime.png"
-            alt="Anime"
+            src="/semipro/manga.png"
+            alt="Manga and Comics"
             className="semi-img"
           />
           <div className="semi-info">
-            <h3>Anime</h3>
+            <h3>Manga & Comics</h3>
             <p>
-              In my downtime, I’ve been keeping up with <strong>Jujutsu Kaisen</strong> and <strong>Gachiakuta</strong>, and I also enjoy playing <strong>NBA 2K26</strong>.
+              In my downtime, I’ve been reading manga and comics, most recently
+              <strong> Boruto</strong>, <strong>Invincible</strong>, and <strong>Black Clover</strong>.
               These are a few of the ways I like to unwind in my leisure time.
             </p>
           </div>
