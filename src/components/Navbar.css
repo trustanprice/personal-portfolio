@@ -78,6 +78,14 @@
   width: 100%;
 }
 
+/* Controls cluster (dark toggle, theme picker, hamburger) */
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 25px;
+}
+
 /* ==============================
    THEME TOGGLE BUTTON
 ============================== */
@@ -93,7 +101,6 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-left: 25px;
 }
 
 .theme-toggle:hover {
@@ -114,6 +121,34 @@ body.dark-mode .theme-toggle:hover {
 }
 
 /* ==============================
+   HAMBURGER BUTTON (mobile only)
+============================== */
+.hamburger {
+  display: none;
+  background: none;
+  border: 1.5px solid var(--accent-dark-color);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  color: var(--accent-dark-color);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  background: var(--accent-solid);
+  color: var(--accent-contrast);
+  box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.6);
+}
+
+body.dark-mode .hamburger {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* ==============================
    MOBILE NAVBAR
 ============================== */
 @media (max-width: 768px) {
@@ -121,107 +156,59 @@ body.dark-mode .theme-toggle:hover {
     position: sticky;
     top: 0;
     width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 80px 24px 40px;
-    background: rgba(var(--accent-rgb), 0.12);
+    flex-wrap: wrap;
+    padding: 14px 20px;
+    background: rgba(var(--accent-rgb), 0.1);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    transition: transform 0.4s ease, background 0.3s ease, padding 0.3s ease;
   }
 
-  /* Compact, more transparent bar shown when re-appearing mid-scroll
-     (rather than the full-height landing menu shown at the top) */
-  .navbar.scrolled {
-    padding: 14px 20px;
-    background: rgba(var(--accent-rgb), 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  .logo {
+    font-size: 1.3rem;
   }
 
-  .nav-links {
+  .navbar-controls {
+    margin-left: auto;
+    gap: 10px;
+  }
+
+  .theme-toggle,
+  .hamburger {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hamburger {
     display: flex;
+  }
+
+  /* Links collapse into a dropdown panel toggled by the hamburger */
+  .nav-links {
+    order: 3;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 22px;
-    margin: 0 auto;
-    padding: 0;
+    gap: 18px;
     width: 100%;
-    transition: gap 0.3s ease;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+    transform: translateY(-8px);
+    transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease,
+      padding 0.35s ease;
   }
 
-  .navbar.scrolled .nav-links {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 12px;
+  .nav-links.open {
+    max-height: 400px;
+    opacity: 1;
+    transform: translateY(0);
+    padding: 20px 0 6px;
   }
 
   .nav-links a {
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: color 0.3s ease, font-size 0.3s ease;
-  }
-
-  .navbar.scrolled .nav-links a {
-    font-size: 0.8rem;
-    font-weight: 600;
-  }
-
-  .nav-links a:hover {
-    color: var(--accent-color);
-  }
-
-  /* Center logo above nav links */
-  .navbar .logo {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 1.6rem;
-    transition: font-size 0.3s ease, margin-bottom 0.3s ease;
-  }
-
-  .navbar.scrolled .logo {
-    margin-bottom: 10px;
     font-size: 1.1rem;
-  }
-
-  /* Keep dark mode toggle fixed top-right */
-  .theme-toggle {
-    position: absolute;
-    top: 16px;
-    right: 24px;
-    margin: 0;
-    width: 38px;
-    height: 38px;
-    background: var(--bg-alt);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 1001;
-  }
-
-  .navbar.scrolled .theme-toggle {
-    top: 10px;
-    right: 16px;
-    width: 30px;
-    height: 30px;
-    background: rgba(var(--accent-rgb), 0.1);
-  }
-
-  .navbar.scrolled .theme-switcher {
-    top: 10px;
-    right: 54px;
-  }
-
-  .navbar.scrolled .theme-switcher-toggle {
-    width: 30px;
-    height: 30px;
+    font-weight: 700;
   }
 }
