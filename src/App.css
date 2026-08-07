@@ -1,88 +1,182 @@
 /* ------------------------------
-   Global Theme Variables
+   THEME ENGINE
+   Themes are selected via [data-theme="..."] on <body>,
+   and combined with body.dark-mode for the dark variant of
+   each theme. Every color used across the site should pull
+   from these tokens so switching theme/mode recolors everything.
 ------------------------------ */
-:root {
+
+/* Default theme: Teal (original) — light */
+:root,
+body[data-theme="teal"] {
   --bg-color: #f4f6f9;
-  --text-color: #222;
+  --bg-alt: #ffffff;
+  --text-color: #1c1f22;
+  --text-muted: #5c6570;
   --accent-color: #2c7a7b;
+  --accent-dark-color: #1e4d4f;
+  --accent-solid: #2c7a7b;
+  --accent-contrast: #ffffff;
+  --accent-rgb: 44, 122, 123;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --card-shadow: rgba(0, 0, 0, 0.06);
 }
 
-body.dark-mode {
+/* Teal — dark */
+body.dark-mode,
+body.dark-mode[data-theme="teal"] {
   --bg-color: #0f171a;
+  --bg-alt: #101a1d;
   --text-color: #eaf8f9;
+  --text-muted: #9fd8d4;
   --accent-color: #00ffc6;
+  --accent-dark-color: #009b87;
+  --accent-solid: #00ffc6;
+  --accent-contrast: #0f171a;
+  --accent-rgb: 0, 255, 198;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --card-shadow: rgba(0, 255, 198, 0.08);
+}
+
+/* Caterpillar — Yellow & Black — light */
+body[data-theme="cat"] {
+  --bg-color: #faf8f2;
+  --bg-alt: #ffffff;
+  --text-color: #161616;
+  --text-muted: #4a4a4a;
+  --accent-color: #141414;
+  --accent-dark-color: #000000;
+  --accent-solid: #ffc400;
+  --accent-contrast: #111111;
+  --accent-rgb: 255, 196, 0;
+  --border-color: rgba(0, 0, 0, 0.12);
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Caterpillar — dark */
+body.dark-mode[data-theme="cat"] {
+  --bg-color: #121212;
+  --bg-alt: #1a1a1a;
+  --text-color: #f5efe0;
+  --text-muted: #cfc6a8;
+  --accent-color: #ffc400;
+  --accent-dark-color: #e0ac00;
+  --accent-solid: #ffc400;
+  --accent-contrast: #111111;
+  --accent-rgb: 255, 196, 0;
+  --border-color: rgba(255, 196, 0, 0.15);
+  --card-shadow: rgba(255, 196, 0, 0.1);
+}
+
+/* Illini — Orange & Blue — light */
+body[data-theme="illini"] {
+  --bg-color: #f5f7fb;
+  --bg-alt: #ffffff;
+  --text-color: #13294b;
+  --text-muted: #44567a;
+  --accent-color: #ff5f05;
+  --accent-dark-color: #cc4c04;
+  --accent-solid: #ff5f05;
+  --accent-contrast: #ffffff;
+  --accent-rgb: 255, 95, 5;
+  --border-color: rgba(19, 41, 75, 0.1);
+  --card-shadow: rgba(19, 41, 75, 0.08);
+}
+
+/* Illini — dark */
+body.dark-mode[data-theme="illini"] {
+  --bg-color: #0c1526;
+  --bg-alt: #13203a;
+  --text-color: #eef2fa;
+  --text-muted: #b7c3dc;
+  --accent-color: #ff7a2e;
+  --accent-dark-color: #ff5f05;
+  --accent-solid: #ff7a2e;
+  --accent-contrast: #13294b;
+  --accent-rgb: 255, 122, 46;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --card-shadow: rgba(255, 122, 46, 0.1);
+}
+
+/* Buckeyes — Scarlet & Gray — light */
+body[data-theme="osu"] {
+  --bg-color: #f7f6f5;
+  --bg-alt: #ffffff;
+  --text-color: #201f1f;
+  --text-muted: #666666;
+  --accent-color: #ba0c2f;
+  --accent-dark-color: #8a0921;
+  --accent-solid: #ba0c2f;
+  --accent-contrast: #ffffff;
+  --accent-rgb: 186, 12, 47;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --card-shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* Buckeyes — dark */
+body.dark-mode[data-theme="osu"] {
+  --bg-color: #151414;
+  --bg-alt: #1f1e1e;
+  --text-color: #f2efe9;
+  --text-muted: #a7b1b7;
+  --accent-color: #ff4d5e;
+  --accent-dark-color: #ba0c2f;
+  --accent-solid: #ff4d5e;
+  --accent-contrast: #151414;
+  --accent-rgb: 255, 77, 94;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --card-shadow: rgba(255, 77, 94, 0.1);
+}
+
+/* CU Boulder — Gold, Black & Gray — light */
+body[data-theme="cu"] {
+  --bg-color: #f7f5f0;
+  --bg-alt: #ffffff;
+  --text-color: #1a1a1a;
+  --text-muted: #565a5c;
+  --accent-color: #565a5c;
+  --accent-dark-color: #3a3d3e;
+  --accent-solid: #cfb87c;
+  --accent-contrast: #000000;
+  --accent-rgb: 207, 184, 124;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --card-shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* CU Boulder — dark */
+body.dark-mode[data-theme="cu"] {
+  --bg-color: #121212;
+  --bg-alt: #1c1c1c;
+  --text-color: #f5f1e6;
+  --text-muted: #a2a4a3;
+  --accent-color: #cfb87c;
+  --accent-dark-color: #b39b5d;
+  --accent-solid: #cfb87c;
+  --accent-contrast: #000000;
+  --accent-rgb: 207, 184, 124;
+  --border-color: rgba(207, 184, 124, 0.15);
+  --card-shadow: rgba(207, 184, 124, 0.1);
 }
 
 /* ------------------------------
-   Global Styles
+   GLOBAL / BASE
 ------------------------------ */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: 'Inter', sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .App {
   text-align: center;
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.4s ease, color 0.4s ease;
   min-height: 100vh;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--accent-color);
-  color: white;
-  padding: 1rem 2rem;
-  transition: background-color 0.3s ease;
-}
-
-body.dark-mode .navbar {
-  background-color: #1a2b2f;
-}
-
-/* Toggle Button */
-.dark-toggle {
-  background: none;
-  border: 1px solid var(--accent-color);
-  color: var(--text-color);
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.dark-toggle:hover {
-  background-color: var(--accent-color);
-  color: white;
-}
-
-/* Footer */
-footer {
-  background-color: var(--accent-color);
-  color: white;
-  padding: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-body.dark-mode footer {
-  background-color: #1a2b2f;
-}
-
-/* Logo and Text */
-.logo {
-  font-weight: 700;
-  font-size: 1.3rem;
-}
-
-/* Optional: Smooth logo animation */
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

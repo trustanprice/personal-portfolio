@@ -3,7 +3,6 @@
 ------------------------------ */
 .semi-page {
   background-color: var(--bg-color);
-  font-family: Arial, sans-serif;
   color: var(--text-color);
   padding-bottom: 60px;
   transition: background-color 0.4s ease, color 0.4s ease;
@@ -85,7 +84,7 @@
 
 /* Dark Mode Enhancements */
 body.dark-mode .semi-hero-image img {
-  box-shadow: 0 8px 20px rgba(0, 255, 198, 0.15);
+  box-shadow: 0 8px 20px rgba(var(--accent-rgb), 0.15);
 }
 
 /* ------------------------------
@@ -122,7 +121,7 @@ body.dark-mode .semi-hero-image img {
   display: flex;
   align-items: flex-start;
   background-color: var(--bg-color);
-  border-radius: 12px;
+  border-radius: 18px;
   padding: 30px;
   width: 100%;
   max-width: 1400px;
@@ -135,13 +134,13 @@ body.dark-mode .semi-hero-image img {
 
 .semi-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 22px rgba(44, 122, 123, 0.15);
+  box-shadow: 0 8px 22px rgba(var(--accent-rgb), 0.15);
 }
 
 /* Dark Mode */
 body.dark-mode .semi-card {
-  background-color: #101a1d;
-  box-shadow: 0 6px 18px rgba(0, 255, 198, 0.05);
+  background-color: var(--bg-alt);
+  box-shadow: 0 6px 18px rgba(var(--accent-rgb), 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -157,8 +156,8 @@ body.dark-mode .semi-card {
 }
 
 body.dark-mode .semi-img {
-  background-color: #0f171a;
-  box-shadow: 0 3px 14px rgba(0, 255, 198, 0.1);
+  background-color: var(--bg-color);
+  box-shadow: 0 3px 14px rgba(var(--accent-rgb), 0.1);
 }
 
 .semi-info h3 {
@@ -188,16 +187,17 @@ body.dark-mode .semi-img {
   border: 2px solid var(--accent-color);
   color: var(--accent-color);
   background: transparent;
-  padding: 10px 18px;
-  border-radius: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .btn.see-all:hover {
-  background: var(--accent-color);
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(44, 122, 123, 0.3);
+  background: var(--accent-solid);
+  color: var(--accent-contrast);
+  border-color: var(--accent-solid);
+  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
 }
 
 /* ------------------------------

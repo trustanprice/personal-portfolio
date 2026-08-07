@@ -1,26 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaSun, FaMoon } from "react-icons/fa";
+import ThemeSwitcher from "./ThemeSwitcher";
 import "./Navbar.css";
 
-function Navbar() {
-  const [darkMode, setDarkMode] = useState(false);
+function Navbar({ darkMode, setDarkMode, theme, setTheme }) {
   const [isVisible, setIsVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Initialize dark mode preference
-  useEffect(() => {
-    const savedMode = localStorage.getItem("darkMode") === "true";
-    setDarkMode(savedMode);
-    document.body.classList.toggle("dark-mode", savedMode);
-  }, []);
-
-  // Toggle theme
+  // Toggle dark/light mode
   const toggleTheme = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    document.body.classList.toggle("dark-mode", newMode);
-    localStorage.setItem("darkMode", newMode);
+    setDarkMode(!darkMode);
   };
 
   // Navbar hide/show on scroll
@@ -28,6 +19,7 @@ function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setIsVisible(currentScrollY <= lastScrollY || currentScrollY < 50);
+      setIsScrolled(currentScrollY > 50);
       setLastScrollY(currentScrollY);
     };
 
@@ -36,7 +28,11 @@ function Navbar() {
   }, [lastScrollY]);
 
   return (
-    <nav className={`navbar ${isVisible ? "show" : "hide"}`}>
+    <nav
+      className={`navbar ${isVisible ? "show" : "hide"} ${
+        isScrolled ? "scrolled" : ""
+      }`}
+    >
       <Link to="/" className="logo">
         trustanprice.io
       </Link>
@@ -52,6 +48,8 @@ function Navbar() {
       <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle dark mode">
         {darkMode ? <FaSun size={18} /> : <FaMoon size={18} />}
       </button>
+
+      <ThemeSwitcher theme={theme} setTheme={setTheme} />
     </nav>
   );
 }

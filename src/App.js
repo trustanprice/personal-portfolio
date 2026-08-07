@@ -10,9 +10,12 @@ import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
-  // Load saved preference (dark or light)
+  // Load saved preferences (dark/light mode + color theme)
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
+  );
+  const [theme, setTheme] = useState(
+    localStorage.getItem("siteTheme") || "teal"
   );
 
   // Apply dark mode to the <body> globally
@@ -21,9 +24,20 @@ function App() {
     localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
 
+  // Apply color theme to the <body> globally
+  useEffect(() => {
+    document.body.setAttribute("data-theme", theme);
+    localStorage.setItem("siteTheme", theme);
+  }, [theme]);
+
   return (
     <Router>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Navbar
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        theme={theme}
+        setTheme={setTheme}
+      />
       <div className="App" style={{ backgroundColor: "var(--bg-color)", color: "var(--text-color)", minHeight: "100vh" }}>
         <Routes>
           <Route path="/" element={<Home />} />

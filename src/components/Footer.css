@@ -1,9 +1,10 @@
 .footer {
-    text-align: center;
-    padding: 20px;
-    background: #f4f6f9;
-    color: #555;
-    font-size: 0.9rem;
-    margin-top: 50px;
-  }
-  
+  text-align: center;
+  padding: 24px 20px;
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 50px;
+  border-top: 1px solid var(--border-color);
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
