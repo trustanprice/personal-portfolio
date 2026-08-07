@@ -134,16 +134,34 @@ function Home() {
 
         <div className="feature-card">
           <img
-            src="/home/caterpillar-thumbnail.png"
-            alt="Caterpillar Internship"
+            src="/home/caterpillar-thumbnail-2026.png"
+            alt="Caterpillar Internship 2026"
             className="feature-img"
           />
           <div className="feature-info">
-            <h3>Caterpillar Inc. — Chicago, IL</h3>
+            <h3>Caterpillar Inc. — Chicago, IL (2026)</h3>
             <p>
-              Worked on the Analytics & Executions team under Paul Brown,
-              building CI/CD pipelines, developing tests for AWS Lambda functions,
-              integrating AWS CloudWatch with Grafana dashboards, and improving audit logging solutions.
+              Returning as a Software Engineer Intern to build CI/CD pipelines in GitHub Actions
+              with reusable workflows, custom actions, and CloudFormation, layered with an
+              LLMOps automation system for autonomous remediation and risk prediction. Partnered
+              with Security and CloudOps teams to migrate Azure Pipelines to GitHub Actions,
+              modernizing CI/CD infrastructure across multiple application teams.
+            </p>
+          </div>
+        </div>
+
+        <div className="feature-card">
+          <img
+            src="/home/caterpillar-thumbnail.png"
+            alt="Caterpillar Internship 2025"
+            className="feature-img"
+          />
+          <div className="feature-info">
+            <h3>Caterpillar Inc. — Chicago, IL (2025)</h3>
+            <p>
+              Worked on the Analytics & Executions team under Paul Brown, building CI/CD
+              pipelines, developing tests for AWS Lambda functions, integrating AWS CloudWatch
+              with Grafana dashboards, and improving audit logging solutions.
             </p>
           </div>
         </div>

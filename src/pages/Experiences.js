@@ -36,7 +36,32 @@ function Experiences() {
                 </h2>
                 <div className="divider"></div>
 
-                {/* Caterpillar */}
+                {/* Caterpillar 2026 */}
+                <div className="experience-card">
+                    <img
+                        src="/experiences/caterpillar-logo.png"
+                        alt="Caterpillar Logo"
+                        className="experience-logo"
+                    />
+                    <div className="experience-info">
+                        <div className="experience-header">
+                            <h3>Caterpillar Inc.</h3>
+                            <span className="role">Software Engineer Intern</span>
+                            <span className="date">May 2026 – Aug 2026</span>
+                        </div>
+                        <p className="experience-desc">
+                            • Built CI/CD pipelines in GitHub Actions with reusable workflows,
+                            custom actions, and CloudFormation, layered with an LLMOps automation
+                            system for autonomous remediation and risk prediction.<br />
+                            • Partnered with Security and CloudOps teams to ensure full pipeline
+                            automation coverage and compliance.<br />
+                            • Migrated Azure Pipelines to GitHub Actions, modernizing the CI/CD
+                            infrastructure for multiple application teams.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Caterpillar 2025 */}
                 <div className="experience-card">
                     <img
                         src="/experiences/caterpillar-logo.png"
