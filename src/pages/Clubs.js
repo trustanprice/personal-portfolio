@@ -37,29 +37,6 @@ function Clubs() {
         </h2>
         <div className="divider"></div>
 
-        {/* Sports Analytics Society */}
-        <div className="club-card">
-          <div className="club-logo">
-            <img
-              src="/clubs/sas-logo.png"
-              alt="Sports Analytics Society Logo"
-              style={{ width: "60px", height: "60px" }}
-            />
-          </div>
-          <div className="club-info">
-            <div className="club-header">
-              <h3>Sports Analytics Society</h3>
-              <span className="role">Lead Machine Learning Engineer</span>
-              <span className="date">Fall 2025 – Present</span>
-            </div>
-            <p className="club-desc">
-              • Lead predictive modeling initiatives and data engineering pipelines for sports data projects.<br />
-              • Mentor students on implementing regression, clustering, and ML-based forecasting models.<br />
-              • Support the development of interactive dashboards for an NFL Sports Betting Predictions project.
-            </p>
-          </div>
-        </div>
-
         {/* B[U]ILT */}
         <div className="club-card">
           <div className="club-logo">
@@ -102,6 +79,29 @@ function Clubs() {
               • Collaborate with fellow Black engineers to enhance representation and access to professional opportunities.<br />
               • Attend conferences and technical talks focused on engineering innovation and career development.<br />
               • Participate in mentorship programs and community outreach to support underrepresented students in STEM.
+            </p>
+          </div>
+        </div>
+
+        {/* Sports Analytics Society */}
+        <div className="club-card">
+          <div className="club-logo">
+            <img
+              src="/clubs/sas-logo.png"
+              alt="Sports Analytics Society Logo"
+              style={{ width: "60px", height: "60px" }}
+            />
+          </div>
+          <div className="club-info">
+            <div className="club-header">
+              <h3>Sports Analytics Society</h3>
+              <span className="role">Lead Machine Learning Engineer</span>
+              <span className="date">Fall 2025 – Spring 2026</span>
+            </div>
+            <p className="club-desc">
+              • Lead predictive modeling initiatives and data engineering pipelines for sports data projects.<br />
+              • Mentor students on implementing regression, clustering, and ML-based forecasting models.<br />
+              • Support the development of interactive dashboards for an NFL Sports Betting Predictions project.
             </p>
           </div>
         </div>
