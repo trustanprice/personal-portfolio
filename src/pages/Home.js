@@ -104,13 +104,13 @@ function Home() {
           <div className="feature-info">
             <h3>NBA Predictions Project</h3>
             <p>
-              Predicts NBA team win totals using Elastic Net regression for
-              feature reduction and KNN regression for performance prediction.
-              Built with Streamlit for visualization and Python for the model,
-              showcasing machine learning in sports analytics.
+            Predicts NBA win totals via walk-forward-validated gradient boosting, powers 
+            live player power rankings and coaching evaluations from real NBA.com data, 
+            and explains every number's methodology in plain language. Built with Python, 
+            FastAPI, and Next.js.
             </p>
             <a
-              href="https://basketball-predictions-trustanprice.streamlit.app/"
+              href="https://basketball-predictions.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="btn learn-more"

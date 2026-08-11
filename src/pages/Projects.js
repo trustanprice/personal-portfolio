@@ -106,12 +106,25 @@ function Projects() {
                         <div className="project-info">
                             <h3>NBA Predictions Application</h3>
                             <p>
-                                A predictive modeling app that forecasts NBA team win totals using
-                                Elastic Net and KNN regression. Includes an interactive Streamlit UI
-                                to explore season forecasts, feature weights, and team statistics.
+                                An NBA analytics platform built around one core idea: every number should come with its own explanation, not just a value.
                             </p>
+
+                            <p>Three connected models:</p>
+
+                            <ul>
+                                <li><strong>Win-total predictor:</strong> benchmarks gradient boosting against KNN under honest walk-forward validation (never random cross-validation, since this is time-dependent data).</li>
+                                <li><strong>Player power rankings:</strong> transparent, z-scored composite ratings computed live from real-time NBA.com data.</li>
+                                <li><strong>Coaching evaluation:</strong> measures actual win percentage against roster-talent expectation.</li>
+                            </ul>
+
+                            <p>
+                                Every prediction ships with its full methodology inline: the formula, the raw inputs, and the honest accuracy, including where a technique doesn't help and says so plainly.
+                            
+                                Built with Python and FastAPI on the backend, including a custom NBA.com data client (on top of <code>nba_api</code>, with its own retry, caching, and schema-validation layer). Frontend in Next.js, deployed on Vercel and Render.
+                            </p>
+
                             <a
-                                href="https://basketball-predictions-trustanprice.streamlit.app/"
+                                href="https://basketball-predictions.vercel.app/"
                                 className="learn-more"
                                 target="_blank"
                                 rel="noopener noreferrer"
