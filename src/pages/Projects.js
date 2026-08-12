@@ -58,7 +58,7 @@ function Projects() {
                                 Synchrony.
                             </p>
                             <a
-                                href="https://github.com/trustangabrielprice/illinois-datathon-team015"
+                                href="https://github.com/DarylOkeke/datathon-final-submission/blob/main/datathon_team015_v1.pdf"
                                 className="btn learn-more"
                                 target="_blank"
                                 rel="noopener noreferrer"
