@@ -120,7 +120,7 @@ body.dark-mode .semi-hero-image img {
 .semi-card {
   display: flex;
   align-items: flex-start;
-  background-color: var(--bg-color);
+  background-color: var(--bg-alt);
   border-radius: 18px;
   padding: 30px;
   width: 100%;

@@ -117,7 +117,7 @@ body.dark-mode .experiences-hero-image img {
 .experience-card {
   display: flex;
   align-items: flex-start;
-  background-color: var(--bg-color);
+  background-color: var(--bg-alt);
   border-radius: 18px;
   padding: 30px;
   width: 100%;

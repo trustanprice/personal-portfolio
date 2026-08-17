@@ -142,7 +142,7 @@ body.dark-mode .projects-hero-image img {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background: var(--bg-color);
+  background: var(--bg-alt);
   border-radius: 18px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   padding: 30px 40px;
