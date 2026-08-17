@@ -69,6 +69,43 @@ function Home() {
       <section className="featured">
         <h2 className="section-title">Featured Projects</h2>
 
+        {/* Forward Data Lab */}
+        <div className="feature-card">
+          <img
+            src="/home/forward-data-lab-thumbnail.png"
+            alt="Forward Data Lab Project"
+            className="feature-img"
+          />
+          <div className="feature-info">
+            <h3>Forward Data Lab — Retrieval's Blind Spot</h3>
+            <p>
+              Research project for the Forward Data Lab investigating how AI research agents
+              like Ai2's Asta retrieve and synthesize academic papers, and where that pipeline
+              can quietly fail. Built a minimal, inspectable RAG pipeline with a calibrated
+              relevance-confidence threshold and citation-weighted reranking, verified against
+              real papers and live queries.
+            </p>
+            <div className="feature-links">
+              <a
+                href="https://forward-data-lab.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn learn-more"
+              >
+                View Live Site →
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1yiZuSyG6jJU_nVv_b1BozBVIGZjfDBit/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn learn-more"
+              >
+                Learn More →
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* UIUC Statistics Datathon – Call Center Forecasting */}
         <div className="feature-card">
           <img
@@ -119,6 +156,7 @@ function Home() {
             </a>
           </div>
         </div>
+
 
         {/* See All Projects */}
         <div className="see-all-container">

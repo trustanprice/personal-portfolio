@@ -16,8 +16,9 @@ The portfolio consists of five primary sections:
 
 ### 💻 Projects
 - Displays my key technical projects such as:
-  - **E-Commerce BI Warehouse (Coming Soon)** — a dbt + DuckDB + Metabase project exploring fintech analytics.  
-  - **NBA Win Predictions App** — machine learning model using Elastic Net & KNN for team win predictions.  
+  - **Forward Data Lab — Retrieval's Blind Spot** — research project investigating how AI research agents like Ai2's Asta retrieve and synthesize academic papers; ships a minimal, inspectable RAG pipeline with a calibrated relevance-confidence threshold and citation-weighted reranking. [Live site](https://forward-data-lab.vercel.app/) · [demo walkthrough](https://drive.google.com/file/d/1yiZuSyG6jJU_nVv_b1BozBVIGZjfDBit/view?usp=sharing).
+  - **LedgerOne** — a dbt + DuckDB double-entry financial ledger exploring fintech/e-commerce analytics.  
+  - **NBA Win Predictions App** — machine learning model using gradient boosting & KNN for team win predictions.  
   - **AI Academic Advisor** — NLP-based React + Flask app for student major and schedule recommendations.
 - Each project card includes a description, thumbnail, and direct link to either a deployed demo or GitHub repo.
 
@@ -132,6 +133,15 @@ For manual deployment, follow Vercel’s React deployment guide:
 ✅ Smooth navigation using React Router
 ✅ “Back to Home” and “See All” buttons for consistent UX
 ✅ Modular and easily extensible design for adding new projects or experiences
+
+---
+
+## 🤖 For Future Me (or an Agent)
+
+This repo has no data layer — every project/experience/club entry is
+hardcoded JSX. See [AGENTS.md](AGENTS.md) (and the per-folder AGENTS.md files
+it links to) for a fleet-manager-style breakdown of what lives where and the
+conventions to follow when adding something new.
 
 ---
 

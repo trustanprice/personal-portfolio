@@ -38,6 +38,76 @@ function Projects() {
 
                 <div className="projects-list">
 
+                    {/* LedgerOne – E-commerce Financial Ledger */}
+                    <div className="feature-card">
+                        <img
+                            src="/home/ecommerce-thumbnail.png"
+                            alt="LedgerOne E-commerce Financial Ledger"
+                            className="feature-img"
+                        />
+                        <div className="feature-info">
+                            <h3>LedgerOne: E-Commerce Financial Ledger & Analytics</h3>
+                            <p>
+                                A fintech-focused e-commerce analytics project centered on building a
+                                double-entry financial ledger from raw transactional events. LedgerOne
+                                models orders, payments, refunds, fees, and payouts as immutable financial
+                                events, transforms them with dbt and DuckDB, and exposes clean,
+                                auditable metrics for revenue recognition, cash flow, and platform
+                                performance through BI dashboards.
+                            </p>
+                            <a
+                                href="https://github.com/trustanprice/ledgerone"
+                                className="btn learn-more"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Learn More →
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Forward Data Lab */}
+                    <div className="feature-card">
+                        <img
+                            src="/home/forward-data-lab-thumbnail.png"
+                            alt="Forward Data Lab Project"
+                            className="feature-img"
+                        />
+                        <div className="feature-info">
+                            <h3>Forward Data Lab — Retrieval's Blind Spot</h3>
+                            <p>
+                                Independent research project for the Forward Data Lab, investigating how AI
+                                research agents like Ai2's Asta retrieve and synthesize academic literature,
+                                and where that pipeline can quietly go wrong. Built a minimal, inspectable RAG
+                                pipeline over 18 real papers pulled live from the Semantic Scholar API that
+                                mirrors Asta's retrieve → rerank → cap → generate flow, then added two concrete
+                                fixes: a calibrated relevance-confidence threshold that refuses to force a
+                                synthesis when nothing clears a similarity bar, and citation-weighted reranking
+                                that blends embedding similarity with real citation counts so well-established
+                                work outranks obscure preprints. Verified against six live queries (three
+                                on-topic, three off-topic) with results and reasoning documented end-to-end.
+                            </p>
+                            <div className="feature-links">
+                                <a
+                                    href="https://forward-data-lab.vercel.app/"
+                                    className="btn learn-more"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Live Site →
+                                </a>
+                                <a
+                                    href="https://drive.google.com/file/d/1yiZuSyG6jJU_nVv_b1BozBVIGZjfDBit/view?usp=sharing"
+                                    className="btn learn-more"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Learn More →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* UIUC Statistics Datathon – Call Center Forecasting */}
                     <div className="feature-card">
                         <img
@@ -64,34 +134,6 @@ function Projects() {
                                 rel="noopener noreferrer"
                             >
                                 View Presentation →
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* LedgerOne – E-commerce Financial Ledger */}
-                    <div className="feature-card">
-                        <img
-                            src="/home/ecommerce-thumbnail.png"
-                            alt="LedgerOne E-commerce Financial Ledger"
-                            className="feature-img"
-                        />
-                        <div className="feature-info">
-                            <h3>LedgerOne: E-Commerce Financial Ledger & Analytics</h3>
-                            <p>
-                                A fintech-focused e-commerce analytics project centered on building a
-                                double-entry financial ledger from raw transactional events. LedgerOne
-                                models orders, payments, refunds, fees, and payouts as immutable financial
-                                events, transforms them with dbt and DuckDB, and exposes clean,
-                                auditable metrics for revenue recognition, cash flow, and platform
-                                performance through BI dashboards.
-                            </p>
-                            <a
-                                href="https://github.com/trustanprice/ledgerone"
-                                className="btn learn-more"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Learn More →
                             </a>
                         </div>
                     </div>

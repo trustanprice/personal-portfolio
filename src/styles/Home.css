@@ -269,6 +269,12 @@ body.dark-mode .feature-img {
   transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
+.feature-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+}
+
 .feature-info a:hover {
   color: var(--accent-dark-color);
   border-bottom: 2px solid var(--accent-color, #2c7a7b);
