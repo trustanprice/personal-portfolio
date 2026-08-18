@@ -124,7 +124,7 @@ function Home() {
             </p>
             <div className="feature-links">
               <a
-                href="https://trustanprice.github.io/ledgerone/walkthrough/"
+                href="https://ledgerone-green.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn learn-more"
