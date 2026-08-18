@@ -119,8 +119,10 @@ function Home() {
               A single-entry, append-only fintech ledger: Python generates immutable financial
               events, and a dbt + DuckDB pipeline (staging → star schema → tested reporting marts)
               turns them into auditable revenue, refund, and payout metrics. A companion credit-risk
-              module builds vintage curves, a roll-rate transition matrix, and a CECL-style reserve
-              estimate, presented through a live, scroll-driven walkthrough site.
+              module (vintage curves, roll-rate transition matrix, CECL-style reserve estimate) is
+              presented through a modern interactive dashboard — teaching walkthrough,
+              data-engineering reference, forecasting view, and infrastructure writeup, all in one
+              multi-tab site.
             </p>
             <div className="feature-links">
               <a
@@ -129,7 +131,7 @@ function Home() {
                 rel="noopener noreferrer"
                 className="btn learn-more"
               >
-                View Walkthrough →
+                View Live Site →
               </a>
               <a
                 href="https://github.com/trustanprice/ledgerone"

@@ -60,11 +60,22 @@ components (no CMS, no data files) and all imagery served from `public/`.
   Dementia Diagnosis.
 - **LedgerOne** (2026-08-18): description corrected — it's a *single-entry*,
   append-only ledger, not double-entry (the portfolio copy previously said
-  double-entry; fixed to match the actual repo). Now also mentions the
-  credit-risk practice module (vintage analysis, roll-rate transition
-  matrix, CECL reserve estimate) and links out to both the live walkthrough
-  site (https://trustanprice.github.io/ledgerone/walkthrough/) and the
-  GitHub repo, via `.feature-links` on both Home and Projects.
+  double-entry; fixed to match the actual repo). Links out to both the live
+  site and the GitHub repo via `.feature-links` on both Home and Projects.
+  The live-site link points at the Vercel deploy
+  (https://ledgerone-green.vercel.app/) — that repo also deploys the same
+  build to GitHub Pages (https://trustanprice.github.io/ledgerone/walkthrough/)
+  at a `/ledgerone/walkthrough/` subpath, so don't mix the two base paths up
+  if the URL ever needs touching again. Updated again same day once the
+  underlying app was rebuilt from a single scrollytelling page into a
+  5-tab site (Overview, Day in the Life walkthrough, Database & Data
+  Engineering reference, Forecasting dashboard, Infrastructure/
+  Productionization writeup) — portfolio copy now describes it as a
+  multi-tab live site, not just a walkthrough. Before touching this copy
+  again, re-check `ledgerone/README.md` and `ledgerone/AGENTS.md` (and
+  `ledgerone/apps/walkthrough/README.md` for the live-site copy
+  specifically) rather than assuming this description is still current —
+  it's an actively evolving sibling project.
 - Five color themes available via `ThemeSwitcher` (Teal default, Caterpillar,
   Illini, Buckeyes, CU Boulder), each with a light and dark variant.
 - Fleet-manager AGENTS.md structure added 2026-08-16 to make it faster to

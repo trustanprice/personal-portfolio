@@ -17,7 +17,7 @@ The portfolio consists of five primary sections:
 ### 💻 Projects
 - Displays my key technical projects such as:
   - **Forward Data Lab — Retrieval's Blind Spot** — research project investigating how AI research agents like Ai2's Asta retrieve and synthesize academic papers; ships a minimal, inspectable RAG pipeline with a calibrated relevance-confidence threshold and citation-weighted reranking. [Live site](https://forward-data-lab.vercel.app/) · [demo walkthrough](https://drive.google.com/file/d/1yiZuSyG6jJU_nVv_b1BozBVIGZjfDBit/view?usp=sharing).
-  - **LedgerOne** — a single-entry, append-only fintech ledger (Python + dbt + DuckDB, staging → star schema → tested reporting marts) with a companion credit-risk module (vintage curves, roll-rate transition matrix, CECL reserve estimate) presented through a live [scroll-driven walkthrough site](https://trustanprice.github.io/ledgerone/walkthrough/).  
+  - **LedgerOne** — a single-entry, append-only fintech ledger (Python + dbt + DuckDB, staging → star schema → tested reporting marts) with a companion credit-risk module (vintage curves, roll-rate transition matrix, CECL reserve estimate) presented through a multi-tab [live site](https://ledgerone-green.vercel.app/) — teaching walkthrough, data-engineering reference, forecasting dashboard, and infrastructure writeup.  
   - **NBA Win Predictions App** — machine learning model using gradient boosting & KNN for team win predictions.  
   - **AI Academic Advisor** — NLP-based React + Flask app for student major and schedule recommendations.
 - Each project card includes a description, thumbnail, and direct link to either a deployed demo or GitHub repo.

@@ -49,17 +49,19 @@ function Projects() {
                             <h3>LedgerOne: FinTech Ledger, Analytics & Credit Risk Platform</h3>
                             <p>
                                 An end-to-end fintech analytics platform built around a single-entry,
-                                append-only ledger — financial events are immutable and account balances
-                                are always derived, never stored. Python generates realistic synthetic
-                                events; a dbt-core + dbt-duckdb
-                                pipeline transforms them through a staging layer into a star schema and
-                                five business-question reporting marts, gated end-to-end by <code>dbt
-                                test</code>'s schema and custom singular tests — including a check that
-                                every REFUND balances exactly against the PURCHASE it reverses. A separate
-                                credit-risk practice module runs on the same
-                                synthetic-data/dbt/DuckDB stack and is presented through a live,
-                                scroll-driven React walkthrough site. The whole pipeline reproduces with
-                                one command: <code>make all</code>.
+                                append-only ledger where financial events are immutable and account balances
+                                are dynamically derived. The platform utilizes Python to generate realistic
+                                synthetic events, alongside a dbt-core and dbt-duckdb pipeline that transforms
+                                raw data into a star schema and five target reporting marts. The pipeline is
+                                gated end-to-end by <code>dbt test</code> schema checks and custom singular
+                                validations, including an exact purchase-to-refund reconciliation check.
+                                A dedicated credit-risk module calculates vintage analysis, roll-rate transition
+                                matrices, and simplified CECL reserve estimations on the same stack. Insights
+                                are served through an interactive dashboard covering a methodology walkthrough,
+                                a data engineering reference, a forecasting tool, and a cloud productionization
+                                writeup (S3 &rarr; MotherDuck &rarr; GitHub Actions &rarr; CloudFormation)
+                                deployed to Vercel and GitHub Pages. The entire pipeline reproduces with
+                                one command:{" "}<code>make all</code>.
                             </p>
                             <div className="feature-links">
                                 <a
@@ -68,7 +70,7 @@ function Projects() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    View Walkthrough →
+                                    View Live Site →
                                 </a>
                                 <a
                                     href="https://github.com/trustanprice/ledgerone"
@@ -177,7 +179,7 @@ function Projects() {
 
                             <p>
                                 Every prediction ships with its full methodology inline: the formula, the raw inputs, and the honest accuracy, including where a technique doesn't help and says so plainly.
-                            
+
                                 Built with Python and FastAPI on the backend, including a custom NBA.com data client (on top of <code>nba_api</code>, with its own retry, caching, and schema-validation layer). Frontend in Next.js, deployed on Vercel and Render.
                             </p>
 
