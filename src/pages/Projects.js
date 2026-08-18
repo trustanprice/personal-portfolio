@@ -51,14 +51,12 @@ function Projects() {
                                 An end-to-end fintech analytics platform built around a single-entry,
                                 append-only ledger — financial events are immutable and account balances
                                 are always derived, never stored. Python generates realistic synthetic
-                                events (deposits, purchases, fees, refunds); a dbt-core + dbt-duckdb
-                                pipeline transforms them through a staging layer into a star schema
-                                (<code>fact_transactions</code> plus date/customer/account dimensions) and
+                                events; a dbt-core + dbt-duckdb
+                                pipeline transforms them through a staging layer into a star schema and
                                 five business-question reporting marts, gated end-to-end by <code>dbt
                                 test</code>'s schema and custom singular tests — including a check that
                                 every REFUND balances exactly against the PURCHASE it reverses. A separate
-                                credit-risk practice module (vintage analysis, a roll-rate/transition-matrix
-                                model, and a simplified CECL reserve estimate) runs on the same
+                                credit-risk practice module runs on the same
                                 synthetic-data/dbt/DuckDB stack and is presented through a live,
                                 scroll-driven React walkthrough site. The whole pipeline reproduces with
                                 one command: <code>make all</code>.
