@@ -51,13 +51,25 @@ components (no CMS, no data files) and all imagery served from `public/`.
 ## Current state
 
 - Five routes live: Home, Projects, Experiences, Clubs, SemiPro.
-- Home's Featured Projects and the Projects page's Highlighted Projects both
-  now include the **Forward Data Lab** project (live site:
-  https://forward-data-lab.vercel.app/, demo video linked as "Learn More"),
-  alongside the UIUC Datathon, LedgerOne, NBA Predictions, AI Academic
-  Advisor, and Dementia Diagnosis projects.
+- Home's Featured Projects: **Forward Data Lab**, **LedgerOne**, NBA
+  Predictions — Datathon was swapped out for LedgerOne here (2026-08-18) now
+  that LedgerOne has a live demo (walkthrough site) worth featuring; it's
+  still on the full Projects-page list.
+- The Projects page's Highlighted Projects list has all six: Forward Data
+  Lab, LedgerOne, UIUC Datathon, NBA Predictions, AI Academic Advisor, and
+  Dementia Diagnosis.
+- **LedgerOne** (2026-08-18): description corrected — it's a *single-entry*,
+  append-only ledger, not double-entry (the portfolio copy previously said
+  double-entry; fixed to match the actual repo). Now also mentions the
+  credit-risk practice module (vintage analysis, roll-rate transition
+  matrix, CECL reserve estimate) and links out to both the live walkthrough
+  site (https://trustanprice.github.io/ledgerone/walkthrough/) and the
+  GitHub repo, via `.feature-links` on both Home and Projects.
 - Five color themes available via `ThemeSwitcher` (Teal default, Caterpillar,
   Illini, Buckeyes, CU Boulder), each with a light and dark variant.
-- Fleet-manager AGENTS.md structure added 2026-08-16 (this pass) to make it
-  faster to pick this project back up later — mirrors the pattern used in
-  the `forward-data-lab` repo.
+- Fleet-manager AGENTS.md structure added 2026-08-16 to make it faster to
+  pick this project back up later — mirrors the pattern used in the
+  `forward-data-lab` repo. When the underlying project (e.g. `ledgerone`)
+  evolves, check its own README/AGENTS.md for what actually changed before
+  updating this portfolio's copy — don't assume the portfolio text is
+  current.

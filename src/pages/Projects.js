@@ -38,31 +38,49 @@ function Projects() {
 
                 <div className="projects-list">
 
-                    {/* LedgerOne – E-commerce Financial Ledger */}
+                    {/* LedgerOne – FinTech Ledger, Analytics & Credit Risk Platform */}
                     <div className="feature-card">
                         <img
-                            src="/home/ecommerce-thumbnail.png"
-                            alt="LedgerOne E-commerce Financial Ledger"
+                            src="/home/ledgerone-thumbnail.png"
+                            alt="LedgerOne FinTech Ledger, Analytics & Credit Risk Platform"
                             className="feature-img"
                         />
                         <div className="feature-info">
-                            <h3>LedgerOne: E-Commerce Financial Ledger & Analytics</h3>
+                            <h3>LedgerOne: FinTech Ledger, Analytics & Credit Risk Platform</h3>
                             <p>
-                                A fintech-focused e-commerce analytics project centered on building a
-                                double-entry financial ledger from raw transactional events. LedgerOne
-                                models orders, payments, refunds, fees, and payouts as immutable financial
-                                events, transforms them with dbt and DuckDB, and exposes clean,
-                                auditable metrics for revenue recognition, cash flow, and platform
-                                performance through BI dashboards.
+                                An end-to-end fintech analytics platform built around a single-entry,
+                                append-only ledger — financial events are immutable and account balances
+                                are always derived, never stored. Python generates realistic synthetic
+                                events (deposits, purchases, fees, refunds); a dbt-core + dbt-duckdb
+                                pipeline transforms them through a staging layer into a star schema
+                                (<code>fact_transactions</code> plus date/customer/account dimensions) and
+                                five business-question reporting marts, gated end-to-end by <code>dbt
+                                test</code>'s schema and custom singular tests — including a check that
+                                every REFUND balances exactly against the PURCHASE it reverses. A separate
+                                credit-risk practice module (vintage analysis, a roll-rate/transition-matrix
+                                model, and a simplified CECL reserve estimate) runs on the same
+                                synthetic-data/dbt/DuckDB stack and is presented through a live,
+                                scroll-driven React walkthrough site. The whole pipeline reproduces with
+                                one command: <code>make all</code>.
                             </p>
-                            <a
-                                href="https://github.com/trustanprice/ledgerone"
-                                className="btn learn-more"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Learn More →
-                            </a>
+                            <div className="feature-links">
+                                <a
+                                    href="https://trustanprice.github.io/ledgerone/walkthrough/"
+                                    className="btn learn-more"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Walkthrough →
+                                </a>
+                                <a
+                                    href="https://github.com/trustanprice/ledgerone"
+                                    className="btn learn-more"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Repository →
+                                </a>
+                            </div>
                         </div>
                     </div>
 

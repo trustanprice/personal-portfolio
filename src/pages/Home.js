@@ -106,28 +106,40 @@ function Home() {
           </div>
         </div>
 
-        {/* UIUC Statistics Datathon – Call Center Forecasting */}
+        {/* LedgerOne – FinTech Ledger, Analytics & Credit Risk Platform */}
         <div className="feature-card">
           <img
-            src="/home/datathon-thumbnail.png"
-            alt="UIUC Statistics Datathon 2026 Project"
+            src="/home/ledgerone-thumbnail.png"
+            alt="LedgerOne FinTech Ledger, Analytics & Credit Risk Platform"
             className="feature-img"
           />
           <div className="feature-info">
-            <h3>UIUC Statistics Datathon 2026 – 2nd Place (200+ Teams)</h3>
+            <h3>LedgerOne: FinTech Ledger, Analytics & Credit Risk Platform</h3>
             <p>
-              Served as Project Lead for a team competing in the UIUC Statistics Datathon 2026, where we
-              built a forecasting solution to support call center operations. Our work placed 2nd out of 200+ teams and
-              was presented to industry leaders at Synchrony.
+              A single-entry, append-only fintech ledger: Python generates immutable financial
+              events, and a dbt + DuckDB pipeline (staging → star schema → tested reporting marts)
+              turns them into auditable revenue, refund, and payout metrics. A companion credit-risk
+              module builds vintage curves, a roll-rate transition matrix, and a CECL-style reserve
+              estimate, presented through a live, scroll-driven walkthrough site.
             </p>
-            <a
-              href="https://github.com/DarylOkeke/datathon-final-submission/blob/main/datathon_team015_v1.pdf"
-              className="btn learn-more"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Presentation →
-            </a>
+            <div className="feature-links">
+              <a
+                href="https://trustanprice.github.io/ledgerone/walkthrough/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn learn-more"
+              >
+                View Walkthrough →
+              </a>
+              <a
+                href="https://github.com/trustanprice/ledgerone"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn learn-more"
+              >
+                View Repository →
+              </a>
+            </div>
           </div>
         </div>
 
