@@ -56,8 +56,12 @@ function Projects() {
                                 gated end-to-end by <code>dbt test</code> schema checks and custom singular
                                 validations, including an exact purchase-to-refund reconciliation check.
                                 A dedicated credit-risk module calculates vintage analysis, roll-rate transition
-                                matrices, and simplified CECL reserve estimations on the same stack. Insights
-                                are served through an interactive dashboard covering a methodology walkthrough,
+                                matrices, and simplified CECL reserve estimations on the same stack, then
+                                backtests that methodology against a real Freddie Mac mortgage panel with a
+                                time-based holdout split — landing within 0.19 percentage points on the
+                                cumulative delinquency forecast, while honestly surfacing that the roll-rate
+                                transition matrix isn't perfectly stable over time. Insights are served through
+                                an interactive dashboard covering a methodology walkthrough,
                                 a data engineering reference, a forecasting tool, and a cloud productionization
                                 writeup (S3 &rarr; MotherDuck &rarr; GitHub Actions &rarr; CloudFormation)
                                 deployed to Vercel and GitHub Pages. The entire pipeline reproduces with
@@ -94,11 +98,16 @@ function Projects() {
                         <div className="feature-info">
                             <h3>Forward Data Lab — Retrieval's Blind Spot</h3>
                             <p>
-                                Independent research project for the Forward Data Lab, investigating how AI
-                                research agents like Ai2's Asta retrieve and synthesize academic literature,
-                                and where that pipeline can quietly go wrong. Built a minimal, inspectable RAG
-                                pipeline over 18 real papers pulled live from the Semantic Scholar API that
-                                mirrors Asta's retrieve → rerank → cap → generate flow, then added two concrete
+                                Independent research project for the Forward Data Lab: a systematic,
+                                criteria-scored comparison of Ai2's Asta against Google Scholar across five
+                                query archetypes (broad conceptual, narrow technical, comparative,
+                                recent/emerging-topic, and ambiguous), with every cited paper independently
+                                verified against its real publication. That investigation surfaced Asta's
+                                central gap: it displays each source's citation count but never weights its
+                                synthesis by it, treating a 3-citation paper and a 16,950-citation seminal
+                                paper as equally strong evidence. Built a minimal, inspectable RAG pipeline
+                                over 18 real papers pulled live from the Semantic Scholar API that mirrors
+                                Asta's retrieve → rerank → cap → generate flow, then added two concrete
                                 fixes: a calibrated relevance-confidence threshold that refuses to force a
                                 synthesis when nothing clears a similarity bar, and citation-weighted reranking
                                 that blends embedding similarity with real citation counts so well-established

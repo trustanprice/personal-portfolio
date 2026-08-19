@@ -79,11 +79,12 @@ function Home() {
           <div className="feature-info">
             <h3>Forward Data Lab — Retrieval's Blind Spot</h3>
             <p>
-              Research project for the Forward Data Lab investigating how AI research agents
-              like Ai2's Asta retrieve and synthesize academic papers, and where that pipeline
-              can quietly fail. Built a minimal, inspectable RAG pipeline with a calibrated
-              relevance-confidence threshold and citation-weighted reranking, verified against
-              real papers and live queries.
+              Research project for the Forward Data Lab: a systematic, criteria-scored
+              comparison of Ai2's Asta against Google Scholar across five query types, with
+              every citation independently verified. Found that Asta displays citation counts
+              but never weights its synthesis by them — then built a minimal, inspectable RAG
+              pipeline with a calibrated relevance-confidence threshold and citation-weighted
+              reranking to fix exactly that gap.
             </p>
             <div className="feature-links">
               <a
@@ -120,9 +121,10 @@ function Home() {
               events, and a dbt + DuckDB pipeline (staging → star schema → tested reporting marts)
               turns them into auditable revenue, refund, and payout metrics. A companion credit-risk
               module (vintage curves, roll-rate transition matrix, CECL-style reserve estimate) is
-              presented through a modern interactive dashboard — teaching walkthrough,
-              data-engineering reference, forecasting view, and infrastructure writeup, all in one
-              multi-tab site.
+              backtested against real Freddie Mac mortgage data — within 0.19 percentage points on
+              a time-based holdout — and presented through a modern interactive dashboard: teaching
+              walkthrough, data-engineering reference, forecasting view, and infrastructure writeup,
+              all in one multi-tab site.
             </p>
             <div className="feature-links">
               <a

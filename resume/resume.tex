@@ -1,0 +1,169 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item[\textbullet]\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\small #2} \\
+      \small #3    & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.20in, label={}, itemsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape{Trustan Price}} \\[5pt]
+    \small
+    217-954-8537 $|$
+    \href{https://mail.google.com/mail/?view=cm&fs=1&to=trustanprice@gmail.com&su=Let's%20Connect!}{trustanprice@gmail.com} $|$
+    \href{https://www.linkedin.com/in/trustan-price-69bb17269/}{LinkedIn} $|$
+    \href{https://github.com/trustanprice}{GitHub} $|$
+    \href{https://trustanprice-peronalportfolio.vercel.app/}{Portfolio}
+\end{center}
+
+
+\section{Education}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {University of Illinois Urbana-Champaign}{Champaign, IL}
+  {Master of \textbf{Computer Science}}{2026 -- 2027}
+
+\resumeSubheading
+  {University of Illinois Urbana-Champaign}{Champaign, IL}
+  {Bachelor of Science in \textbf{Statistics}; Minors in \textbf{Computer Science} and Data Science}{2022 -- 2025}
+
+\resumeSubHeadingListEnd
+
+
+
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, parsep=0pt]
+    \small
+    \item \textbf{Languages:} Python, SQL, R, JavaScript, CSS, HTML, C++, Java \\
+    \textbf{Libraries:} Pandas, NumPy, Scikit-Learn, Matplotlib, Boto3, TensorFlow, PyTorch \\
+    \textbf{Frameworks \& Tools:} CI/CD, Azure DevOps, Git, Flask, React.js, Streamlit, Vercel, Power BI, Tableau, Grafana \\
+    \textbf{Cloud \& Platforms:} AWS (S3, Lambda, EC2, SageMaker, CloudFormation, API Gateway) \\
+\end{itemize}
+
+
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+    {Software Engineer Intern}{May 2026 -- Aug 2026}
+        {Caterpillar Inc.}{Chicago, IL}
+            \resumeItemListStart
+    \resumeItem{Built CI/CD pipelines in GitHub Actions with reusable workflows, custom actions, and CloudFormation, layered with an LLMOps automation system for autonomous remediation, risk prediction and RAG-based observability.}
+    \resumeItem{Partnered with Security and CloudOps teams to ensure full pipeline automation coverage and compliance.}
+    \resumeItem{Migrated Azure Pipelines to GitHub Actions, modernizing the CI/CD infrastructure for multiple application teams.}
+                            \resumeItemListEnd
+
+\resumeSubheading
+  {Software Engineer Intern}{May 2025 -- Aug 2025}
+  {Caterpillar Inc.}{Chicago, IL}
+  \resumeItemListStart
+    \resumeItem{\textbf{Achieved 100\% audit test coverage} for a decades-old production codebase, enabling safe modernization.}
+    \resumeItem{Built observability dashboards with CloudWatch, Prometheus, and Grafana to monitor deployed ML systems.}
+  \resumeItemListEnd
+
+\resumeSubheading
+  {AI \& Mixed Reality Research Assistant - Avinash Gupta, Ph.D}{Feb 2025 -- Sep 2025}
+  {Human-XR Interaction (HXRI) Lab, University of Illinois Urbana–Champaign}{Champaign, IL}
+  \resumeItemListStart
+    \resumeItem{Developed a Mixed Reality clinical training simulator for a real medical client using Unity and MRTK3 on HoloLens.}
+    \resumeItem{Integrated AI-driven motion tracking and computer vision pipelines with live feedback from medical professionals.}
+  \resumeItemListEnd
+
+\resumeSubheading
+  {Software Engineer Intern}{May 2024 -- May 2025}
+  {State Farm}{Bloomington, IL}
+  \resumeItemListStart
+    \resumeItem{Developed and productionized a CNN-based car seat classification system deployed for direct customer use.}
+    \resumeItem{Built and validated a labeled image dataset from scratch, enabling scalable model training and real-time inference.}
+    \resumeItem{Implemented preprocessing and analytics pipelines with Pandas and NumPy to support production ML workflows.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+  {\textbf{Call Center Forecasting Platform} \,|\, Python, LightGBM, Time-Series Modeling}{Mar 2026}
+\resumeItemListStart
+  \resumeItem{Led development of a production-style forecasting system at\textbf{ UIUC Datathon} that predicted call volume, customer care time, and abandon rate at 30-minute intervals, \textbf{achieving 2nd place out of 200+ teams.}}
+  \resumeItem{Engineered time-series features including lag variables, rolling statistics, and calendar effects, and deployed ensemble models to generate accurate workload forecasts across multiple portfolios.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{NBA Team Failure Prediction Model} \,|\, Python, Pandas, Scikit-Learn, Streamlit, Excel}{Sep 2025}
+\resumeItemListStart
+  \resumeItem{Built a multi-season NBA win/loss prediction model \textbf{achieving 90\% accuracy on a 5-game failure threshold.}}
+  \resumeItem{Designed a failure detection framework to flag statistically unexpected losses using strength of schedule, win probability baselines, and adjusted performance metrics.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{ML Dementia Classification} \,|\, Pandas, TensorFlow, Statistical Analysis}{May 2024 -- Aug 2024}
+\resumeItemListStart
+  \resumeItem{Built CNN with a preprocessing pipeline for 4-class dementia staging, achieving 95\% classification accuracy.}
+  \resumeItem{Presented project findings to the \textbf{Dean of the College of Liberal Arts \& Sciences at UIUC.}}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+
+\section{Clubs}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+    {\textbf{Sports Analytics Society} — \textbf{Lead Machine Learning Engineer}}{Fall 2025}
+
+    \resumeProjectHeading
+        {\textbf{Sports Analytics by Minorities} — \textbf{Founder \& President}}{Fall 2022 -- Spring 2024}
+
+        \resumeSubHeadingListEnd
+
+\end{document}

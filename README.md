@@ -16,8 +16,8 @@ The portfolio consists of five primary sections:
 
 ### 💻 Projects
 - Displays my key technical projects such as:
-  - **Forward Data Lab — Retrieval's Blind Spot** — research project investigating how AI research agents like Ai2's Asta retrieve and synthesize academic papers; ships a minimal, inspectable RAG pipeline with a calibrated relevance-confidence threshold and citation-weighted reranking. [Live site](https://forward-data-lab.vercel.app/) · [demo walkthrough](https://drive.google.com/file/d/1yiZuSyG6jJU_nVv_b1BozBVIGZjfDBit/view?usp=sharing).
-  - **LedgerOne** — a single-entry, append-only fintech ledger (Python + dbt + DuckDB, staging → star schema → tested reporting marts) with a companion credit-risk module (vintage curves, roll-rate transition matrix, CECL reserve estimate) presented through a multi-tab [live site](https://ledgerone-green.vercel.app/) — teaching walkthrough, data-engineering reference, forecasting dashboard, and infrastructure writeup.  
+  - **Forward Data Lab — Retrieval's Blind Spot** — a systematic, criteria-scored comparison of Ai2's Asta against Google Scholar across five query archetypes (every citation independently verified), which surfaced that Asta never weights its synthesis by citation impact; ships a minimal, inspectable RAG pipeline with a calibrated relevance-confidence threshold and citation-weighted reranking to fix exactly that gap. [Live site](https://forward-data-lab.vercel.app/) · [demo walkthrough](https://drive.google.com/file/d/1yiZuSyG6jJU_nVv_b1BozBVIGZjfDBit/view?usp=sharing).
+  - **LedgerOne** — a single-entry, append-only fintech ledger (Python + dbt + DuckDB, staging → star schema → tested reporting marts) with a companion credit-risk module (vintage curves, roll-rate transition matrix, CECL reserve estimate) backtested against real Freddie Mac mortgage data (within 0.19pp on a time-based holdout) and presented through a multi-tab [live site](https://ledgerone-green.vercel.app/) — teaching walkthrough, data-engineering reference, forecasting dashboard, and infrastructure writeup.  
   - **NBA Win Predictions App** — machine learning model using gradient boosting & KNN for team win predictions.  
   - **AI Academic Advisor** — NLP-based React + Flask app for student major and schedule recommendations.
 - Each project card includes a description, thumbnail, and direct link to either a deployed demo or GitHub repo.
@@ -80,6 +80,9 @@ personal-portfolio/
 │ ├── experiences/
 │ ├── clubs/
 │ └── semipro/
+├── resume/
+│ ├── resume.tex
+│ └── resume.pdf
 └── README.md
 
 
@@ -133,6 +136,22 @@ For manual deployment, follow Vercel’s React deployment guide:
 ✅ Smooth navigation using React Router
 ✅ “Back to Home” and “See All” buttons for consistent UX
 ✅ Modular and easily extensible design for adding new projects or experiences
+
+---
+
+## 📄 Resume
+
+`resume/resume.tex` is the LaTeX source for the downloadable CV linked from
+Home (compiles to `public/home/trustanprice-cv2026.pdf`). It's a curated,
+length-capped subset of the Experiences/Projects pages — **always exactly
+one page, never more than 4 experiences or 3 projects** — kept in sync by
+hand whenever those pages change. See [resume/AGENTS.md](resume/AGENTS.md)
+for the compile command and the sync/cap rules.
+
+```bash
+cd resume
+pdflatex resume.tex && pdflatex resume.tex   # run twice for hyperref refs
+```
 
 ---
 
