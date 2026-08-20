@@ -18,12 +18,22 @@ inferred. When a new entry would exceed a cap, drop one before adding:
 - **Experience**: drop the oldest/least-relevant of the 4 — usually literally
   the oldest by end date, unless an older role is more relevant to the kind
   of job being targeted than a more recent one (judgment call, but default
-  to reverse-chronological).
-- **Projects**: drop the lowest-impact of the 3. Currently: Call Center
-  Forecasting (Datathon), NBA Team Failure Prediction, ML Dementia
-  Classification. Note that **LedgerOne and Forward Data Lab are not on the
-  resume yet** even though they're featured on the portfolio — adding either
-  means removing one of the three above.
+  to reverse-chronological). If a 5th experience needs to fit, the
+  designated release valve is **combining the two Caterpillar internships
+  (Summer 2025 + Summer 2026) into one entry** — one `\resumeSubheading`
+  spanning "May 2025 -- Aug 2026," with a merged bullet list (pick the
+  strongest 2-3 bullets across both stints) — rather than dropping HXRI Lab
+  or State Farm. This is the same technique the job-tailoring workflow below
+  uses.
+- **Projects**: drop the lowest-impact of the 3 for the job at hand. As of
+  2026-08-19 the base resume carries Call Center Forecasting (Datathon),
+  LedgerOne, and Forward Data Lab — NBA Predictions and ML Dementia
+  Classification are benched (still strong, just less differentiated /
+  less on-thesis for the "risk modeling, fraud detection, forecasting"
+  career direction than what replaced them) but are fair game to bring back
+  for a job posting where they'd read as more relevant than one of the three
+  above (e.g. a full-stack- or sports-analytics-flavored role for NBA; a
+  healthcare-ML role for Dementia Classification).
 
 ## Sync convention
 
@@ -44,6 +54,38 @@ substance changes (new metrics, new scope), review this file too:
    makes sense (new calendar year, degree progress), update both the
    filename and its `href` in `src/pages/Home.js` — don't silently overwrite
    old content under a year-stamped name that no longer describes it.
+
+## Job-tailored resume workflow
+
+When the user pastes a full job description in chat and asks for a resume
+built from it, that's a request for a **new, tailored variant** of
+`resume.tex` optimized for that specific posting — not a request to
+overwrite the base resume by default. Process:
+
+1. Read the job description for what it actually emphasizes (required
+   skills, domain, seniority, team function) rather than pattern-matching
+   on keywords alone.
+2. Select which 4 experiences and which 3 projects to feature, and in what
+   order, based on relevance to *this* posting — not always the base
+   resume's picks. The full pool to choose from is everything in
+   `Experiences.js`/`Projects.js` on the portfolio, not just what's
+   currently in `resume.tex`.
+3. Same hard caps as the base resume apply: **≤4 experiences, ≤3 projects,
+   always exactly 1 page.** If the right 4 experiences for this job would
+   otherwise be 5, combine the two Caterpillar stints into one entry (see
+   above) — that's the designated release valve. Don't drop HXRI Lab or
+   State Farm to make room unless the posting genuinely has no use for them.
+4. Rewrite bullets to genuinely emphasize what's relevant to the posting —
+   reordering and re-weighting real accomplishments, not fabricating ones
+   or keyword-stuffing.
+5. Recompile and verify 1 page (below) before presenting it.
+6. Save the result as a **separate file**, `resume-<company-or-role-slug>.tex`
+   in this folder (e.g. `resume-anthropic-swe.tex`), rather than overwriting
+   `resume.tex` — the base resume stays the general-purpose default unless
+   the user explicitly says to replace it. Mention the new filename when
+   presenting the result. These job-specific variants are gitignored (see
+   below) — they're working files for one application, not portfolio
+   content, unless the user asks to commit one.
 
 ## Compiling
 
@@ -92,7 +134,24 @@ fetch the package directly rather than fight `tlmgr`:
 
 ## Current state
 
-Compiled clean, 1 page, as of 2026-08-19: 4 experiences (Caterpillar ×2,
-HXRI Lab, State Farm), 3 projects (Call Center Forecasting, NBA Team Failure
-Prediction, ML Dementia Classification), Education, Skills, and Clubs
-sections. Deployed to `public/home/trustanprice-cv2026.pdf`.
+Compiled clean, 1 page, as of 2026-08-20: 4 experiences (Caterpillar ×2,
+HXRI Lab, State Farm), 3 projects (Call Center Forecasting/Datathon,
+LedgerOne, Forward Data Lab), Education, Skills, and Clubs sections.
+Deployed to `public/home/trustanprice-cv2026.pdf`.
+
+NBA Predictions and ML Dementia Classification were swapped out for
+LedgerOne and Forward Data Lab on 2026-08-20 — both new picks are more
+recent and a better fit for the "risk modeling, fraud detection,
+forecasting" career direction stated in the portfolio bio (LedgerOne
+especially: real credit-risk modeling, validated against real Freddie Mac
+data). NBA and Dementia are still strong, still on the portfolio's Projects
+page, and are fair picks to bring back for a job-tailored variant where
+they're more relevant than one of the current three (see the job-tailoring
+workflow above).
+
+To fit the new project bullets on one page, `itemsep` in
+`\resumeSubHeadingListStart`/`\resumeItemListStart` was tightened from 2pt
+to 1pt and `\resumeItemListEnd`'s trailing `\vspace` from -5pt to -6pt —
+applies uniformly to the whole document (imperceptible spacing change, not
+a content cut). If a future edit overflows to 2 pages again, this is the
+first knob to try before cutting bullet content.

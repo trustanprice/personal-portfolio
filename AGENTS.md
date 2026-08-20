@@ -53,6 +53,13 @@ components (no CMS, no data files) and all imagery served from `public/`.
   [resume/AGENTS.md](resume/AGENTS.md) for the hard caps (≤4 experiences,
   ≤3 projects, always 1 page) and what to drop when a new entry would
   exceed them.
+- **Job-application resumes**: when the user pastes a job description in
+  chat and asks for a resume from it, that's a request to build a
+  *job-tailored variant* of `resume.tex` (different experience/project
+  selection and bullet emphasis, same hard caps, saved as a separate
+  `resume/resume-<slug>.tex` rather than overwriting the base) — see
+  [resume/AGENTS.md](resume/AGENTS.md)'s "Job-tailored resume workflow"
+  section for the full process.
 - No test suite is actively maintained beyond the CRA-default
   `src/App.test.js` smoke test.
 - Deployed via Vercel from this repo's `main` branch (no custom build config
@@ -122,3 +129,9 @@ components (no CMS, no data files) and all imagery served from `public/`.
   `public/home/trustanprice-cv2026.pdf`, compiled from this source). See
   [resume/AGENTS.md](resume/AGENTS.md) for the compile step and the
   hard caps that keep it at one page.
+- **2026-08-20**: resume projects refreshed — NBA Predictions and ML
+  Dementia Classification swapped out for LedgerOne and Forward Data Lab
+  (more recent, better fit for the stated risk/fraud/forecasting career
+  direction). Added the job-tailored resume workflow (see the "Resume sync"
+  bullet above and [resume/AGENTS.md](resume/AGENTS.md)) so a pasted job
+  description turns into a tailored `resume-<slug>.tex` variant on request.

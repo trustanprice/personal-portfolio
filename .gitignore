@@ -30,3 +30,9 @@ resume/*.fls
 resume/*.fdb_latexmk
 resume/*.synctex.gz
 resume/resume_preview*.png
+resume/preview*.png
+
+# Job-tailored resume variants (resume/AGENTS.md) — working files for one
+# application, not portfolio content, unless explicitly committed
+resume/resume-*.tex
+resume/resume-*.pdf

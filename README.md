@@ -148,6 +148,12 @@ one page, never more than 4 experiences or 3 projects** — kept in sync by
 hand whenever those pages change. See [resume/AGENTS.md](resume/AGENTS.md)
 for the compile command and the sync/cap rules.
 
+**Applying for a job?** Paste the full job description in chat and ask for
+a resume — that builds a tailored variant (different project/experience
+selection and emphasis, same one-page/4-experience/3-project caps) saved as
+its own `resume/resume-<company>.tex` rather than overwriting this base
+resume. See resume/AGENTS.md's "Job-tailored resume workflow."
+
 ```bash
 cd resume
 pdflatex resume.tex && pdflatex resume.tex   # run twice for hyperref refs
