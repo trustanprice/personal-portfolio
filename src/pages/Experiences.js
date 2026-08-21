@@ -52,8 +52,9 @@ function Experiences() {
                         <p className="experience-desc">
                             • Incoming Machine Learning Intern on Synchrony's Forecasting & Analytics
                             team, starting Fall 2026.<br />
-                            • Will apply predictive modeling and data science methods to real-world
-                            financial forecasting problems for a consumer financial services leader.
+                            • Will work under Sid Chakravarty, VP of Enterprise AI & Analytics at
+                            Synchrony, gaining exposure to AI strategy, decision intelligence, and
+                            forecasting/MLOps initiatives.
                         </p>
                     </div>
                 </div>
