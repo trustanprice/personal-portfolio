@@ -175,7 +175,7 @@ function Experiences() {
                         <div className="experience-header">
                             <h3>Sports Info Solutions</h3>
                             <span className="role">Basketball Scouting Analyst</span>
-                            <span className="date">Aug 2023 - Present</span>
+                            <span className="date">Aug 2023 - Mar 2026</span>
                         </div>
                         <p className="experience-desc">
                             • Scouted and tracked live basketball and football data using the company’s proprietary in-game analytics application.<br />
