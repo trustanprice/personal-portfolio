@@ -93,8 +93,26 @@ components (no CMS, no data files) and all imagery served from `public/`.
   `ledgerone/apps/walkthrough/README.md` for the live-site copy
   specifically) rather than assuming this description is still current —
   it's an actively evolving sibling project.
-- Five color themes available via `ThemeSwitcher` (Teal default, Caterpillar,
-  Illini, Buckeyes, CU Boulder), each with a light and dark variant.
+- Five color themes available via `ThemeSwitcher` (Teal default, Synchrony,
+  Illini, Buckeyes, CU Boulder), each with a light and dark variant. The
+  Caterpillar theme (`data-theme="cat"`) was renamed to Synchrony
+  (`data-theme="synchrony"`) on 2026-08-21 — gold `#f3c844` / near-black
+  `#1c1f23`, colors sampled directly from the pasted Synchrony logo (see
+  `public/experiences/synchrony-logo.png`), not guessed.
+- **2026-08-21**: fixed a real layout bug on Projects — `.feature-card` and
+  `.project-card` used `align-items: center`, so each card's image position
+  depended on that card's own height (short cards vs. long ones), making
+  images look inconsistently placed down the page. Changed to
+  `align-items: flex-start` (top-aligned) in both `src/styles/Home.css` and
+  `src/styles/Projects.css`, with `align-items: center` restored inside
+  each file's mobile breakpoint (768px/900px) where cards stack into a
+  single column and `align-items` switches to controlling horizontal
+  centering instead. Also split several run-on project-description
+  paragraphs (LedgerOne, Forward Data Lab, Datathon, NBA) into properly
+  separated `<p>` tags at natural topic breaks — one NBA paragraph in
+  particular had a blank line *inside* a single `<p>` in the JSX source,
+  which JSX collapses to nothing at render time, so it read as one run-on
+  paragraph despite looking separated in the source.
 - Fleet-manager AGENTS.md structure added 2026-08-16 to make it faster to
   pick this project back up later — mirrors the pattern used in the
   `forward-data-lab` repo. When the underlying project (e.g. `ledgerone`)

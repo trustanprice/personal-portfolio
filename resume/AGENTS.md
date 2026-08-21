@@ -4,9 +4,15 @@
 
 `resume.tex` is the single LaTeX source for Trustan's downloadable CV — the
 curated, hard-length-capped counterpart to the full-detail
-`src/pages/Experiences.js` and `src/pages/Projects.js`. It compiles to
-`resume.pdf`, which is copied to `public/home/trustanprice-cv2026.pdf` (the
-file linked from the résumé icon on Home).
+`src/pages/Experiences.js` and `src/pages/Projects.js`. `pdflatex` always
+names its output after the input file, so compiling produces `resume.pdf`;
+that gets renamed/copied to **`trustanprice-resume.pdf`** (the tracked,
+committed copy — the one exception to the "job-tailored variants are
+gitignored" rule below, since it's the base, not a variant) and also copied
+to `public/home/trustanprice-cv2026.pdf` (the file linked from the résumé
+icon on Home). Three names, one source — see Compiling below for the exact
+steps. `resume.tex` itself keeps its plain name; only the *compiled output*
+follows the `trustanprice-*` convention.
 
 ## The rule this file exists to enforce
 
@@ -88,14 +94,24 @@ overwrite the base resume by default. Process:
 4. Rewrite bullets to genuinely emphasize what's relevant to the posting —
    reordering and re-weighting real accomplishments, not fabricating ones
    or keyword-stuffing.
-5. Recompile and verify 1 page (below) before presenting it.
-6. Save the result as a **separate file**, `resume-<company-or-role-slug>.tex`
-   in this folder (e.g. `resume-anthropic-swe.tex`), rather than overwriting
-   `resume.tex` — the base resume stays the general-purpose default unless
-   the user explicitly says to replace it. Mention the new filename when
-   presenting the result. These job-specific variants are gitignored (see
-   below) — they're working files for one application, not portfolio
-   content, unless the user asks to commit one.
+5. Recompile and verify 1 page (below) before presenting it. Job-tailored
+   variants tend to run denser than the base resume (different/longer
+   project bullets), so they often need the tighter spacing from the start
+   rather than as an afterthought: `itemsep=0pt` in both
+   `\resumeSubHeadingListStart`/`\resumeItemListStart` and
+   `\resumeItemListEnd`'s `\vspace{-7pt}` (vs. the base resume's `1pt`/
+   `-6pt`) — apply this in the variant's own preamble, don't touch the base
+   resume's spacing to compensate.
+6. Save the result as a **separate file**, `trustanprice-<company>.tex`
+   in this folder (e.g. `trustanprice-anthropic.tex`) — lowercase company
+   name/slug, no role description in the filename (the user names these by
+   company, confirmed in practice: `trustanprice-ibm`, `trustanprice-chase`,
+   `trustanprice-apple`, `trustanprice-google`, `trustanprice-uber`) —
+   rather than overwriting `resume.tex`. The base resume stays the
+   general-purpose default unless the user explicitly says to replace it.
+   Mention the new filename when presenting the result. These job-specific
+   variants are gitignored (see below) — they're working files for one
+   application, not portfolio content, unless the user asks to commit one.
 
 ## Compiling
 
@@ -113,8 +129,21 @@ Verify page count before trusting the result:
 pdfinfo resume.pdf | grep Pages   # must print "Pages: 1"
 ```
 
-`resume.aux`, `.log`, `.out` are build artifacts (gitignored); `resume.pdf`
-itself is committed.
+Then sync the compiled output to its other two names (base resume only —
+job-tailored variants stay as `trustanprice-<company>.pdf`, no second copy):
+
+```bash
+cp resume.pdf trustanprice-resume.pdf
+cp resume.pdf ../public/home/trustanprice-cv2026.pdf
+```
+
+`resume.aux`, `.log`, `.out`, and `resume.pdf` itself are all gitignored
+build artifacts — `resume.pdf` is just pdflatex's unavoidable intermediate
+name (it always names output after the input file), regenerated fresh on
+every compile. Only the two *copies* made in the step above —
+`trustanprice-resume.pdf` and `public/home/trustanprice-cv2026.pdf` — are
+committed; they're the stable, intentionally-named files anything should
+actually link to or distribute.
 
 ### Local dependency note (TinyTeX)
 
@@ -147,7 +176,37 @@ fetch the package directly rather than fight `tlmgr`:
 Compiled clean, 1 page, as of 2026-08-20: 4 experiences (Caterpillar ×2,
 HXRI Lab, State Farm), 3 projects (Call Center Forecasting/Datathon,
 LedgerOne, Forward Data Lab), Education, Skills, and Clubs sections.
-Deployed to `public/home/trustanprice-cv2026.pdf`.
+Deployed to `public/home/trustanprice-cv2026.pdf` and
+`trustanprice-resume.pdf` (renamed from `resume.pdf` 2026-08-21 to match
+the job-tailored variants' `trustanprice-*` naming; see the gitignore note
+above — `resume.pdf` itself is gitignored now, this file's the tracked one).
+
+**2026-08-21**: five job-tailored variants built in one sitting
+(`trustanprice-ibm`, `trustanprice-chase`, `trustanprice-apple`,
+`trustanprice-google`, `trustanprice-uber`), each compiled and verified at
+1 page, each reusing the same 4-experience Experience section (only the
+Projects section varies) — the JD-relevance reasoning behind each Projects
+pick:
+- **IBM** (Associate Application Developer, full-stack/GenAI/consulting):
+  NBA Predictions, LedgerOne, Forward Data Lab.
+- **Chase** (JPMC 2027 SWE Program, generalist + AI-dev-tools + financial
+  services): LedgerOne, Datathon, Forward Data Lab — closest to the base
+  resume's own picks, since the JD is fairly general and financial-services-
+  adjacent.
+- **Apple** (IS&T Early Career, broad enterprise/BI/full-stack team list):
+  LedgerOne, NBA Predictions, Datathon — dropped Forward Data Lab, since
+  this posting doesn't mention AI/GenAI at all.
+- **Google** (Early Career, explicitly lists information retrieval/NLP/ML
+  as preferred): Forward Data Lab first (direct IR/NLP/RAG match), then
+  LedgerOne, then NBA Predictions.
+- **Uber** (backend/distributed-systems/production-reliability, SQL
+  required): NBA Predictions (reframed around its resilient live-data
+  client — production-reliability engineering, not just "full-stack"),
+  LedgerOne (reframed to foreground SQL), Datathon.
+
+All five variants needed `itemsep=0pt`/`\vspace{-7pt}` (tighter than the
+base resume's `1pt`/`-6pt`) to fit — see the note in the job-tailored
+workflow section above before writing a sixth one from scratch.
 
 NBA Predictions and ML Dementia Classification were swapped out for
 LedgerOne and Forward Data Lab on 2026-08-20 — both new picks are more

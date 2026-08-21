@@ -22,13 +22,17 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# LaTeX build artifacts (resume/) — resume.pdf itself is committed
+# LaTeX build artifacts (resume/) — pdflatex always names output after the
+# input file, so resume.tex always produces resume.pdf; that's a transient
+# intermediate, gitignored like the rest. The intentionally-named copies
+# (trustanprice-resume.pdf, public/home/trustanprice-cv2026.pdf) are committed.
 resume/*.aux
 resume/*.log
 resume/*.out
 resume/*.fls
 resume/*.fdb_latexmk
 resume/*.synctex.gz
+resume/resume.pdf
 resume/resume_preview*.png
 resume/preview*.png
 

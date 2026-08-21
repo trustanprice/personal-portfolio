@@ -52,20 +52,25 @@ function Projects() {
                                 append-only ledger where financial events are immutable and account balances
                                 are dynamically derived. The platform utilizes Python to generate realistic
                                 synthetic events, alongside a dbt-core and dbt-duckdb pipeline that transforms
-                                raw data into a star schema and five target reporting marts. The pipeline is
-                                gated end-to-end by <code>dbt test</code> schema checks and custom singular
-                                validations, including an exact purchase-to-refund reconciliation check.
-                                A dedicated credit-risk module calculates vintage analysis, roll-rate transition
-                                matrices, and simplified CECL reserve estimations on the same stack, then
-                                backtests that methodology against a real Freddie Mac mortgage panel with a
-                                time-based holdout split — landing within 0.19 percentage points on the
-                                cumulative delinquency forecast, while honestly surfacing that the roll-rate
-                                transition matrix isn't perfectly stable over time. Insights are served through
-                                an interactive dashboard covering a methodology walkthrough,
-                                a data engineering reference, a forecasting tool, and a cloud productionization
-                                writeup (S3 &rarr; MotherDuck &rarr; GitHub Actions &rarr; CloudFormation)
-                                deployed to Vercel and GitHub Pages. The entire pipeline reproduces with
-                                one command:{" "}<code>make all</code>.
+                                raw data into a star schema and five target reporting marts.
+                            </p>
+                            <p>
+                                The pipeline is gated end-to-end by <code>dbt test</code> schema checks and
+                                custom singular validations, including an exact purchase-to-refund
+                                reconciliation check. A dedicated credit-risk module calculates vintage
+                                analysis, roll-rate transition matrices, and simplified CECL reserve
+                                estimations on the same stack, then backtests that methodology against a real
+                                Freddie Mac mortgage panel with a time-based holdout split — landing within
+                                0.19 percentage points on the cumulative delinquency forecast, while honestly
+                                surfacing that the roll-rate transition matrix isn't perfectly stable over
+                                time.
+                            </p>
+                            <p>
+                                Insights are served through an interactive dashboard covering a methodology
+                                walkthrough, a data engineering reference, a forecasting tool, and a cloud
+                                productionization writeup (S3 &rarr; MotherDuck &rarr; GitHub Actions &rarr;
+                                CloudFormation) deployed to Vercel and GitHub Pages. The entire pipeline
+                                reproduces with one command:{" "}<code>make all</code>.
                             </p>
                             <div className="feature-links">
                                 <a
@@ -105,13 +110,16 @@ function Projects() {
                                 verified against its real publication. That investigation surfaced Asta's
                                 central gap: it displays each source's citation count but never weights its
                                 synthesis by it, treating a 3-citation paper and a 16,950-citation seminal
-                                paper as equally strong evidence. Built a minimal, inspectable RAG pipeline
-                                over 18 real papers pulled live from the Semantic Scholar API that mirrors
-                                Asta's retrieve → rerank → cap → generate flow, then added two concrete
-                                fixes: a calibrated relevance-confidence threshold that refuses to force a
-                                synthesis when nothing clears a similarity bar, and citation-weighted reranking
-                                that blends embedding similarity with real citation counts so well-established
-                                work outranks obscure preprints. Verified against six live queries (three
+                                paper as equally strong evidence.
+                            </p>
+                            <p>
+                                Built a minimal, inspectable RAG pipeline over 18 real papers pulled live
+                                from the Semantic Scholar API that mirrors Asta's retrieve → rerank → cap →
+                                generate flow, then added two concrete fixes: a calibrated
+                                relevance-confidence threshold that refuses to force a synthesis when
+                                nothing clears a similarity bar, and citation-weighted reranking that blends
+                                embedding similarity with real citation counts so well-established work
+                                outranks obscure preprints. Verified against six live queries (three
                                 on-topic, three off-topic) with results and reasoning documented end-to-end.
                             </p>
                             <div className="feature-links">
@@ -148,11 +156,13 @@ function Projects() {
                                 A competitive analytics project where I served as Project Lead, bringing together
                                 a team of minority students to compete in the UIUC Statistics Datathon. Our goal
                                 was not only to perform at a high level, but to represent students who are often
-                                underrepresented in spaces like this. Over a fast-paced development cycle, we
-                                built a forecasting solution to help predict call center demand and support
-                                better operational decision-making. Our work earned 2nd place out of 200+ teams
-                                and gave us the opportunity to present our solution to industry leaders at
-                                Synchrony.
+                                underrepresented in spaces like this.
+                            </p>
+                            <p>
+                                Over a fast-paced development cycle, we built a forecasting solution to help
+                                predict call center demand and support better operational decision-making.
+                                Our work earned 2nd place out of 200+ teams and gave us the opportunity to
+                                present our solution to industry leaders at Synchrony.
                             </p>
                             <a
                                 href="https://github.com/DarylOkeke/datathon-final-submission/blob/main/datathon_team015_v1.pdf"
@@ -188,7 +198,9 @@ function Projects() {
 
                             <p>
                                 Every prediction ships with its full methodology inline: the formula, the raw inputs, and the honest accuracy, including where a technique doesn't help and says so plainly.
+                            </p>
 
+                            <p>
                                 Built with Python and FastAPI on the backend, including a custom NBA.com data client (on top of <code>nba_api</code>, with its own retry, caching, and schema-validation layer). Frontend in Next.js, deployed on Vercel and Render.
                             </p>
 

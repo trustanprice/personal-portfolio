@@ -38,34 +38,34 @@ body.dark-mode[data-theme="teal"] {
   --card-shadow: rgba(0, 255, 198, 0.08);
 }
 
-/* Caterpillar — Yellow & Black — light */
-body[data-theme="cat"] {
+/* Synchrony — Gold & Near-Black — light */
+body[data-theme="synchrony"] {
   --bg-color: #faf8f2;
   --bg-alt: #ffffff;
-  --text-color: #161616;
+  --text-color: #1c1f23;
   --text-muted: #4a4a4a;
-  --accent-color: #141414;
+  --accent-color: #1c1f23;
   --accent-dark-color: #000000;
-  --accent-solid: #ffc400;
+  --accent-solid: #f3c844;
   --accent-contrast: #111111;
-  --accent-rgb: 255, 196, 0;
+  --accent-rgb: 243, 200, 68;
   --border-color: rgba(0, 0, 0, 0.12);
   --card-shadow: rgba(0, 0, 0, 0.1);
 }
 
-/* Caterpillar — dark */
-body.dark-mode[data-theme="cat"] {
+/* Synchrony — dark */
+body.dark-mode[data-theme="synchrony"] {
   --bg-color: #121212;
   --bg-alt: #1a1a1a;
-  --text-color: #f5efe0;
+  --text-color: #f5f1e0;
   --text-muted: #cfc6a8;
-  --accent-color: #ffc400;
-  --accent-dark-color: #e0ac00;
-  --accent-solid: #ffc400;
+  --accent-color: #f3c844;
+  --accent-dark-color: #d4ac2e;
+  --accent-solid: #f3c844;
   --accent-contrast: #111111;
-  --accent-rgb: 255, 196, 0;
-  --border-color: rgba(255, 196, 0, 0.15);
-  --card-shadow: rgba(255, 196, 0, 0.1);
+  --accent-rgb: 243, 200, 68;
+  --border-color: rgba(243, 200, 68, 0.15);
+  --card-shadow: rgba(243, 200, 68, 0.1);
 }
 
 /* Illini — Orange & Blue — light */

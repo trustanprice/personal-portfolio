@@ -4,7 +4,7 @@ import "./ThemeSwitcher.css";
 
 const THEMES = [
   { key: "teal", label: "Teal (Default)", swatch: ["#2c7a7b", "#1e4d4f"] },
-  { key: "cat", label: "Caterpillar", swatch: ["#ffc400", "#000000"] },
+  { key: "synchrony", label: "Synchrony", swatch: ["#f3c844", "#1c1f23"] },
   { key: "illini", label: "Illini", swatch: ["#ff5f05", "#13294b"] },
   { key: "osu", label: "Buckeyes", swatch: ["#ba0c2f", "#666666"] },
   { key: "cu", label: "CU Boulder", swatch: ["#cfb87c", "#000000"] },

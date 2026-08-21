@@ -22,7 +22,7 @@ menu) and the footer. Nothing here is page-specific.
   the `ThemeSwitcher` dropdown, and a hamburger menu for mobile (auto-closes
   when the navbar itself hides).
 - `ThemeSwitcher.js` / `ThemeSwitcher.css` — small popover listing the five
-  color themes (`teal` default, `cat`, `illini`, `osu`, `cu`); clicking a
+  color themes (`teal` default, `synchrony`, `illini`, `osu`, `cu`); clicking a
   swatch calls `setTheme(key)`. Closes on outside-click via a `mousedown`
   listener on a `ref`'d wrapper. Adding a new theme means adding an entry to
   the `THEMES` array here **and** the matching `[data-theme="..."]` block in
@@ -33,4 +33,6 @@ menu) and the footer. Nothing here is page-specific.
 ## Current state
 
 Stable, no open work. Five themes wired end-to-end (switcher UI ↔
-`App.css` tokens).
+`App.css` tokens). The Caterpillar theme (`cat`) was renamed to Synchrony
+(`synchrony`) 2026-08-21, gold/near-black colors sampled from the pasted
+Synchrony logo — see root [AGENTS.md](../../AGENTS.md) current-state log.
