@@ -188,6 +188,22 @@ function Home() {
 
         <div className="feature-card">
           <img
+            src="/home/synchrony-thumbnail.png"
+            alt="Synchrony"
+            className="feature-img"
+          />
+          <div className="feature-info">
+            <h3>Synchrony — Machine Learning Intern (Fall 2026)</h3>
+            <p>
+              Incoming Machine Learning Intern on Synchrony's Forecasting & Analytics team,
+              starting Fall 2026 — applying predictive modeling and data science to real-world
+              financial forecasting problems.
+            </p>
+          </div>
+        </div>
+
+        <div className="feature-card">
+          <img
             src="/home/caterpillar-thumbnail-2026.png"
             alt="Caterpillar Internship 2026"
             className="feature-img"

@@ -36,6 +36,28 @@ function Experiences() {
                 </h2>
                 <div className="divider"></div>
 
+                {/* Synchrony */}
+                <div className="experience-card">
+                    <img
+                        src="/experiences/synchrony-logo.png"
+                        alt="Synchrony Logo"
+                        className="experience-logo"
+                    />
+                    <div className="experience-info">
+                        <div className="experience-header">
+                            <h3>Synchrony</h3>
+                            <span className="role">Machine Learning Intern – Forecasting & Analytics</span>
+                            <span className="date">Fall 2026</span>
+                        </div>
+                        <p className="experience-desc">
+                            • Incoming Machine Learning Intern on Synchrony's Forecasting & Analytics
+                            team, starting Fall 2026.<br />
+                            • Will apply predictive modeling and data science methods to real-world
+                            financial forecasting problems for a consumer financial services leader.
+                        </p>
+                    </div>
+                </div>
+
                 {/* Caterpillar 2026 */}
                 <div className="experience-card">
                     <img

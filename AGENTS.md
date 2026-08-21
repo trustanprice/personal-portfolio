@@ -135,3 +135,14 @@ components (no CMS, no data files) and all imagery served from `public/`.
   direction). Added the job-tailored resume workflow (see the "Resume sync"
   bullet above and [resume/AGENTS.md](resume/AGENTS.md)) so a pasted job
   description turns into a tailored `resume-<slug>.tex` variant on request.
+- **Synchrony — Machine Learning Intern, Forecasting & Analytics (Fall
+  2026)** added 2026-08-20: a Featured Experience card on Home (before the
+  Caterpillar 2026 card, as the most upcoming role) and the top entry on
+  `Experiences.js`. Logo pasted by the user via clipboard image, saved to
+  both `public/experiences/synchrony-logo.png` (Experiences card) and
+  `public/home/synchrony-thumbnail.png` (Home card) — same file, two
+  conventional locations, per the naming pattern in
+  [public/AGENTS.md](public/AGENTS.md). **Deliberately not added to
+  `resume/resume.tex`** per explicit instruction — see the "Deliberate
+  exceptions" note in [resume/AGENTS.md](resume/AGENTS.md) before adding it
+  there in a future pass.

@@ -35,6 +35,16 @@ inferred. When a new entry would exceed a cap, drop one before adding:
   above (e.g. a full-stack- or sports-analytics-flavored role for NBA; a
   healthcare-ML role for Dementia Classification).
 
+## Deliberate exceptions to the sync convention
+
+- **Synchrony (Fall 2026)**: added to `Experiences.js` (and Home's Featured
+  Experience) 2026-08-20, but **explicitly excluded from `resume.tex` by the
+  user's own instruction** — it's an upcoming role, not yet started, and not
+  meant to appear on the CV. Don't "fix" this by adding it during a future
+  sync pass; only add it if the user asks. If it does get added later, it's
+  the newest experience — the usual oldest-drops-first rule (or combining
+  the two Caterpillar stints) would apply to make room within the 4-cap.
+
 ## Sync convention
 
 `resume.tex` is a *subset* of the portfolio, not an independent source of

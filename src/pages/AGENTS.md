@@ -53,6 +53,7 @@ experience, club, and hobby entry is hardcoded directly in its page's JSX.
 ## Current state
 
 All five pages implemented and building cleanly (`npm run build`, CRA/
-`react-scripts`). Most recently updated: Home and Projects both gained a
-Forward Data Lab card (2026-08-16) — see the root
-[AGENTS.md](../../AGENTS.md) "Current state" section for the live links.
+`react-scripts`). Most recently updated: Home and Experiences both gained a
+Synchrony card (2026-08-20, upcoming Fall 2026 internship) — see the root
+[AGENTS.md](../../AGENTS.md) "Current state" section for the full log,
+including which entries are deliberately excluded from `resume/resume.tex`.

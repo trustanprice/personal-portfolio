@@ -36,3 +36,9 @@ boilerplate (`index.html`, `manifest.json`, `robots.txt`, favicons).
 
 `home/forward-data-lab-thumbnail.png` added 2026-08-16 for the Forward Data
 Lab project card on both `Home.js` and `Projects.js`.
+
+`home/synchrony-thumbnail.png` and `experiences/synchrony-logo.png` added
+2026-08-20 for the new Synchrony experience (Home's Featured Experience +
+`Experiences.js`) — same source image (a user-pasted clipboard PNG) saved
+under both conventional names, same pattern as the thumbnail/logo split
+above.
