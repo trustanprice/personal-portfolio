@@ -33,6 +33,9 @@ resume/resume_preview*.png
 resume/preview*.png
 
 # Job-tailored resume variants (resume/AGENTS.md) — working files for one
-# application, not portfolio content, unless explicitly committed
-resume/resume-*.tex
-resume/resume-*.pdf
+# application, not portfolio content, unless explicitly committed.
+# Naming is trustanprice-<company>.tex/.pdf; the base resume's compiled
+# output (trustanprice-resume.pdf) is the one exception, kept tracked.
+resume/trustanprice-*.tex
+resume/trustanprice-*.pdf
+!resume/trustanprice-resume.pdf
