@@ -52,17 +52,15 @@ function Projects() {
                                 append-only ledger: Python generates synthetic events, and a dbt-core/DuckDB
                                 pipeline transforms them into a star schema and five reporting marts, gated
                                 end-to-end by <code>dbt test</code>. A credit-risk module (vintage analysis,
-                                roll-rate transition matrices, CECL reserve estimates) is validated within
-                                0.19 percentage points of real Freddie Mac mortgage outcomes.
+                                roll-rate matrices, CECL estimates) is validated within 0.19 percentage
+                                points of real Freddie Mac mortgage outcomes.
                             </p>
                             <p>
-                                The platform is also genuinely deployed to AWS, not just designed to be:
-                                CloudFormation-managed stacks with GitHub OIDC auth (zero long-lived
-                                credentials) run the same pipeline against MotherDuck in both dev and prod,
-                                verified by 136 out of 136 tests passing in the cloud. A six-tab interactive
-                                dashboard (methodology, data engineering, forecasting, infrastructure, and an
-                                emerging-techniques roadmap) is deployed to Vercel and GitHub Pages — the whole
-                                pipeline still reproduces locally with one command:{" "}<code>make all</code>.
+                                The platform is also genuinely deployed to AWS: CloudFormation-managed
+                                stacks with GitHub OIDC auth (no long-lived credentials) run the pipeline
+                                against MotherDuck in dev and prod, verified by 136/136 tests passing in the
+                                cloud. A six-tab dashboard spans methodology, data engineering, forecasting,
+                                infrastructure, and emerging techniques, deployed to Vercel and GitHub Pages.
                             </p>
                             <div className="feature-links">
                                 <a
@@ -97,19 +95,18 @@ function Projects() {
                             <p>
                                 Independent research project for the Forward Data Lab: a systematic,
                                 criteria-scored comparison of Ai2's Asta against Google Scholar across five
-                                query archetypes, with every cited paper independently verified. That
-                                investigation surfaced Asta's central gap: it displays each source's citation
-                                count but never weights its synthesis by it, treating a 3-citation paper and
-                                a 16,950-citation seminal paper as equally strong evidence.
+                                query archetypes, every citation independently verified. That surfaced
+                                Asta's central gap: it displays each source's citation count but never
+                                weights its synthesis by it, treating a 3-citation paper and a
+                                16,950-citation seminal paper as equally strong evidence.
                             </p>
                             <p>
-                                Built a minimal, inspectable RAG pipeline over 18 real papers pulled live
-                                from the Semantic Scholar API that mirrors Asta's retrieve → rerank → cap →
-                                generate flow, then added two concrete fixes: a relevance-confidence
-                                threshold that refuses to force a synthesis when nothing clears a similarity
-                                bar, and citation-weighted reranking so well-established work outranks
-                                obscure preprints. Verified against six live queries, three on-topic and
-                                three off-topic.
+                                Built a minimal, inspectable RAG pipeline over 18 real papers that mirrors
+                                Asta's retrieve → rerank → cap → generate flow, then added two fixes: a
+                                relevance-confidence threshold that blocks synthesis when nothing clears a
+                                similarity bar, and citation-weighted reranking so well-established work
+                                outranks obscure preprints. Verified against six live queries, three
+                                on-topic and three off-topic.
                             </p>
                             <div className="feature-links">
                                 <a
@@ -151,18 +148,20 @@ function Projects() {
                                 Over a fast-paced development cycle, we engineered time-series features
                                 (lag variables, rolling statistics, calendar effects) and deployed LightGBM
                                 ensemble models to forecast call volume, customer care time, and abandon
-                                rate at 30-minute intervals. Our work earned 2nd place out of 200+ teams and
-                                gave us the opportunity to present our solution to industry leaders at
-                                Synchrony.
+                                rate at 30-minute intervals, generating accurate workload forecasts across
+                                multiple portfolios. Our work earned 2nd place out of 200+ teams and gave us
+                                the opportunity to present our solution to industry leaders at Synchrony.
                             </p>
-                            <a
-                                href="https://github.com/DarylOkeke/datathon-final-submission/blob/main/datathon_team015_v1.pdf"
-                                className="btn learn-more"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                View Presentation →
-                            </a>
+                            <div className="feature-links">
+                                <a
+                                    href="https://github.com/DarylOkeke/datathon-final-submission/blob/main/datathon_team015_v1.pdf"
+                                    className="btn learn-more"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Presentation →
+                                </a>
+                            </div>
                         </div>
                     </div>
 
