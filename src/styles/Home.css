@@ -216,7 +216,7 @@ body.dark-mode .icon-link:hover {
   background: var(--bg-alt);
   padding: 24px;
   margin: 30px auto;
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
   box-shadow: 0 6px 20px var(--card-shadow);
   transition: all 0.3s ease;
