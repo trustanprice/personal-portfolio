@@ -122,6 +122,17 @@ components (no CMS, no data files) and all imagery served from `public/`.
   (`data-theme="synchrony"`) on 2026-08-21 — gold `#f3c844` / near-black
   `#1c1f23`, colors sampled directly from the pasted Synchrony logo (see
   `public/experiences/synchrony-logo.png`), not guessed.
+- **Synchrony interview presentation** (2026-08-25): an "Interview
+  Presentation →" link was added to the Synchrony `experience-card` on
+  `Experiences.js`, pointing at
+  `public/home/synchrony-interview-presentation.pdf` (the user's actual
+  RAG-explainer deck from the Synchrony interview process). This is the
+  first `experience-card` on the whole page with a link — reused the
+  globally-available `.learn-more` class from `Projects.css` rather than
+  inventing new styling, since it's loaded on every page regardless of
+  where it's defined (see `src/styles/AGENTS.md`'s "not CSS modules" note).
+  If more experience entries get their own presentation/writeup links
+  later, follow this same pattern rather than introducing a new one.
 - **2026-08-21**: fixed a real layout bug on Projects — `.feature-card` and
   `.project-card` used `align-items: center`, so each card's image position
   depended on that card's own height (short cards vs. long ones), making

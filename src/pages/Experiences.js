@@ -56,6 +56,14 @@ function Experiences() {
                             Synchrony, gaining exposure to AI strategy, decision intelligence, and
                             forecasting/MLOps initiatives.
                         </p>
+                        <a
+                            href="/home/synchrony-interview-presentation.pdf"
+                            className="learn-more"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Interview Presentation →
+                        </a>
                     </div>
                 </div>
 
