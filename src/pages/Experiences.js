@@ -89,6 +89,14 @@ function Experiences() {
                             • Migrated Azure Pipelines to GitHub Actions, modernizing the CI/CD
                             infrastructure for multiple application teams.
                         </p>
+                        <a
+                            href="/home/caterpillar-2026-final-presentation.pdf"
+                            className="learn-more"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Final Presentation →
+                        </a>
                     </div>
                 </div>
 

@@ -133,6 +133,20 @@ components (no CMS, no data files) and all imagery served from `public/`.
   where it's defined (see `src/styles/AGENTS.md`'s "not CSS modules" note).
   If more experience entries get their own presentation/writeup links
   later, follow this same pattern rather than introducing a new one.
+- **Caterpillar 2026 final presentation** (2026-08-25): same pattern, second
+  instance — a "Final Presentation →" link on the Caterpillar 2026
+  `experience-card`, pointing at
+  `public/home/caterpillar-2026-final-presentation.pdf` (Trustan's actual
+  end-of-internship deck, "Intern Final Presentation: A DevOps Summer
+  Recap"). Deliberately labeled "Final Presentation," not "Internship
+  Summary" — the card already says Caterpillar/Software Engineer
+  Intern/dates, so restating "Internship" in the link label would be
+  redundant. The deck itself has substantially more detail than the current
+  bullets (AWS Cloud Practitioner cert work, the Team 9 hackathon project,
+  IAM/OIDC deep-dives, the Genesis LLMOps pivot) that didn't get folded into
+  the bullets this pass — only the link was added, per the scope of what
+  was asked. Worth revisiting the bullets themselves against this deck next
+  time Caterpillar 2026 comes up.
 - **2026-08-21**: fixed a real layout bug on Projects — `.feature-card` and
   `.project-card` used `align-items: center`, so each card's image position
   depended on that card's own height (short cards vs. long ones), making
