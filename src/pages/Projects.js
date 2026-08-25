@@ -49,36 +49,20 @@ function Projects() {
                             <h3>LedgerOne: FinTech Ledger, Analytics & Credit Risk Platform</h3>
                             <p>
                                 An end-to-end fintech analytics platform built around a single-entry,
-                                append-only ledger where financial events are immutable and account balances
-                                are dynamically derived. The platform utilizes Python to generate realistic
-                                synthetic events, alongside a dbt-core and dbt-duckdb pipeline that transforms
-                                raw data into a star schema and five target reporting marts.
+                                append-only ledger: Python generates synthetic events, and a dbt-core/DuckDB
+                                pipeline transforms them into a star schema and five reporting marts, gated
+                                end-to-end by <code>dbt test</code>. A credit-risk module (vintage analysis,
+                                roll-rate transition matrices, CECL reserve estimates) is validated within
+                                0.19 percentage points of real Freddie Mac mortgage outcomes.
                             </p>
                             <p>
-                                The pipeline is gated end-to-end by <code>dbt test</code> schema checks and
-                                custom singular validations, including an exact purchase-to-refund
-                                reconciliation check. A dedicated credit-risk module calculates vintage
-                                analysis, roll-rate transition matrices, and simplified CECL reserve
-                                estimations on the same stack, then backtests that methodology against a real
-                                Freddie Mac mortgage panel with a time-based holdout split — landing within
-                                0.19 percentage points on the cumulative delinquency forecast, while honestly
-                                surfacing that the roll-rate transition matrix isn't perfectly stable over
-                                time.
-                            </p>
-                            <p>
-                                The platform is also genuinely deployed to the cloud, not just designed to be
-                                one day: CloudFormation-managed AWS stacks (S3 raw-data buckets, a GitHub OIDC
-                                deploy role with zero long-lived credentials) run the same dbt pipeline
-                                against MotherDuck in both dev and prod, verified end-to-end by real CI runs
-                                — 136 out of 136 dbt tests passing against live cloud databases in both
-                                environments.
-                            </p>
-                            <p>
-                                Insights are served through a six-tab interactive dashboard covering a
-                                methodology walkthrough, a data engineering reference, a forecasting tool, an
-                                infrastructure writeup documenting that real deployment, and a roadmap tab for
-                                upcoming techniques, deployed to Vercel and GitHub Pages. The entire local
-                                pipeline still reproduces with one command:{" "}<code>make all</code>.
+                                The platform is also genuinely deployed to AWS, not just designed to be:
+                                CloudFormation-managed stacks with GitHub OIDC auth (zero long-lived
+                                credentials) run the same pipeline against MotherDuck in both dev and prod,
+                                verified by 136 out of 136 tests passing in the cloud. A six-tab interactive
+                                dashboard (methodology, data engineering, forecasting, infrastructure, and an
+                                emerging-techniques roadmap) is deployed to Vercel and GitHub Pages — the whole
+                                pipeline still reproduces locally with one command:{" "}<code>make all</code>.
                             </p>
                             <div className="feature-links">
                                 <a
@@ -113,22 +97,19 @@ function Projects() {
                             <p>
                                 Independent research project for the Forward Data Lab: a systematic,
                                 criteria-scored comparison of Ai2's Asta against Google Scholar across five
-                                query archetypes (broad conceptual, narrow technical, comparative,
-                                recent/emerging-topic, and ambiguous), with every cited paper independently
-                                verified against its real publication. That investigation surfaced Asta's
-                                central gap: it displays each source's citation count but never weights its
-                                synthesis by it, treating a 3-citation paper and a 16,950-citation seminal
-                                paper as equally strong evidence.
+                                query archetypes, with every cited paper independently verified. That
+                                investigation surfaced Asta's central gap: it displays each source's citation
+                                count but never weights its synthesis by it, treating a 3-citation paper and
+                                a 16,950-citation seminal paper as equally strong evidence.
                             </p>
                             <p>
                                 Built a minimal, inspectable RAG pipeline over 18 real papers pulled live
                                 from the Semantic Scholar API that mirrors Asta's retrieve → rerank → cap →
-                                generate flow, then added two concrete fixes: a calibrated
-                                relevance-confidence threshold that refuses to force a synthesis when
-                                nothing clears a similarity bar, and citation-weighted reranking that blends
-                                embedding similarity with real citation counts so well-established work
-                                outranks obscure preprints. Verified against six live queries (three
-                                on-topic, three off-topic) with results and reasoning documented end-to-end.
+                                generate flow, then added two concrete fixes: a relevance-confidence
+                                threshold that refuses to force a synthesis when nothing clears a similarity
+                                bar, and citation-weighted reranking so well-established work outranks
+                                obscure preprints. Verified against six live queries, three on-topic and
+                                three off-topic.
                             </p>
                             <div className="feature-links">
                                 <a
@@ -167,10 +148,12 @@ function Projects() {
                                 underrepresented in spaces like this.
                             </p>
                             <p>
-                                Over a fast-paced development cycle, we built a forecasting solution to help
-                                predict call center demand and support better operational decision-making.
-                                Our work earned 2nd place out of 200+ teams and gave us the opportunity to
-                                present our solution to industry leaders at Synchrony.
+                                Over a fast-paced development cycle, we engineered time-series features
+                                (lag variables, rolling statistics, calendar effects) and deployed LightGBM
+                                ensemble models to forecast call volume, customer care time, and abandon
+                                rate at 30-minute intervals. Our work earned 2nd place out of 200+ teams and
+                                gave us the opportunity to present our solution to industry leaders at
+                                Synchrony.
                             </p>
                             <a
                                 href="https://github.com/DarylOkeke/datathon-final-submission/blob/main/datathon_team015_v1.pdf"
@@ -205,11 +188,7 @@ function Projects() {
                             </ul>
 
                             <p>
-                                Every prediction ships with its full methodology inline: the formula, the raw inputs, and the honest accuracy, including where a technique doesn't help and says so plainly.
-                            </p>
-
-                            <p>
-                                Built with Python and FastAPI on the backend, including a custom NBA.com data client (on top of <code>nba_api</code>, with its own retry, caching, and schema-validation layer). Frontend in Next.js, deployed on Vercel and Render.
+                                Every prediction ships with its full methodology inline — the formula, the raw inputs, and the honest accuracy, including where a technique doesn't help. Built with Python and FastAPI on the backend (including a custom NBA.com data client with its own retry, caching, and schema-validation layer) and Next.js on the frontend, deployed on Vercel and Render.
                             </p>
 
                             <a
@@ -233,10 +212,13 @@ function Projects() {
                         <div className="project-info">
                             <h3>AI Academic Advisor</h3>
                             <p>
-                                An intelligent advising tool that helps students explore majors and
-                                build schedules through natural language inputs. Built with React and
-                                Flask, it uses keyword extraction and rule-based reasoning to match
-                                students with real course data from UIUC’s catalog.
+                                An intelligent academic advising tool that helps students explore majors
+                                and build class schedules through natural-language input — describe your
+                                interests and goals in plain English instead of filling out a form. Built
+                                with a React frontend and a Flask backend, it parses each query with
+                                keyword extraction and rule-based reasoning, then matches the result
+                                against real course data from UIUC's catalog to generate concrete
+                                recommendations.
                             </p>
                             <a
                                 href="https://github.com/trustanprice/AI-Advisor"
@@ -259,9 +241,12 @@ function Projects() {
                         <div className="project-info">
                             <h3>ML Dementia Diagnosis via MRI</h3>
                             <p>
-                                A deep learning research project developing CNN architectures to
-                                classify MRI scans by dementia stage. Combines image preprocessing,
-                                class balancing, and interpretability analysis for early detection.
+                                A deep learning research project focused on early dementia detection:
+                                built a CNN with a full preprocessing pipeline for 4-class dementia
+                                staging from brain MRI scans, achieving 95% classification accuracy. The
+                                pipeline combines class balancing to handle imbalanced stage distributions
+                                with interpretability analysis, so predictions come with an explanation,
+                                not just a label.
                             </p>
                             <a
                                 href="/home/ml-dementia-diagnosis.pdf"
