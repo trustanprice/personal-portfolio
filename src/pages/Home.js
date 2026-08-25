@@ -121,10 +121,10 @@ function Home() {
               events, and a dbt + DuckDB pipeline (staging → star schema → tested reporting marts)
               turns them into auditable revenue, refund, and payout metrics. A companion credit-risk
               module (vintage curves, roll-rate transition matrix, CECL-style reserve estimate) is
-              backtested against real Freddie Mac mortgage data — within 0.19 percentage points on
-              a time-based holdout — and presented through a modern interactive dashboard: teaching
-              walkthrough, data-engineering reference, forecasting view, and infrastructure writeup,
-              all in one multi-tab site.
+              validated within 0.19 percentage points of real Freddie Mac mortgage outcomes, and the
+              whole platform is genuinely deployed to AWS — CloudFormation, OIDC-secured CI/CD,
+              MotherDuck in the cloud, 136/136 dbt tests passing — all covered by a modern
+              interactive dashboard.
             </p>
             <div className="feature-links">
               <a

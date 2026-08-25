@@ -66,11 +66,19 @@ function Projects() {
                                 time.
                             </p>
                             <p>
-                                Insights are served through an interactive dashboard covering a methodology
-                                walkthrough, a data engineering reference, a forecasting tool, and a cloud
-                                productionization writeup (S3 &rarr; MotherDuck &rarr; GitHub Actions &rarr;
-                                CloudFormation) deployed to Vercel and GitHub Pages. The entire pipeline
-                                reproduces with one command:{" "}<code>make all</code>.
+                                The platform is also genuinely deployed to the cloud, not just designed to be
+                                one day: CloudFormation-managed AWS stacks (S3 raw-data buckets, a GitHub OIDC
+                                deploy role with zero long-lived credentials) run the same dbt pipeline
+                                against MotherDuck in both dev and prod, verified end-to-end by real CI runs
+                                — 136 out of 136 dbt tests passing against live cloud databases in both
+                                environments.
+                            </p>
+                            <p>
+                                Insights are served through a six-tab interactive dashboard covering a
+                                methodology walkthrough, a data engineering reference, a forecasting tool, an
+                                infrastructure writeup documenting that real deployment, and a roadmap tab for
+                                upcoming techniques, deployed to Vercel and GitHub Pages. The entire local
+                                pipeline still reproduces with one command:{" "}<code>make all</code>.
                             </p>
                             <div className="feature-links">
                                 <a

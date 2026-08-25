@@ -93,6 +93,29 @@ components (no CMS, no data files) and all imagery served from `public/`.
   `ledgerone/apps/walkthrough/README.md` for the live-site copy
   specifically) rather than assuming this description is still current —
   it's an actively evolving sibling project.
+- **LedgerOne (2026-08-25)**: the sibling repo shipped a real AWS deployment
+  — CloudFormation-managed `ledgerone-dev`/`ledgerone-prod` stacks (S3 raw
+  bucket + GitHub OIDC deploy role, no long-lived AWS credentials), with
+  GitHub Actions running the same dbt pipeline against MotherDuck instead
+  of a local file, verified end-to-end by real CI runs (136/136 dbt tests
+  passing, both environments). The Infrastructure tab used to describe this
+  as a hypothetical "what productionizing would look like" design writeup —
+  it doesn't anymore, it documents what's actually running. Portfolio copy
+  (Home, Projects, README) updated to lead with the real-deployment claim
+  rather than the old "cloud productionization writeup" framing. Note:
+  `ledgerone/README.md` (root) is itself stale on this — it still describes
+  the walkthrough as a single-scene scrollytelling site — so this update
+  was sourced from `ledgerone/AGENTS.md` and
+  `ledgerone/apps/walkthrough/README.md` instead, which are current; worth
+  flagging to the user next time this comes up rather than trusting
+  ledgerone's own README at face value.
+- The walkthrough site also gained a sixth tab, **Emerging Techniques**
+  (2026-08-25) — explicitly scaffolding only (structure + placeholder
+  cards for planned stochastic-process work and a SAS exercise, no real
+  content yet, per its own on-page banner). Portfolio copy mentions it only
+  as "a roadmap tab for upcoming techniques" — don't describe it as
+  delivered content until ledgerone's own docs say the scaffolding phase is
+  done.
 - Five color themes available via `ThemeSwitcher` (Teal default, Synchrony,
   Illini, Buckeyes, CU Boulder), each with a light and dark variant. The
   Caterpillar theme (`data-theme="cat"`) was renamed to Synchrony
