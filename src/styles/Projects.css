@@ -140,7 +140,7 @@ body.dark-mode .projects-hero-image img {
 ------------------------------ */
 .project-card {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: flex-start;
   background: var(--bg-alt);
   border-radius: 18px;
@@ -166,8 +166,7 @@ body.dark-mode .project-card {
 
 .project-img {
   width: 280px;
-  min-height: 180px;
-  align-self: stretch;
+  height: 180px;
   border-radius: 10px;
   object-fit: cover;
   flex-shrink: 0;
@@ -228,8 +227,6 @@ body.dark-mode .project-img {
   .project-img {
     width: 100%;
     height: auto;
-    min-height: 0;
-    align-self: auto;
   }
 
   .project-info {

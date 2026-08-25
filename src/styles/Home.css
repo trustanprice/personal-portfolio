@@ -208,7 +208,7 @@ body.dark-mode .icon-link:hover {
 ============================== */
 .feature-card {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 30px;
   border: 1px solid var(--border-color);
@@ -231,8 +231,7 @@ body.dark-mode .icon-link:hover {
 
 .feature-img {
   width: 280px;
-  min-height: 180px;
-  align-self: stretch;
+  height: 180px;
   border-radius: 12px;
   flex-shrink: 0;
   object-fit: cover;
@@ -373,8 +372,6 @@ body.dark-mode .feature-img {
   .feature-img {
     width: 100%;
     height: auto;
-    min-height: 0;
-    align-self: auto;
     margin-bottom: 15px;
   }
   .feature-info {
