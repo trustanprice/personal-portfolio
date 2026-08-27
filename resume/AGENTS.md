@@ -21,16 +21,17 @@ Experience. Never more than 3 `\resumeProjectHeading` entries in Projects.**
 These are hard caps, not soft targets — set by the user explicitly, not
 inferred. When a new entry would exceed a cap, drop one before adding:
 
-- **Experience**: drop the oldest/least-relevant of the 4 — usually literally
-  the oldest by end date, unless an older role is more relevant to the kind
-  of job being targeted than a more recent one (judgment call, but default
-  to reverse-chronological). If a 5th experience needs to fit, the
-  designated release valve is **combining the two Caterpillar internships
+- **Experience**: drop the oldest/least-relevant — usually literally the
+  oldest by end date, unless an older role is more relevant to the kind of
+  job being targeted than a more recent one (judgment call, but default to
+  reverse-chronological). The designated release valve when a new
+  experience needs to fit is **combining the two Caterpillar internships
   (Summer 2025 + Summer 2026) into one entry** — one `\resumeSubheading`
   spanning "May 2025 -- Aug 2026," with a merged bullet list (pick the
-  strongest 2-3 bullets across both stints) — rather than dropping HXRI Lab
-  or State Farm. This is the same technique the job-tailoring workflow below
-  uses.
+  strongest 2-3 bullets across both stints). This was actually done on the
+  base resume 2026-08-25 (see Current state) — it's no longer just a
+  documented technique, it's the live structure. Same technique the
+  job-tailoring workflow below uses for variants.
 - **Projects**: drop the lowest-impact of the 3 for the job at hand. As of
   2026-08-19 the base resume carries Call Center Forecasting (Datathon),
   LedgerOne, and Forward Data Lab — NBA Predictions and ML Dementia
@@ -40,16 +41,6 @@ inferred. When a new entry would exceed a cap, drop one before adding:
   for a job posting where they'd read as more relevant than one of the three
   above (e.g. a full-stack- or sports-analytics-flavored role for NBA; a
   healthcare-ML role for Dementia Classification).
-
-## Deliberate exceptions to the sync convention
-
-- **Synchrony (Fall 2026)**: added to `Experiences.js` (and Home's Featured
-  Experience) 2026-08-20, but **explicitly excluded from `resume.tex` by the
-  user's own instruction** — it's an upcoming role, not yet started, and not
-  meant to appear on the CV. Don't "fix" this by adding it during a future
-  sync pass; only add it if the user asks. If it does get added later, it's
-  the newest experience — the usual oldest-drops-first rule (or combining
-  the two Caterpillar stints) would apply to make room within the 4-cap.
 
 ## Sync convention
 
@@ -87,10 +78,15 @@ overwrite the base resume by default. Process:
    `Experiences.js`/`Projects.js` on the portfolio, not just what's
    currently in `resume.tex`.
 3. Same hard caps as the base resume apply: **≤4 experiences, ≤3 projects,
-   always exactly 1 page.** If the right 4 experiences for this job would
-   otherwise be 5, combine the two Caterpillar stints into one entry (see
-   above) — that's the designated release valve. Don't drop HXRI Lab or
-   State Farm to make room unless the posting genuinely has no use for them.
+   always exactly 1 page.** The base resume (as of 2026-08-25) already
+   combines the two Caterpillar stints into one entry, leaving three
+   experience slots used (Synchrony, combined Caterpillar, State Farm) — a
+   4th is available if a posting calls for HXRI Lab (AI/Mixed Reality
+   research, dropped from the base pool but still fair game for a
+   research- or AR/VR-flavored posting) or for reverting to two separate
+   Caterpillar entries if a posting specifically wants that level of detail
+   on one summer. Don't drop Synchrony or State Farm to make room unless
+   the posting genuinely has no use for them.
 4. Rewrite bullets to genuinely emphasize what's relevant to the posting —
    reordering and re-weighting real accomplishments, not fabricating ones
    or keyword-stuffing.
@@ -173,13 +169,27 @@ fetch the package directly rather than fight `tlmgr`:
 
 ## Current state
 
-Compiled clean, 1 page, as of 2026-08-20: 4 experiences (Caterpillar ×2,
-HXRI Lab, State Farm), 3 projects (Call Center Forecasting/Datathon,
-LedgerOne, Forward Data Lab), Education, Skills, and Clubs sections.
-Deployed to `public/home/trustanprice-cv2026.pdf` and
-`trustanprice-resume.pdf` (renamed from `resume.pdf` 2026-08-21 to match
-the job-tailored variants' `trustanprice-*` naming; see the gitignore note
-above — `resume.pdf` itself is gitignored now, this file's the tracked one).
+**2026-08-25**: base resume's Experience section restructured on explicit
+user instruction. Synchrony added — no longer excluded, since the role
+actually started (Aug 2026 -- Present, not the "Fall 2026, upcoming"
+framing `Experiences.js` still uses as of this writing; portfolio pages
+haven't been refreshed to match, worth revisiting). The two Caterpillar
+entries were combined into one (May 2025 -- Aug 2026, 3 merged bullets —
+the release valve described above, now actually in use). HXRI Lab was
+dropped to make room; State Farm was kept over it — judgment call, reasoning
+was State Farm's production-ML/data-science framing and full-year tenure
+being more broadly relevant to the data/ML-flavored roles this resume
+keeps getting tailored for than HXRI's narrower AR/VR research scope.
+Net: 3 experience entries now (Synchrony, combined Caterpillar, State
+Farm), one slot open under the 4-cap. Location left blank for Synchrony in
+the `\resumeSubheading` — no confirmed work-site city, didn't want to guess
+one.
+
+Compiled clean, 1 page. Deployed to `public/home/trustanprice-cv2026.pdf`
+and `trustanprice-resume.pdf` (renamed from `resume.pdf` 2026-08-21 to
+match the job-tailored variants' `trustanprice-*` naming; see the
+gitignore note above — `resume.pdf` itself is gitignored now, this file's
+the tracked one).
 
 **2026-08-21**: five job-tailored variants built in one sitting
 (`trustanprice-ibm`, `trustanprice-chase`, `trustanprice-apple`,
