@@ -218,9 +218,13 @@ components (no CMS, no data files) and all imagery served from `public/`.
   `resume/resume.tex` at first (upcoming, not-yet-started role); that
   changed 2026-08-25 once the internship actually started — Synchrony is
   now on the base resume too (Aug 2026 -- Present), see
-  [resume/AGENTS.md](resume/AGENTS.md)'s Current state. Note the portfolio
-  pages here still say "Fall 2026" / haven't been refreshed to "Present" —
-  flagged but not fixed as of this writing, see the entry below.
+  [resume/AGENTS.md](resume/AGENTS.md)'s Current state. **The "Fall 2026"
+  vs. "Aug 2026 -- Present" split between the portfolio pages and the
+  resume is intentional, confirmed by the user 2026-08-27** — portfolio
+  keeps "Fall 2026" (Home and Experiences), resume uses the more precise
+  "Aug 2026 -- Present." Don't "fix" this into consistency; it's a
+  deliberate register difference (narrative framing on the site vs. exact
+  dates on a formal document), not drift.
 
 - **2026-08-27 accuracy audit**: before the user posted about
   NBA Predictions, LedgerOne, and Forward Data Lab on LinkedIn, walked all
