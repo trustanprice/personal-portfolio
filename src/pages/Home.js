@@ -170,14 +170,24 @@ function Home() {
             evaluations from real NBA.com data, and explains every number's methodology in
             plain language. Built with Python, FastAPI, and Next.js.
             </p>
-            <a
-              href="https://basketball-predictions.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn learn-more"
-            >
-              Learn More →
-            </a>
+            <div className="feature-links">
+              <a
+                href="https://basketball-predictions.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn learn-more"
+              >
+                Learn More →
+              </a>
+              <a
+                href="https://github.com/trustanprice/basketball-predictions"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn learn-more"
+              >
+                View Repository →
+              </a>
+            </div>
           </div>
         </div>
 

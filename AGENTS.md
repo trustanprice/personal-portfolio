@@ -287,3 +287,11 @@ components (no CMS, no data files) and all imagery served from `public/`.
   https://github.com/trustanprice/forward-data-lab, to the FDL card on both
   Home.js and Projects.js, matching LedgerOne's existing three/two-link
   pattern. Build verified clean after the change.
+- **NBA Predictions GitHub link** (2026-08-27): same gap as Forward Data
+  Lab — the NBA Predictions card on both Home and Projects only linked the
+  live site (Vercel), no repo link. Fixed by adding "View Repository →" →
+  https://github.com/trustanprice/basketball-predictions on both pages;
+  Projects.js's version now wraps both links in `.feature-links` (reused
+  from Home.css, which loads globally) since the single-link pattern used
+  there (a bare `<a className="learn-more">`) has no gap styling for a
+  second link. Build verified clean after the change.

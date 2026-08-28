@@ -200,14 +200,24 @@ function Projects() {
                                 Every prediction ships with its full methodology inline — the formula, the raw inputs, and the honest accuracy (recent backtests land in the same range as Vegas and ESPN's BPI), including where a technique doesn't help. Built with Python and FastAPI (a custom NBA.com data client with its own retry, caching, and schema-validation layer) and Next.js, deployed on Vercel and Render.
                             </p>
 
-                            <a
-                                href="https://basketball-predictions.vercel.app/"
-                                className="learn-more"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Explore Live App →
-                            </a>
+                            <div className="feature-links">
+                                <a
+                                    href="https://basketball-predictions.vercel.app/"
+                                    className="learn-more"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Explore Live App →
+                                </a>
+                                <a
+                                    href="https://github.com/trustanprice/basketball-predictions"
+                                    className="learn-more"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Repository →
+                                </a>
+                            </div>
                         </div>
                     </div>
 
