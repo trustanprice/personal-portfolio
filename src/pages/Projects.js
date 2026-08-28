@@ -127,6 +127,14 @@ function Projects() {
                                 >
                                     Learn More →
                                 </a>
+                                <a
+                                    href="https://github.com/trustanprice/forward-data-lab"
+                                    className="btn learn-more"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Repository →
+                                </a>
                             </div>
                         </div>
                     </div>

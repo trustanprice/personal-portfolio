@@ -103,6 +103,14 @@ function Home() {
               >
                 Learn More →
               </a>
+              <a
+                href="https://github.com/trustanprice/forward-data-lab"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn learn-more"
+              >
+                View Repository →
+              </a>
             </div>
           </div>
         </div>

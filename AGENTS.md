@@ -277,3 +277,13 @@ components (no CMS, no data files) and all imagery served from `public/`.
     Pages URL (see that entry above) and a reference to the resume's old
     "Deliberate exceptions" section that no longer exists (see the
     Synchrony entry above).
+- **Forward Data Lab GitHub link** (2026-08-27): the FDL card on both Home
+  and Projects previously only linked "View Live Site" (Vercel) and "Learn
+  More" (a Google Drive PDF) — no link to the actual repo, unlike LedgerOne
+  which links both live site and GitHub. Caught while drafting LinkedIn
+  posts: a "portfolio as universal link" pitch doesn't hold if the portfolio
+  card itself dead-ends before reaching the code. Fixed at the root by
+  adding a third `.feature-links` entry, "View Repository →" →
+  https://github.com/trustanprice/forward-data-lab, to the FDL card on both
+  Home.js and Projects.js, matching LedgerOne's existing three/two-link
+  pattern. Build verified clean after the change.
