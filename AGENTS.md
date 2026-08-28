@@ -81,9 +81,15 @@ components (no CMS, no data files) and all imagery served from `public/`.
   site and the GitHub repo via `.feature-links` on both Home and Projects.
   The live-site link points at the Vercel deploy
   (https://ledgerone-green.vercel.app/) — that repo also deploys the same
-  build to GitHub Pages (https://trustanprice.github.io/ledgerone/walkthrough/)
-  at a `/ledgerone/walkthrough/` subpath, so don't mix the two base paths up
-  if the URL ever needs touching again. Updated again same day once the
+  build to GitHub Pages, but **the GH Pages URL changed 2026-08-27**: it's
+  now https://trustanprice.github.io/ledgerone/ (no `/walkthrough/` suffix
+  — a stale `VITE_BASE_PATH` had been 404ing every asset/JSON fetch on GH
+  Pages specifically; Vercel was never affected since it always used the
+  default `base: "/"`. Confirmed via a 2026-08-27 accuracy-audit subagent,
+  not assumed). The portfolio doesn't link the GH Pages URL directly
+  anywhere, only Vercel, so this didn't require a content fix — just
+  correcting this note so it isn't stale the next time someone reads it.
+  Updated again same day once the
   underlying app was rebuilt from a single scrollytelling page into a
   5-tab site (Overview, Day in the Life walkthrough, Database & Data
   Engineering reference, Forecasting dashboard, Infrastructure/
@@ -208,7 +214,62 @@ components (no CMS, no data files) and all imagery served from `public/`.
   both `public/experiences/synchrony-logo.png` (Experiences card) and
   `public/home/synchrony-thumbnail.png` (Home card) — same file, two
   conventional locations, per the naming pattern in
-  [public/AGENTS.md](public/AGENTS.md). **Deliberately not added to
-  `resume/resume.tex`** per explicit instruction — see the "Deliberate
-  exceptions" note in [resume/AGENTS.md](resume/AGENTS.md) before adding it
-  there in a future pass.
+  [public/AGENTS.md](public/AGENTS.md). Was deliberately excluded from
+  `resume/resume.tex` at first (upcoming, not-yet-started role); that
+  changed 2026-08-25 once the internship actually started — Synchrony is
+  now on the base resume too (Aug 2026 -- Present), see
+  [resume/AGENTS.md](resume/AGENTS.md)'s Current state. Note the portfolio
+  pages here still say "Fall 2026" / haven't been refreshed to "Present" —
+  flagged but not fixed as of this writing, see the entry below.
+
+- **2026-08-27 accuracy audit**: before the user posted about
+  NBA Predictions, LedgerOne, and Forward Data Lab on LinkedIn, walked all
+  three sibling repos' actual current state (two via background research
+  subagents, given the volume of unreviewed commits — Forward Data Lab had
+  none since the last review, so no agent needed there) and fixed real
+  drift:
+  - **NBA Predictions**: the portfolio undersold two new, real, validated
+    features not mentioned anywhere — a schedule-aware Monte Carlo
+    win-total simulation (the one of five tested feature hypotheses this
+    cycle that survived a stacked test) and a defensible backtest accuracy
+    stat (hit rates in the same range as Vegas/ESPN BPI at 3/5/8-win
+    thresholds, confirmed in `model_metadata.json`). Added both, on Home
+    and Projects. Also softened "computed live from real-time NBA.com
+    data" to "computed from real NBA.com data" — the live-refresh loop's
+    *design* intent is near-real-time, but NBA.com is confirmed
+    unreachable from Render (verified twice, plus 64/64 failed scheduled
+    GitHub Actions runs, that workflow now disabled), so in practice data
+    freshness depends on Trustan re-running refresh scripts locally and
+    committing the output, which can be days to about a week stale — "live
+    from real-time" overstated the actual cadence. Didn't add the
+    Render/NBA.com limitation itself to the portfolio copy (too deep an
+    operational detail for a project card, and the live app itself doesn't
+    claim intraday freshness anywhere) — just stopped implying more
+    freshness than the mechanism delivers.
+  - **LedgerOne**: real drift since the 2026-08-25 review. The dbt
+    pipeline's "manual dispatch only, not scheduled yet" state (documented
+    then as deliberate, pending trust) is resolved — it now runs on a real
+    daily cron. Real AWS cost monitoring (CloudWatch billing alarm, SNS
+    topic, dashboard, a live Cost Explorer pull) now feeds the
+    Infrastructure tab, replacing the old "not available yet" state. A new
+    16-test Vitest suite exists alongside the 136 dbt tests — the "136"
+    figure is still accurate for dbt specifically, just not the whole
+    testing picture anymore, so the copy now says "136/136 dbt tests plus
+    a 16-test frontend suite." One thing deliberately *not* added: the
+    pipeline's failure-alerting SNS publish is wired in code but the IAM
+    grant it needs isn't applied yet, so a real failure today would hit
+    AccessDenied on the alert itself — didn't claim working alerting to
+    avoid a partial overclaim. Also confirmed the blank-page bug mentioned
+    in commit history was GitHub-Pages-only; the portfolio's actual "View
+    Live Site" link (Vercel) was never affected — no portfolio fix needed
+    there, just confirmed safe.
+  - **Forward Data Lab**: no new commits since the last review — re-verified
+    the specific numbers already in the portfolio copy (18 papers, six live
+    queries, five query archetypes, the 3-citation-vs-16,950-citation
+    finding) against REPORT.md directly rather than trusting memory. All
+    correct, no changes made.
+  - Also fixed two stale internal cross-references in this file unrelated
+    to the audit itself but caught in the process: the LedgerOne GitHub
+    Pages URL (see that entry above) and a reference to the resume's old
+    "Deliberate exceptions" section that no longer exists (see the
+    Synchrony entry above).

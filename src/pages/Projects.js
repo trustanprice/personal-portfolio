@@ -57,10 +57,12 @@ function Projects() {
                             </p>
                             <p>
                                 The platform is also genuinely deployed to AWS: CloudFormation-managed
-                                stacks with GitHub OIDC auth (no long-lived credentials) run the pipeline
-                                against MotherDuck in dev and prod, verified by 136/136 tests passing in the
-                                cloud. A six-tab dashboard spans methodology, data engineering, forecasting,
-                                infrastructure, and emerging techniques, deployed to Vercel and GitHub Pages.
+                                stacks with GitHub OIDC auth (no long-lived credentials) run the pipeline on
+                                a real daily schedule against MotherDuck in dev and prod, verified by 136/136
+                                dbt tests plus a 16-test frontend suite. A six-tab dashboard — now showing
+                                live AWS cost data on its Infrastructure tab — spans methodology, data
+                                engineering, forecasting, infrastructure, and emerging techniques, deployed
+                                to Vercel and GitHub Pages.
                             </p>
                             <div className="feature-links">
                                 <a
@@ -181,13 +183,13 @@ function Projects() {
                             <p>Three connected models:</p>
 
                             <ul>
-                                <li><strong>Win-total predictor:</strong> benchmarks gradient boosting against KNN under honest walk-forward validation (never random cross-validation, since this is time-dependent data).</li>
-                                <li><strong>Player power rankings:</strong> transparent, z-scored composite ratings computed live from real-time NBA.com data.</li>
+                                <li><strong>Win-total predictor:</strong> benchmarks gradient boosting against KNN under honest walk-forward validation, refined by a schedule-aware Monte Carlo simulation — the one of five tested feature ideas that actually held up under a stacked test.</li>
+                                <li><strong>Player power rankings:</strong> transparent, z-scored composite ratings computed from real NBA.com data.</li>
                                 <li><strong>Coaching evaluation:</strong> measures actual win percentage against roster-talent expectation.</li>
                             </ul>
 
                             <p>
-                                Every prediction ships with its full methodology inline — the formula, the raw inputs, and the honest accuracy, including where a technique doesn't help. Built with Python and FastAPI on the backend (including a custom NBA.com data client with its own retry, caching, and schema-validation layer) and Next.js on the frontend, deployed on Vercel and Render.
+                                Every prediction ships with its full methodology inline — the formula, the raw inputs, and the honest accuracy (recent backtests land in the same range as Vegas and ESPN's BPI), including where a technique doesn't help. Built with Python and FastAPI (a custom NBA.com data client with its own retry, caching, and schema-validation layer) and Next.js, deployed on Vercel and Render.
                             </p>
 
                             <a

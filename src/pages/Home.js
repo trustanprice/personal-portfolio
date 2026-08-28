@@ -122,9 +122,9 @@ function Home() {
               turns them into auditable revenue, refund, and payout metrics. A companion credit-risk
               module (vintage curves, roll-rate transition matrix, CECL-style reserve estimate) is
               validated within 0.19 percentage points of real Freddie Mac mortgage outcomes, and the
-              whole platform is genuinely deployed to AWS — CloudFormation, OIDC-secured CI/CD,
-              MotherDuck in the cloud, 136/136 dbt tests passing — all covered by a modern
-              interactive dashboard.
+              whole platform is genuinely deployed to AWS on a real daily schedule — CloudFormation,
+              OIDC-secured CI/CD, MotherDuck in the cloud, 136/136 dbt tests passing, live cost
+              monitoring — all covered by a modern interactive dashboard.
             </p>
             <div className="feature-links">
               <a
@@ -157,10 +157,10 @@ function Home() {
           <div className="feature-info">
             <h3>NBA Predictions Project</h3>
             <p>
-            Predicts NBA win totals via walk-forward-validated gradient boosting, powers 
-            live player power rankings and coaching evaluations from real NBA.com data, 
-            and explains every number's methodology in plain language. Built with Python, 
-            FastAPI, and Next.js.
+            Predicts NBA win totals via walk-forward-validated gradient boosting and a
+            schedule-aware Monte Carlo simulation, powers player power rankings and coaching
+            evaluations from real NBA.com data, and explains every number's methodology in
+            plain language. Built with Python, FastAPI, and Next.js.
             </p>
             <a
               href="https://basketball-predictions.vercel.app/"
