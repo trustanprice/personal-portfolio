@@ -68,6 +68,28 @@ function Experiences() {
                     </div>
                 </div>
 
+                {/* UIUC Data & Business Intelligence */}
+                <div className="experience-card">
+                    <img
+                        src="/experiences/uiuc-logo.png"
+                        alt="University of Illinois Urbana-Champaign Logo"
+                        className="experience-logo"
+                    />
+                    <div className="experience-info">
+                        <div className="experience-header">
+                            <h3>University of Illinois Urbana-Champaign</h3>
+                            <span className="role">Data & Business Intelligence Intern</span>
+                            <span className="date">Aug 2025 – Present</span>
+                        </div>
+                        <p className="experience-desc">
+                            • Conduct business and data analytics to help guide strategic decisions on
+                            forward-thinking projects, using tools such as Power BI, DAX, and Python.<br />
+                            • Work side-by-side with teams to explore large datasets, translate complex
+                            business needs, and deliver clear, actionable insights.
+                        </p>
+                    </div>
+                </div>
+
                 {/* Caterpillar 2026 */}
                 <div className="experience-card">
                     <img
