@@ -79,7 +79,7 @@ function Experiences() {
                         <div className="experience-header">
                             <h3>University of Illinois Urbana-Champaign</h3>
                             <span className="role">Data & Business Intelligence Intern</span>
-                            <span className="date">Aug 2025 – Present</span>
+                            <span className="date">Aug 2026 – Present</span>
                         </div>
                         <p className="experience-desc">
                             • Conduct business and data analytics to help guide strategic decisions on
