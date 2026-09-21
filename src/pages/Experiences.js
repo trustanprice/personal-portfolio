@@ -46,14 +46,15 @@ function Experiences() {
                     <div className="experience-info">
                         <div className="experience-header">
                             <h3>Synchrony</h3>
-                            <span className="role">Machine Learning Intern – Forecasting & Analytics</span>
-                            <span className="date">Fall 2026</span>
+                            <span className="role">Data Scientist Intern – Forecasting & Analytics</span>
+                            <span className="date">Aug 2026 – Present</span>
                         </div>
                         <p className="experience-desc">
-                            • Incoming Machine Learning Intern on Synchrony's Forecasting & Analytics
-                            team, starting Fall 2026.<br />
-                            • Will work under Sid Chakravarty, VP of Enterprise AI & Analytics at
-                            Synchrony, gaining exposure to AI strategy, decision intelligence, and
+                            • Developing and deploying an application to Synchrony's newly provisioned
+                            AWS account: an interactive dashboard consolidating BI insights alongside
+                            advanced forecast modeling for the Forecasting & Analytics team.<br />
+                            • Working under Sid Chakravarty, VP of Enterprise AI & Analytics, gaining
+                            hands-on exposure to AI strategy, decision intelligence, and
                             forecasting/MLOps initiatives.
                         </p>
                         <a

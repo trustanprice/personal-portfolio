@@ -211,11 +211,11 @@ function Home() {
             className="feature-img"
           />
           <div className="feature-info">
-            <h3>Synchrony — Machine Learning Intern (Fall 2026)</h3>
+            <h3>Synchrony — Data Scientist Intern (2026)</h3>
             <p>
-              Incoming Machine Learning Intern on Synchrony's Forecasting & Analytics team,
-              starting Fall 2026 — applying predictive modeling and data science to real-world
-              financial forecasting problems.
+              Data Scientist Intern on Synchrony's Forecasting & Analytics team, developing and
+              deploying an interactive AWS dashboard that consolidates BI insights alongside
+              advanced forecast modeling.
             </p>
           </div>
         </div>
