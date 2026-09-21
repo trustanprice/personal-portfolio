@@ -46,13 +46,13 @@ function Experiences() {
                     <div className="experience-info">
                         <div className="experience-header">
                             <h3>Synchrony</h3>
-                            <span className="role">Data Scientist Intern – Forecasting & Analytics</span>
+                            <span className="role">Data Scientist Intern – Forecasting & Advanced Modeling</span>
                             <span className="date">Aug 2026 – Present</span>
                         </div>
                         <p className="experience-desc">
                             • Developing and deploying an application to Synchrony's newly provisioned
                             AWS account: an interactive dashboard consolidating BI insights alongside
-                            advanced forecast modeling for the Forecasting & Analytics team.<br />
+                            advanced forecast modeling for the Forecasting & Advanced Modeling team.<br />
                             • Working under Sid Chakravarty, VP of Enterprise AI & Analytics, gaining
                             hands-on exposure to AI strategy, decision intelligence, and
                             forecasting/MLOps initiatives.

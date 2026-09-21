@@ -213,7 +213,7 @@ function Home() {
           <div className="feature-info">
             <h3>Synchrony — Data Scientist Intern (2026)</h3>
             <p>
-              Data Scientist Intern on Synchrony's Forecasting & Analytics team, developing and
+              Data Scientist Intern on Synchrony's Forecasting & Advanced Modeling team, developing and
               deploying an interactive AWS dashboard that consolidates BI insights alongside
               advanced forecast modeling.
             </p>

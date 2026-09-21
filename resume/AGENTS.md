@@ -785,3 +785,25 @@ Standard 3-experience Experience section (Synchrony's existing dashboard
 bullet already echoes "actionable intelligence" language, left
 unchanged), dbt added to Skills (`ds-roles/` convention), no Clubs,
 standard `resume.pdf`-matching spacing. Compiled clean, 1 page.
+
+**2026-09-21**: factual correction — Synchrony's team is actually called
+**Forecasting \& Advanced Modeling**, not "Forecasting \& Analytics" (the
+name every file in this system had used since the team was first added).
+User caught it after the portfolio's Home/Experiences Synchrony sections
+were synced and pushed. Fixed everywhere the wrong name appeared: base
+`resume.tex`, all 25 job-tailored variants that reference Synchrony
+(`swe-roles/`: amex, capitalone, caterpillar, disney, doordash,
+google-swe, merge, visa, visa-bellevue; `ds-roles/`: abbott, aflac,
+akuna, capitalone-ds, citadel, cvs, fanatics, fanduel, freddiemac,
+google-research, ibm-costasset, iheartmedia, jpmc, oden, tiktok,
+uber-ds), and `src/pages/Home.js`/`Experiences.js` on the portfolio. Did
+**not** rewrite the 2026-09-16 changelog entry above that quotes the old,
+already-retired bullet text verbatim — that's an accurate historical
+record of what the bullet used to say, not a current claim, so it stays
+as written. All 26 `.tex` files recompiled clean at 1 page after the
+fix (verified individually, not assumed). `trustanprice-resume.pdf` and
+`public/home/trustanprice-cv2026.pdf` re-synced from the corrected
+`resume.tex`. The "VP of Enterprise AI \& Analytics" bullet (Sid
+Chakravarty's title) was left untouched — that's a different, correct
+phrase (a person's title, not the team name) that happens to also
+contain the word "Analytics."
