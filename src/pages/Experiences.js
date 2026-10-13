@@ -82,10 +82,16 @@ function Experiences() {
                             <span className="date">Aug 2026 – Present</span>
                         </div>
                         <p className="experience-desc">
-                            • Conduct business and data analytics to help guide strategic decisions on
-                            forward-thinking projects, using tools such as Power BI, DAX, and Python.<br />
-                            • Work side-by-side with teams to explore large datasets, translate complex
-                            business needs, and deliver clear, actionable insights.
+                            • Built an interactive React dashboard for athletics leadership comparing
+                            player pay with on-field production across football positions, with
+                            drill-down charts and a football-field map of spending.<br />
+                            • Designed a multi-agent Python pipeline — data ingestion, financial
+                            modeling, and visualization — orchestrated by a Fleet Manager that routes
+                            tasks, recovers from failures, and logs every assumption.<br />
+                            • Joined internal contract, snap-count, and grading data for 117 players
+                            with scraped stats across all 68 Power 4 teams (3,750 players) to benchmark
+                            Illinois against national peers under the House v. NCAA revenue-sharing cap,
+                            translating the results into plain-language, board-ready findings.
                         </p>
                     </div>
                 </div>

@@ -68,13 +68,21 @@ components (no CMS, no data files) and all imagery served from `public/`.
 ## Current state
 
 - Five routes live: Home, Projects, Experiences, Clubs, SemiPro.
-- Home's Featured Projects: **Forward Data Lab**, **LedgerOne**, NBA
-  Predictions — Datathon was swapped out for LedgerOne here (2026-08-18) now
-  that LedgerOne has a live demo (walkthrough site) worth featuring; it's
-  still on the full Projects-page list.
-- The Projects page's Highlighted Projects list has all six: Forward Data
-  Lab, LedgerOne, UIUC Datathon, NBA Predictions, AI Academic Advisor, and
-  Dementia Diagnosis.
+- Home's Featured Projects (updated 2026-10-12, by explicit user request):
+  **LedgerOne**, **JimmyChops**, **Roster & Revenue Optimization Dashboard**
+  — Forward Data Lab and NBA Predictions were swapped out entirely, not just
+  reordered; both are still on the full Projects-page list, just no longer
+  featured on Home. JimmyChops and Roster & Revenue reuse the
+  `/projects/jimmychops-thumbnail.png` and
+  `/projects/roster-revenue-thumbnail.png` images (not duplicated into
+  `/home/`) and their abridged Home copy omits all external links, matching
+  their Projects-page entries (no live site/repo links exist for either —
+  JimmyChops is a real client app not meant to be publicly linked without
+  permission, and Roster & Revenue isn't deployed).
+- The Projects page's Highlighted Projects list has all eight (updated
+  2026-10-12): Roster & Revenue Optimization Dashboard, LedgerOne, Forward
+  Data Lab, UIUC Datathon, NBA Predictions, JimmyChops, AI Academic Advisor,
+  and Dementia Diagnosis.
 - **LedgerOne** (2026-08-18): description corrected — it's a *single-entry*,
   append-only ledger, not double-entry (the portfolio copy previously said
   double-entry; fixed to match the actual repo). Links out to both the live
@@ -295,3 +303,77 @@ components (no CMS, no data files) and all imagery served from `public/`.
   from Home.css, which loads globally) since the single-link pattern used
   there (a bare `<a className="learn-more">`) has no gap styling for a
   second link. Build verified clean after the change.
+- **Roster & Revenue Optimization Dashboard added** (2026-10-12): a new
+  `.feature-card` on `Projects.js` (first entry, before LedgerOne) for a
+  real project built during the UIUC Data & Business Intelligence
+  internship — a dashboard for Illinois Athletics comparing player pay to
+  on-field production under the House v. NCAA revenue-sharing cap, with a
+  multi-agent Python pipeline (orchestrated by a "Fleet Manager" — the
+  project's own term, not this repo's) feeding a React/Recharts front end.
+  The UIUC `experience-card` on `Experiences.js` was updated to describe
+  this specific work instead of the generic Power BI/DAX placeholder
+  bullets it had before. **Deliberately not added to Home.js's Featured
+  Projects**, unlike this folder's usual "add to both Home and Projects"
+  convention (see [src/pages/AGENTS.md](src/pages/AGENTS.md)) — the
+  project involves real athletes' contract and pay data, and per the
+  user's own stated caveats it hasn't been deployed or presented to the
+  Board yet; featuring it prominently before those are settled felt like
+  the wrong default. Revisit once the user confirms deployment status and
+  whether they want it featured. **No thumbnail exists yet** —
+  `Projects.js` references `/projects/roster-revenue-thumbnail.png`,
+  which is not a real file; the user needs to supply a screenshot with
+  player names and pay figures blurred (real PII, per their own caveat)
+  before this renders anything but a broken image. Copy avoids naming any
+  specific athlete or dollar figure, states plainly that it currently only
+  runs locally (no deployment claimed) and that basketball/soccer are
+  placeholder-data scaffolding and other schools' pay figures are
+  third-party estimates — all per the user's own accuracy caveats, not
+  independently verified by Claude since there's no sibling repo to check
+  against (unlike LedgerOne/NBA Predictions/Forward Data Lab, which have
+  their own READMEs this file's past entries cross-checked against).
+  **Thumbnail added same day**: the user's screenshot (Basketball tab,
+  explicit "Sample data" banner, no real player names — just position
+  labels like PG/Guard C/Big C) saved to
+  `public/projects/roster-revenue-thumbnail.png`, which `Projects.js`
+  already referenced. A second screenshot meant for the JimmyChops
+  thumbnail rendered as pure white/blank when read — its file size (138KB
+  for 909×352) was too large for that to actually be an empty image, so
+  something is likely wrong on the read/encoding side rather than the
+  image genuinely being blank; flagged to the user rather than guessing.
+  **Resolved 2026-10-12**: user supplied a different image (the actual
+  JimmyChops wordmark logo — dark gothic lettering, "Champaign, IL," on a
+  black background), confirmed visible this time, saved to
+  `public/projects/jimmychops-thumbnail.png` — the path `Projects.js`
+  already referenced, so no code change was needed, just the asset.
+  **Copy revised same day** per explicit instruction: dropped the
+  `($21.58M)` cap figure and the whole third paragraph about deployment
+  status/Board presentation/placeholder-data caveats — the user wanted
+  the card to describe only what the system is, with zero dollar figures
+  (confidential), not where or how it currently runs. The "117 players,"
+  "68 Power 4 teams (3,750 players)" counts stayed (not money), but the
+  "347 pay estimates" figure was dropped too even though it's a count,
+  not a dollar amount — erred cautious since it's pay-adjacent.
+- **JimmyChops — Barber Booking Platform added** (2026-10-12): a new
+  `.project-card` on `Projects.js` (after NBA Predictions, same denser
+  pattern since it has a 5-item feature list), for a solo full-stack
+  booking platform (React Native/Expo customer+admin app, React/Vite admin
+  dashboard, Supabase/Postgres backend) serving 300+ monthly customers for
+  a local barbershop. Added **only to `Projects.js`, not Home's Featured
+  Projects** — the user's instruction was explicitly "add this too under
+  projects," scoped to the Projects page, so that's what was done; unlike
+  the Roster & Revenue entry above, this one has no sensitivity concerns
+  (no real PII, a real production app), so the Home-exclusion here is
+  about following the literal scope of the request, not a caution call —
+  worth adding to Home too if the user actually wants it featured there.
+  **No thumbnail exists yet** — references
+  `/projects/jimmychops-thumbnail.png`, not a real file. Content (the
+  Postgres-first RLS security model, transactional double-booking
+  prevention, timezone-safe `timestamptz` scheduling, real-time chat via
+  Supabase Realtime + Edge Functions, admin KPI dashboard + owner kill
+  switch, and the multi-agent dev workflow) is taken directly from the
+  resume entry the user supplied, condensed into the page's prose/`<ul>`
+  style — not independently verified against a sibling repo (none was
+  given). No live site or repo link was provided, so none was added;
+  the user's own note flagged the "300+ monthly customers" figure as a
+  placeholder they may want to replace with a harder number (e.g.
+  bookings/month) later — not changed here, flagging it forward.

@@ -38,6 +38,38 @@ function Projects() {
 
                 <div className="projects-list">
 
+                    {/* Roster & Revenue Optimization Dashboard – Illinois Division of Intercollegiate Athletics */}
+                    <div className="feature-card">
+                        <img
+                            src="/projects/roster-revenue-thumbnail.png"
+                            alt="Roster & Revenue Optimization Dashboard"
+                            className="feature-img"
+                        />
+                        <div className="feature-info">
+                            <h3>Roster & Revenue Optimization Dashboard — Illinois Athletics</h3>
+                            <p>
+                                An interactive analytics dashboard built for the University of Illinois
+                                Division of Intercollegiate Athletics that shows how the NCAA's House v.
+                                NCAA revenue-sharing cap is allocated across football and basketball, and
+                                whether player pay tracks on-field production. The React and Recharts
+                                front end (with custom SVG) gives leadership linked highlighting,
+                                drill-down expandable charts, and a football-field map of spending.
+                            </p>
+                            <p>
+                                A multi-agent Python pipeline — data ingestion, financial modeling, and
+                                visualization — is orchestrated by a Fleet Manager that routes tasks,
+                                recovers from failures, and logs every assumption to a decision file.
+                                Internal contract data, snap counts, and PFF-style grades for 117 players
+                                were joined with scraped stats across all 68 Power 4 teams (3,750 players)
+                                to benchmark Illinois against national peers, using position-level
+                                "production vs. expectation" regression models. Nine automated test suites
+                                verify the in-browser and Python models agree across six scenarios, and
+                                statistical output (R², trend lines) is rewritten into plain-language,
+                                board-ready findings for a non-technical audience.
+                            </p>
+                        </div>
+                    </div>
+
                     {/* LedgerOne – FinTech Ledger, Analytics & Credit Risk Platform */}
                     <div className="feature-card">
                         <img
@@ -218,6 +250,40 @@ function Projects() {
                                     View Repository →
                                 </a>
                             </div>
+                        </div>
+                    </div>
+
+                    {/* JimmyChops – Barber Booking Platform */}
+                    <div className="project-card">
+                        <img
+                            src="/projects/jimmychops-thumbnail.png"
+                            alt="JimmyChops Barber Booking Platform"
+                            className="project-img"
+                        />
+                        <div className="project-info">
+                            <h3>JimmyChops — Barber Booking Platform</h3>
+                            <p>
+                                Built and scaled an end-to-end booking platform for a local barbershop
+                                as a solo full-stack developer, now serving 300+ monthly customers. The
+                                platform spans a customer and admin iOS/Android app (React Native via
+                                Expo), an admin analytics web dashboard (React/Vite), a Supabase backend,
+                                and a public booking page embedded directly in the owner's existing
+                                website.
+                            </p>
+
+                            <ul>
+                                <li><strong>Postgres-first security:</strong> a 22-migration backend using row-level security as the real access boundary — all booking and messaging writes go through database functions rather than direct table access.</li>
+                                <li><strong>Transactional booking logic:</strong> prevents double-booking at the database level, returning stable error codes that clients map to user-facing messages.</li>
+                                <li><strong>Time-zone-safe scheduling:</strong> all times stored as <code>timestamptz</code> and bucketed in the shop's time zone, so daylight-saving changes and device settings never affect a booking.</li>
+                                <li><strong>Real-time chat:</strong> customer–owner messaging with photo attachments, block/report tools, and retention, built on Supabase Realtime, push notifications, and a notification outbox with Edge Functions.</li>
+                                <li><strong>Admin tooling:</strong> KPIs, analytics charts, and client-visit frequency alongside customer/service/availability management, plus an owner kill switch that locks out customers while admins retain access.</li>
+                            </ul>
+
+                            <p>
+                                Built using a multi-agent workflow — specialist agents for backend,
+                                mobile, web, and QA/release — coordinated through shared database
+                                contracts and generated TypeScript types.
+                            </p>
                         </div>
                     </div>
 

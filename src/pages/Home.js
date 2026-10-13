@@ -69,52 +69,6 @@ function Home() {
       <section className="featured">
         <h2 className="section-title">Featured Projects</h2>
 
-        {/* Forward Data Lab */}
-        <div className="feature-card">
-          <img
-            src="/home/forward-data-lab-thumbnail.png"
-            alt="Forward Data Lab Project"
-            className="feature-img"
-          />
-          <div className="feature-info">
-            <h3>Forward Data Lab — Retrieval's Blind Spot</h3>
-            <p>
-              Research project for the Forward Data Lab: a systematic, criteria-scored
-              comparison of Ai2's Asta against Google Scholar across five query types, with
-              every citation independently verified. Found that Asta displays citation counts
-              but never weights its synthesis by them — then built a minimal, inspectable RAG
-              pipeline with a calibrated relevance-confidence threshold and citation-weighted
-              reranking to fix exactly that gap.
-            </p>
-            <div className="feature-links">
-              <a
-                href="https://forward-data-lab.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn learn-more"
-              >
-                View Live Site →
-              </a>
-              <a
-                href="https://drive.google.com/file/d/1yiZuSyG6jJU_nVv_b1BozBVIGZjfDBit/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn learn-more"
-              >
-                Learn More →
-              </a>
-              <a
-                href="https://github.com/trustanprice/forward-data-lab"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn learn-more"
-              >
-                View Repository →
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* LedgerOne – FinTech Ledger, Analytics & Credit Risk Platform */}
         <div className="feature-card">
           <img
@@ -155,39 +109,41 @@ function Home() {
           </div>
         </div>
 
-        {/* NBA Predictions Project */}
+        {/* JimmyChops – Barber Booking Platform */}
         <div className="feature-card">
           <img
-            src="/home/nba-thumbnail.png"
-            alt="NBA Predictions Project"
+            src="/projects/jimmychops-thumbnail.png"
+            alt="JimmyChops Barber Booking Platform"
             className="feature-img"
           />
           <div className="feature-info">
-            <h3>NBA Predictions Project</h3>
+            <h3>JimmyChops — Barber Booking Platform</h3>
             <p>
-            Predicts NBA win totals via walk-forward-validated gradient boosting and a
-            schedule-aware Monte Carlo simulation, powers player power rankings and coaching
-            evaluations from real NBA.com data, and explains every number's methodology in
-            plain language. Built with Python, FastAPI, and Next.js.
+              Solo-built, full-stack booking platform for a local barbershop — a customer and
+              admin iOS/Android app (React Native/Expo), an admin analytics web dashboard
+              (React/Vite), and a Supabase/Postgres backend. Row-level security and
+              transactional booking logic prevent double-booking and unauthorized writes, with
+              real-time chat, time-zone-safe scheduling, and an owner kill switch.
             </p>
-            <div className="feature-links">
-              <a
-                href="https://basketball-predictions.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn learn-more"
-              >
-                Learn More →
-              </a>
-              <a
-                href="https://github.com/trustanprice/basketball-predictions"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn learn-more"
-              >
-                View Repository →
-              </a>
-            </div>
+          </div>
+        </div>
+
+        {/* Roster & Revenue Optimization Dashboard – Illinois Division of Intercollegiate Athletics */}
+        <div className="feature-card">
+          <img
+            src="/projects/roster-revenue-thumbnail.png"
+            alt="Roster & Revenue Optimization Dashboard"
+            className="feature-img"
+          />
+          <div className="feature-info">
+            <h3>Roster & Revenue Optimization Dashboard — Illinois Athletics</h3>
+            <p>
+              Interactive analytics dashboard built for the University of Illinois Division of
+              Intercollegiate Athletics, showing how the NCAA's House v. NCAA revenue-sharing
+              cap is allocated across football and basketball and whether player pay tracks
+              on-field production — a multi-agent Python pipeline feeding a React/Recharts
+              front end with drill-down charts and a football-field spending map.
+            </p>
           </div>
         </div>
 
