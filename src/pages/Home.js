@@ -84,7 +84,7 @@ function Home() {
               turns them into auditable revenue, refund, and payout metrics. A companion credit-risk
               module (vintage curves, roll-rate transition matrix, CECL-style reserve estimate) is
               validated within 0.19 percentage points of real Freddie Mac mortgage outcomes, and the
-              whole platform is genuinely deployed to AWS on a real daily schedule — CloudFormation,
+              whole platform is genuinely deployeed to AWS on a real daily schedule — CloudFormation,
               OIDC-secured CI/CD, MotherDuck in the cloud, 136/136 dbt tests passing, live cost
               monitoring — all covered by a modern interactive dashboard.
             </p>
