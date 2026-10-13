@@ -45,3 +45,8 @@ resume/**/preview*.png
 resume/**/trustanprice-*.tex
 resume/**/trustanprice-*.pdf
 !resume/trustanprice-resume.pdf
+
+# Bundled zip backups of the job-tailored resume folders (local convenience
+# copies, same non-portfolio-content status as the files they contain).
+resume/**/swe-roles-resumes.zip
+resume/**/ds-roles-resumes.zip

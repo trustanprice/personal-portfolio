@@ -807,3 +807,134 @@ fix (verified individually, not assumed). `trustanprice-resume.pdf` and
 Chakravarty's title) was left untouched — that's a different, correct
 phrase (a person's title, not the team name) that happens to also
 contain the word "Analytics."
+
+**2026-09-22**: four more `ds-roles/` variants, all reusing the standard
+`resume.pdf`-matching spacing and the current (Data Scientist Intern /
+Forecasting \& Advanced Modeling) Synchrony bullet from the start:
+
+- `trustanprice-ibm-systemsassurance.tex` (Entry Level Data Scientist:
+  Systems Assurance Data Analytics, Durham NC — a third, distinct IBM
+  posting alongside `swe-roles/trustanprice-ibm.tex`, `-ibm-data.tex`,
+  and `ds-roles/trustanprice-ibm-costasset.tex`; the `-systemsassurance`
+  suffix follows the same per-posting disambiguation precedent). The
+  role is about server-hardware quality/reliability — field event
+  analysis, telemetry, quality metrics, stakeholder dashboards, AI
+  coding-assistant exposure — not a typical ML role. Projects: LedgerOne
+  first (its automated schema/integrity tests and live-cost-monitoring
+  dashboard are a direct match for "quality... monitoring, early
+  warning"), Call Center Forecasting (quality-metric prioritization),
+  Forward Data Lab (AI-agent tooling exposure + its citation-verification
+  step reframed as a QA/verification mindset). The Caterpillar experience
+  bullet already covered observability/monitoring/100%-test-coverage
+  almost exactly on-JD, so only bolding changed there, no rewording.
+  First draft avoided the 2026-09-21 lesson from `ibm-costasset` (adding
+  long new clauses overflowed it to 2 pages) by keeping additions to
+  single bolded words/short phrases instead — compiled clean at 1 page
+  on the first attempt.
+- `trustanprice-tiktok-multimedia.tex` (Data Scientist Graduate,
+  Multimedia team, San Jose, 2027 start — distinct from the existing
+  `trustanprice-tiktok.tex`, which is a different team/posting: PGC
+  content vs. this Multimedia/creation-tools team). Swapped NBA
+  Predictions out for **Call Center Forecasting Platform** relative to
+  the existing tiktok variant's trio, since this posting's "quantify the
+  impact of creation tool performance on user behavior" and "experience
+  metric system... monitoring capability" language matches time-series
+  operational-metrics work and a dashboard/monitoring platform better
+  than a sports-prediction full-stack app. LedgerOne's heading retitled
+  "Ledger \& Metrics Monitoring Platform" and reworded to foreground the
+  monitoring-dashboard angle; Forward Data Lab kept the existing
+  variant's "Experimental Design" framing (matches "conduct
+  experimentation, define launch standards").
+- `trustanprice-amazon.tex` (Business Intelligence Engineer, Amazon
+  Advertising / Ads Finance, New York — first Amazon variant in either
+  role folder). BI/dashboards/data-pipeline/AWS-flavored role that also
+  explicitly asks for a mechanism to measure a "unified generative AI
+  solution['s]" performance. Projects: LedgerOne (AWS + pipeline +
+  dashboard, closest literal match), Forward Data Lab (reworded to
+  explicitly frame its validation methodology as "a mechanism for
+  measuring a generative AI solution's actual performance" — echoing the
+  JD's own phrase, not a new claim), Call Center Forecasting (statistical
+  metrics/root-cause-style operational analytics).
+- `trustanprice-drw.tex` (Data Analyst, Exploration, DRW — a trading
+  firm, Chicago). Role is about onboarding/profiling datasets and data
+  quality (completeness, validity, accuracy, timeliness, consistency)
+  for traders/quant researchers, not modeling. Projects: LedgerOne
+  (reworded to explicitly name "completeness, validity, and accuracy" —
+  its automated schema/integrity tests already check exactly this, just
+  hadn't been named in the JD's own vocabulary before), NBA Predictions
+  (reworded to reframe its retry/cache/schema-validation data client as
+  "the same data-quality discipline a live market-data feed demands" —
+  an honest analogy given DRW's market-data-symbology domain, not a
+  claim of finance-specific experience), Call Center Forecasting
+  (general quantitative/time-series analysis).
+
+All four compiled clean at 1 page. `resume/AGENTS.md`'s own zip-backup
+step (below) picked them up in the same batch.
+
+**Same day — zip backups added**: per an explicit user request, one
+zip archive was added inside each role folder bundling every `.tex` and
+`.pdf` in that folder (LaTeX build artifacts — `.aux`/`.log`/`.out` —
+excluded, since they're compiler scratch, not resume content):
+`resume/swe-roles/swe-roles-resumes.zip` (32 files: 16 companies) and
+`resume/ds-roles/ds-roles-resumes.zip` (40 files: 20 companies). These
+must be regenerated (`zip -q <name>.zip *.tex *.pdf` from inside the
+folder, after removing the old one) whenever a new job-tailored variant
+is added or an existing one is recompiled, or they'll silently go stale
+— there's no automation keeping them in sync. Neither zip's filename
+matched the existing `resume/**/trustanprice-*.{tex,pdf}` gitignore
+pattern, so both role-folder directories were showing as untracked in
+`git status` until two new patterns were added to `.gitignore`
+(`resume/**/swe-roles-resumes.zip`, `resume/**/ds-roles-resumes.zip`) —
+caught and fixed before anything was accidentally committed.
+
+**2026-10-12**: base `resume.tex`'s Projects section replaced entirely —
+user said "use the featured projects," and Home's Featured Projects had
+just been changed (by explicit request, same day) to LedgerOne,
+JimmyChops, and the Roster \& Revenue Optimization Dashboard, dropping
+Forward Data Lab and the Call Center Forecasting Platform (Datathon)
+from the base resume for the first time since 2026-08-20. Both dropped
+projects are still real, still on the Projects page — just no longer in
+the base resume's 3 slots; they remain fair picks for a job-tailored
+variant where they're more relevant (see the hard-cap rule at the top of
+this file).
+- **LedgerOne**: kept its existing, already-proven bullets verbatim — no
+  reason to touch what already works and already fits.
+- **JimmyChops: Barber Booking Platform** (new): condensed from the
+  user's own pre-written "shorter version" resume bullets (3 bullets) to
+  2, merging the security/integrity bullet with the typed-contracts
+  bullet to keep the page budget safe (3 projects × 2 bullets, same
+  shape as every other base-resume project). Kept the "300+ monthly
+  customers" figure bolded as the lead metric, per the user's own
+  resume draft — they separately flagged it as a placeholder they might
+  swap for a harder number later; not changed here, still their call.
+  **Needed a date and had none** — no month/year was ever given
+  anywhere in this system for this project, unlike every other resume
+  entry, which all have a real date backing them. Asked the user via
+  AskUserQuestion rather than guessing (a wrong date on a resume is a
+  real credibility risk, not a cosmetic gap); they said **October 2026**,
+  used as `{Oct 2026}`.
+- **Roster \& Revenue Optimization Dashboard** (new): bullets written
+  from scratch (the user never supplied resume-formatted bullets for
+  this one, only the sanitized Projects-page prose), condensed to 2 and
+  kept to the same no-dollar-figures rule the Projects-page copy follows
+  (see the root [AGENTS.md](../AGENTS.md) entry for that project) — the
+  "117 players"/"68 Power 4 teams (3,750 players)" counts stayed (not
+  money), everything dollar-shaped was left out. Dated `{Aug 2026 --
+  Present}`, inferred from the UIUC Data \& Business Intelligence
+  internship's own dates on `Experiences.js` (Aug 2026 -- Present) since
+  this project *is* that internship's work — a confident inference, not
+  a guess, unlike the JimmyChops date above.
+Recompiled clean at 1 page on the first attempt (6 total project bullets,
+same count as before — kept each new entry to 2 bullets specifically to
+avoid repeating the 2026-09-04/09-17 overflow pattern this file has hit
+before when migrations run long). `trustanprice-resume.pdf` and
+`public/home/trustanprice-cv2026.pdf` re-synced from the new `resume.pdf`.
+**Not propagated to any job-tailored variant** — every `swe-roles/`/
+`ds-roles/` file still uses the old Datathon/LedgerOne/Forward Data Lab
+trio (or whatever was chosen for that specific posting); this change was
+scoped to the base resume only, since that's what was asked ("update my
+resume"). JimmyChops and Roster \& Revenue are both fair additions to a
+future job-tailored variant where they'd read as more relevant than the
+existing trio (e.g. a full-stack/mobile-flavored posting for JimmyChops;
+a sports-analytics- or BI-flavored one for Roster \& Revenue) — flag to
+the user whether any existing variant should be refreshed to match.
