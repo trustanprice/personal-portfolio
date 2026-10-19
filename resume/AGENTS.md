@@ -938,3 +938,31 @@ future job-tailored variant where they'd read as more relevant than the
 existing trio (e.g. a full-stack/mobile-flavored posting for JimmyChops;
 a sports-analytics- or BI-flavored one for Roster \& Revenue) — flag to
 the user whether any existing variant should be refreshed to match.
+
+**2026-10-19**: factual correction, propagated everywhere this time
+instead of just the base resume — Synchrony's title is **Data Scientist
+Intern**, not "Machine Learning Intern." Checked the portfolio first
+(`src/pages/Home.js`/`Experiences.js`): already correct, no change
+needed there (the title had already been fixed on the portfolio side
+previously). The resume side had not kept up: base `resume.tex`'s
+`\resumeSubheading` heading, plus 25 job-tailored variants that still
+had both the old heading **and** the old, generic, already-retired
+Synchrony bullet ("Serve as Machine Learning Intern on Synchrony's
+Forecasting \& Advanced Modeling team, applying predictive modeling and
+data science methods...") — the exact bullet the 2026-09-16 entry above
+said had only been fixed on the base resume and one variant
+(`uber-ds`), with propagation to the rest left open. Both instances of
+the phrase were fixed in the same pass: the heading
+(`{Machine Learning Intern}` → `{Data Scientist Intern}`) and the bullet
+text (`Serve as Machine Learning Intern` → `Serve as Data Scientist
+Intern`) across `resume.tex` and all of `swe-roles/`: amex, capitalone,
+caterpillar, disney, doordash, google-swe, merge, visa, visa-bellevue;
+and `ds-roles/`: abbott, aflac, akuna, capitalone-ds, citadel, cvs,
+fanatics, fanduel, freddiemac, google-research, ibm-costasset,
+iheartmedia, jpmc, oden, tiktok, uber-ds — the same 25-file list from the
+2026-09-21 team-name sweep, since it's the same underlying old-bullet
+problem. The four newest `ds-roles/` variants
+(`ibm-systemsassurance`, `tiktok-multimedia`, `amazon`, `drw`) already
+said "Data Scientist Intern" from the start, so weren't touched. All 26
+files recompiled clean at 1 page (verified individually). Re-synced
+`trustanprice-resume.pdf` and `public/home/trustanprice-cv2026.pdf`.
