@@ -53,7 +53,14 @@ experience, club, and hobby entry is hardcoded directly in its page's JSX.
 ## Current state
 
 All five pages implemented and building cleanly (`npm run build`, CRA/
-`react-scripts`). Most recently updated: Home and Experiences both gained a
-Synchrony card (2026-08-20, upcoming Fall 2026 internship) — see the root
-[AGENTS.md](../../AGENTS.md) "Current state" section for the full log,
-including which entries are deliberately excluded from `resume/resume.tex`.
+`react-scripts`). Most recently updated (2026-10-12): Home's Featured
+Projects swapped to LedgerOne + JimmyChops + Roster & Revenue Optimization
+Dashboard (Forward Data Lab and NBA Predictions dropped from Home, still on
+the full `Projects.js` list, which now has eight entries total), and
+`Experiences.js` gained a UIUC Data & Business Intelligence Intern card
+(Aug 2026 – Present) describing the Roster & Revenue project in detail. See
+the root [AGENTS.md](../../AGENTS.md) "Current state" section for the full
+log, including which entries are deliberately excluded from
+`resume/resume.tex` and why JimmyChops/Roster & Revenue have no external
+links on their cards (real client app / undeployed + real athlete data,
+respectively).

@@ -377,3 +377,25 @@ components (no CMS, no data files) and all imagery served from `public/`.
   the user's own note flagged the "300+ monthly customers" figure as a
   placeholder they may want to replace with a harder number (e.g.
   bookings/month) later — not changed here, flagging it forward.
+- **Documentation sweep** (2026-10-20): the root `README.md`,
+  `src/pages/AGENTS.md`, and `public/AGENTS.md` had all drifted behind the
+  2026-10-12 portfolio changes above (and, in README's case, further back —
+  it still listed HXRI Lab's old framing, the retired Caterpillar "MLOps &
+  Applied Analytics Intern" title, Sigpwny (no longer a club entry), and a
+  Projects list missing LedgerOne, the Datathon, JimmyChops, and Roster &
+  Revenue entirely). All three rewritten from the actual current page JSX
+  (not memory) to match: README's Overview section now lists all 8
+  Projects/8 Experiences/4 Clubs/3 SemiPro entries accurately, its Tech
+  Stack table gained the theme engine and Vercel Analytics, its Folder
+  Structure reflects the real `components/`/`resume/` layout (ThemeSwitcher,
+  Footer, `App.css`, `swe-roles/`/`ds-roles/`), and its Resume section's
+  job-tailored-variant naming was corrected from the old
+  `resume/resume-<company>.tex` convention to the real
+  `resume/swe-roles|ds-roles/trustanprice-<company>.tex` one.
+  `src/pages/AGENTS.md`'s Current State now describes the Featured Projects
+  swap instead of the stale 2026-08-20 Synchrony-card note. `public/AGENTS.md`'s
+  "all thumbnails live in `home/`" convention claim was corrected — no
+  longer true since JimmyChops'/Roster & Revenue's thumbnails live under
+  `projects/` instead, a deliberate exception documented there. Checked
+  `src/components/AGENTS.md` and `src/styles/AGENTS.md` too; both were
+  already current, no changes needed.
