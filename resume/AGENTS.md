@@ -1092,3 +1092,25 @@ not as an instruction to retroactively sweep every older resume.
 Flagged back to the user whether they want a broader sweep across the
 rest of `swe-roles/`/`ds-roles/` too — that would be a much larger
 batch edit worth confirming before doing unprompted.
+
+**Follow-up, same day — real layout bug fixed**: the user reported the
+LedgerOne project's tech list bleeding into its date in
+`swe-roles/trustanprice-salesforce.tex`. Rendered the compiled PDF to an
+image to confirm before touching anything (didn't just trust the report)
+— the tabular*-based `\resumeProjectHeading` layout (`l@{\extracolsep{\fill}}r`,
+no minimum gap enforced) had genuinely run "...DuckDB, AWS" directly
+into "Sep 2025" with zero space: "AWSSep 2025 -- Aug 2026". Per the
+user's explicit instruction, scoped to **only the two most recent
+Salesforce resumes** ("no need to update the other resumes just finish
+the most recent salesforce ones") — checked the AI Product variant too
+and confirmed it has no LedgerOne entry (swapped for Roster \& Revenue
+earlier the same day), so only one file needed the fix. Changed the
+date from the long range `Sep 2025 -- Aug 2026` to a single `Jul 2026`,
+per the user's explicit ask — this both satisfies the date-change
+request and (confirmed visually, not assumed) resolves the bleed, since
+the long date string was exactly what left no room for the fill glue
+between columns. Recompiled, re-rendered to an image, and visually
+verified the fix before reporting it done rather than trusting the
+compile-without-errors signal alone (a `tabular*` overflow like this
+doesn't throw a LaTeX error, so "compiles clean" alone wouldn't have
+caught it). Still 1 page. Zip backup regenerated.
