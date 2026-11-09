@@ -119,11 +119,11 @@ function Home() {
           <div className="feature-info">
             <h3>JimmyChops — Barber Booking Platform</h3>
             <p>
-              Solo-built, full-stack booking platform for a local barbershop — a customer and
-              admin iOS/Android app (React Native/Expo), an admin analytics web dashboard
-              (React/Vite), and a Supabase/Postgres backend. Row-level security and
-              transactional booking logic prevent double-booking and unauthorized writes, with
-              real-time chat, time-zone-safe scheduling, and an owner kill switch.
+              Solo-built, full-stack booking platform for a local barbershop that replaced the
+              owner's outdated, paid Wix site. Live on the App Store with 300+ monthly customers
+              and a validated 10% increase in new clientele, a confirmed 0% double-booking rate,
+              and an estimated 5 hours a week saved via in-app calendar sync and messaging that
+              cuts out manual scheduling between cuts.
             </p>
           </div>
         </div>
@@ -141,8 +141,9 @@ function Home() {
               Interactive analytics dashboard built for the University of Illinois Division of
               Intercollegiate Athletics, showing how the NCAA's House v. NCAA revenue-sharing
               cap is allocated across football and basketball and whether player pay tracks
-              on-field production — a multi-agent Python pipeline feeding a React/Recharts
-              front end with drill-down charts and a football-field spending map.
+              on-field production. Now integrated into the department's internal backplane
+              platform and confirmed for production rollout in January 2027, with an
+              API-fed pipeline that auto-populates the dashboard immediately after every game.
             </p>
           </div>
         </div>

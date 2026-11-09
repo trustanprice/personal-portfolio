@@ -399,3 +399,44 @@ components (no CMS, no data files) and all imagery served from `public/`.
   `projects/` instead, a deliberate exception documented there. Checked
   `src/components/AGENTS.md` and `src/styles/AGENTS.md` too; both were
   already current, no changes needed.
+- **JimmyChops stats added** (2026-11-09): new, user-supplied real facts
+  about the app that weren't captured anywhere before — it's live on the
+  App Store (not just built), it replaced the barber's outdated paid Wix
+  site, and it has three concrete metrics: a validated 10% increase in
+  new clientele, a confirmed 0% double-booking rate, and an estimated 5
+  hours/week saved for the owner via in-app calendar sync and messaging
+  that cuts out manual between-cut scheduling contact, freeing up time
+  for 1–2 additional cuts a day. Added to both `Home.js`'s Featured
+  Projects card (condensed to the four headline stats, no room for the
+  "1–2 more cuts" detail there) and `Projects.js`'s full entry (which
+  does carry that detail, plus a reworded intro naming the Wix
+  replacement and App Store status, plus two `<ul>` bullets updated with
+  the 0%-double-booking and 5-hrs/week figures). `resume/resume.tex`'s
+  JimmyChops bullets were rewritten too — see
+  [resume/AGENTS.md](resume/AGENTS.md)'s Current state for exactly how
+  they were condensed to fit the 2-bullet/1-page budget. None of this is
+  independently verifiable against a sibling repo (JimmyChops has no
+  README/AGENTS.md this file can cross-check against, unlike LedgerOne/
+  NBA Predictions/Forward Data Lab) — taken at face value as first-person
+  facts from the user, same trust level as the original "300+ monthly
+  customers" figure and the Postgres/RLS/migration details before it.
+- **Roster & Revenue Dashboard: production adoption update** (2026-11-09):
+  new, real facts from the user significantly upgrade this project's
+  story — it's now integrated into Illinois Athletics' internal
+  "backplane platform," confirmed for a production rollout targeted
+  January 2027, and its data pipeline is being automated end-to-end
+  (pulling Illinois revenue-share stats and PFF grading data via API,
+  auto-populating the dashboard right after each game, replacing a
+  manual Excel/SharePoint-download-and-visualize workflow). Added a new
+  third paragraph to `Projects.js`'s entry and extended `Home.js`'s
+  featured-card copy with the same facts, condensed. No dollar figures
+  involved this time (unlike the earlier cap-figure removal), so nothing
+  needed to be redacted. Also flowed into `resume/resume.tex` — see
+  [resume/AGENTS.md](resume/AGENTS.md)'s Current state for how the
+  bullet was rewritten (replacing the old player-count stat, since there
+  was no room for both in the 2-bullet budget) and how both JimmyChops
+  and Roster & Revenue were added into rotation on the two Salesforce
+  job-tailored resumes specifically, with the rest of the ~28
+  existing resumes left untouched pending the user's call on a broader
+  sweep. Not independently verifiable (no sibling repo for this
+  project) — taken at face value, same as the JimmyChops stats above.

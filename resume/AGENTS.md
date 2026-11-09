@@ -966,3 +966,129 @@ problem. The four newest `ds-roles/` variants
 said "Data Scientist Intern" from the start, so weren't touched. All 26
 files recompiled clean at 1 page (verified individually). Re-synced
 `trustanprice-resume.pdf` and `public/home/trustanprice-cv2026.pdf`.
+
+**2026-11-09**: two Salesforce (Futureforce University Recruiting)
+postings, pasted in the same message — built as separate files in
+separate role folders rather than one generic "Salesforce" resume, since
+they're genuinely different roles:
+- `swe-roles/trustanprice-salesforce.tex` (Systems Engineering Associate,
+  Early Talent, Dallas TX — configuring/developing/testing Finance and
+  Employee Success applications, test automation frameworks, telemetry/
+  observability for operational excellence). Projects: **LedgerOne**
+  first (its automated schema/integrity tests, 136/136 dbt gate, and
+  AWS CloudFormation/OIDC CI/CD with live cost monitoring are a direct
+  match for "test automation frameworks... code coverage" and
+  "telemetry, observability tooling"), then **NBA Predictions**
+  (reworded to foreground its resilient live-data client — retry/cache/
+  schema-validation so failures fail loudly instead of silently
+  corrupting output, borrowed from `trustanprice-uber.tex`'s framing —
+  direct match for "operational excellence" and observability), then
+  **Forward Data Lab** (AI Agent Tooling, lower priority than the other
+  two since this specific posting doesn't require AI/LLM knowledge,
+  unlike its sibling posting below — kept third rather than dropped,
+  since Salesforce's own JD text is heavily AI-forward company-wide).
+  Standard 3-experience Experience section, no Clubs, standard
+  `resume.pdf`-matching spacing.
+- `ds-roles/trustanprice-salesforce-ai-product.tex` (AI Product
+  Associate Analyst, Early Talent, Chicago/Indianapolis — a business/
+  product-analyst role, not an engineering one: gathering requirements,
+  writing user stories and acceptance criteria for agentic AI features,
+  supporting UAT, explicit curiosity about "AI/LLM fundamentals (RAG,
+  prompt engineering)" and "AI-native tools (Agentforce, Cursor, Claude
+  Code)" with no professional experience required). Filed in
+  `ds-roles/` despite having no deep technical requirement, since it's
+  analyst-flavored rather than SWE-flavored — closer to the DRW/Oden
+  precedent than the SWE ones. Projects, reordered specifically for this
+  posting (different order from the SWE variant above, deliberately —
+  same company, different JD, different emphasis): **Forward Data Lab**
+  leads (direct match for "RAG, prompt engineering" curiosity and
+  "AI-native tools... Claude Code"; its first bullet gained a short
+  clause framing the Asta-vs-Google-Scholar comparison as "a
+  requirements-gathering exercise that turned a vague... question into
+  a concrete, testable gap" — honest reframing of real methodology, not
+  a new claim, matching the posting's own "gather business needs and
+  requirements" language), then **LedgerOne** (reworded second bullet
+  to foreground the dashboard as a stakeholder-facing deliverable for a
+  non-technical audience, matching "communicate information... need to
+  design agent solutions"), then **Call Center Forecasting Platform**
+  (Datathon — reworded second bullet to explicitly name the
+  discovery-to-delivery cycle as analogous to how a user story moves
+  end to end, matching the posting's Agile/ADLC framing). Standard
+  3-experience Experience section, dbt added to Skills (`ds-roles/`
+  convention), no Clubs, standard `resume.pdf`-matching spacing.
+
+Both compiled clean at 1 page on the first attempt. Neither synced to
+`public/home/` or `trustanprice-resume.pdf` — job-tailored variants
+never are. Both zip backups (`swe-roles-resumes.zip`,
+`ds-roles-resumes.zip`) regenerated same day to include these two new
+files, per the standing "regenerate after any new variant" rule above.
+
+**2026-11-09, same day**: base `resume.tex`'s JimmyChops bullets
+rewritten with new, user-supplied real stats that hadn't been captured
+anywhere before — the app is live on the App Store (not just built),
+replaced the barber's outdated paid Wix site, and has three validated/
+estimated metrics: a 10\% increase in new clientele, a confirmed 0\%
+double-booking rate, and an estimated 5 hours/week saved for the owner
+(in-app calendar sync + messaging cutting manual between-cut scheduling
+contact, freeing up time for 1--2 more cuts a day). Bullet 1 now leads
+with the Wix-replacement + App Store + 300+ customers + 10\% clientele
+growth; bullet 2 leads with the 0\% double-booking rate and the 5 hrs/week
+figure (the "1--2 more cuts a day" detail was cut from the resume bullet
+for space — kept on the portfolio copy instead, see root
+[AGENTS.md](../AGENTS.md)). Recompiled clean at 1 page, no overflow.
+Re-synced `trustanprice-resume.pdf` and `public/home/trustanprice-cv2026.pdf`.
+**Not yet propagated to `swe-roles/trustanprice-salesforce.tex` or any
+other job-tailored variant** — none currently include JimmyChops as a
+project; the user is actively deciding whether to add it more broadly
+given these new stats make it one of the strongest entries in the whole
+portfolio (a shipped product with a measured business outcome, not just
+an academic/competition project) — revisit this file once that's
+decided.
+
+**Follow-up, same day**: the user confirmed they want JimmyChops and
+Roster \& Revenue "in the rotation along with all my newer projects,"
+and separately supplied new, real facts about Roster \& Revenue: it's
+now integrated into Illinois Athletics' internal backplane platform,
+confirmed for a production rollout targeted January 2027, and its data
+pipeline is being automated end-to-end — pulling Illinois revenue-share
+stats and PFF grading data via API, auto-populating the dashboard right
+after each game, replacing a manual Excel/SharePoint-download workflow.
+`resume.tex`'s Roster \& Revenue bullet 2 was rewritten to lead with
+this (dropping the old "117 players / 68 Power 4 teams" stat, since the
+new production-adoption and automation story is a stronger resume
+signal and there was no room for both in a 2-bullet budget). Recompiled
+clean at 1 page; re-synced `trustanprice-resume.pdf` and
+`public/home/trustanprice-cv2026.pdf`.
+
+Both newer projects were then added into the two Salesforce variants
+built 2026-11-09 — the first files either project has appeared in
+outside the base resume:
+- `swe-roles/trustanprice-salesforce.tex`: **NBA Predictions and Forward
+  Data Lab dropped**, replaced with **Roster \& Revenue** (reworded to
+  foreground the automation/API-pipeline story — a direct match for
+  this posting's "test automation frameworks... automation metrics")
+  and **JimmyChops** (reworded to foreground the confirmed 0\%
+  double-booking rate as a correctness/reliability stat, matching
+  "unit/functional tests... drive code coverage"). LedgerOne kept
+  unchanged. This is a bigger swap than usual (2 of 3 slots), justified
+  because both newer projects are genuinely stronger JD matches here
+  than what they replaced, not swapped just for novelty.
+- `ds-roles/trustanprice-salesforce-ai-product.tex`: **LedgerOne
+  dropped**, replaced with **Roster \& Revenue** (reworded to foreground
+  stakeholder requirements-gathering and real tool adoption into a
+  production platform — a direct match for this posting's "gather
+  business needs," "tool adoption," and UAT-adjacent language).
+  JimmyChops was considered but **not** added here — it's a weaker fit
+  for a requirements/analyst-focused product role than for the SWE
+  posting above, so it was left out rather than forced in. Forward Data
+  Lab and Call Center Forecasting kept unchanged.
+
+Both recompiled clean at 1 page; both zip backups regenerated.
+**Not propagated to any of the other ~28 existing job-tailored
+variants** — the user's "along with all my newer projects" request was
+read as "make both available for rotation going forward," and applied
+concretely to the two files actually in front of them (built same day),
+not as an instruction to retroactively sweep every older resume.
+Flagged back to the user whether they want a broader sweep across the
+rest of `swe-roles/`/`ds-roles/` too — that would be a much larger
+batch edit worth confirming before doing unprompted.

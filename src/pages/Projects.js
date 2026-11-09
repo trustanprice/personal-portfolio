@@ -67,6 +67,16 @@ function Projects() {
                                 statistical output (R², trend lines) is rewritten into plain-language,
                                 board-ready findings for a non-technical audience.
                             </p>
+                            <p>
+                                Now integrated into the athletics department's internal backplane
+                                platform and confirmed for a production rollout targeted for January
+                                2027. The data pipeline is being automated end-to-end — pulling Illinois
+                                revenue-share statistics and PFF grading data directly via API — so that
+                                once a game ends, an automated run populates the dashboard with that
+                                game's data immediately, replacing a previously manual process of
+                                downloading Excel exports from SharePoint and building visualizations by
+                                hand.
+                            </p>
                         </div>
                     </div>
 
@@ -264,16 +274,19 @@ function Projects() {
                             <h3>JimmyChops — Barber Booking Platform</h3>
                             <p>
                                 Built and scaled an end-to-end booking platform for a local barbershop
-                                as a solo full-stack developer, now serving 300+ monthly customers. The
-                                platform spans a customer and admin iOS/Android app (React Native via
-                                Expo), an admin analytics web dashboard (React/Vite), a Supabase backend,
-                                and a public booking page embedded directly in the owner's existing
-                                website.
+                                as a solo full-stack developer, replacing the owner's outdated, paid Wix
+                                site and eliminating that recurring cost. Live on the App Store, now
+                                serving 300+ monthly customers with a <strong>validated 10% increase in
+                                new clientele</strong>. The platform spans a customer and admin iOS/Android
+                                app (React Native via Expo), an admin analytics web dashboard (React/Vite),
+                                a Supabase backend, and a public booking page embedded directly in the
+                                owner's existing website.
                             </p>
 
                             <ul>
                                 <li><strong>Postgres-first security:</strong> a 22-migration backend using row-level security as the real access boundary — all booking and messaging writes go through database functions rather than direct table access.</li>
-                                <li><strong>Transactional booking logic:</strong> prevents double-booking at the database level, returning stable error codes that clients map to user-facing messages.</li>
+                                <li><strong>Transactional booking logic:</strong> prevents double-booking at the database level, returning stable error codes that clients map to user-facing messages — a <strong>confirmed 0% double-booking rate</strong> in production.</li>
+                                <li><strong>Owner time savings:</strong> in-app appointment management, Google/Apple Calendar sync, and direct messaging all but eliminate manual scheduling contact between cuts, saving an estimated <strong>5 hours a week</strong> and freeing up time for 1–2 additional cuts a day.</li>
                                 <li><strong>Time-zone-safe scheduling:</strong> all times stored as <code>timestamptz</code> and bucketed in the shop's time zone, so daylight-saving changes and device settings never affect a booking.</li>
                                 <li><strong>Real-time chat:</strong> customer–owner messaging with photo attachments, block/report tools, and retention, built on Supabase Realtime, push notifications, and a notification outbox with Edge Functions.</li>
                                 <li><strong>Admin tooling:</strong> KPIs, analytics charts, and client-visit frequency alongside customer/service/availability management, plus an owner kill switch that locks out customers while admins retain access.</li>
