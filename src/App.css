@@ -20,6 +20,8 @@ body[data-theme="teal"] {
   --accent-rgb: 44, 122, 123;
   --border-color: rgba(0, 0, 0, 0.08);
   --card-shadow: rgba(0, 0, 0, 0.06);
+  /* Neutral dim behind the open mobile menu (shared by every light theme). */
+  --scrim: rgba(0, 0, 0, 0.3);
 }
 
 /* Teal — dark */
@@ -36,6 +38,8 @@ body.dark-mode[data-theme="teal"] {
   --accent-rgb: 0, 255, 198;
   --border-color: rgba(255, 255, 255, 0.1);
   --card-shadow: rgba(0, 255, 198, 0.08);
+  /* Shared by every dark theme (body.dark-mode matches them all). */
+  --scrim: rgba(0, 0, 0, 0.55);
 }
 
 /* Synchrony — Gold & Near-Black — light */
@@ -165,12 +169,21 @@ body.dark-mode[data-theme="cu"] {
   box-sizing: border-box;
 }
 
+html {
+  /* Keep iOS from enlarging text on rotation to landscape. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   transition: background-color 0.4s ease, color 0.4s ease;
+  /* Long words, URLs and code wrap instead of overflowing narrow screens
+     (inherited everywhere; flex children also need min-width: 0, see page CSS). */
+  overflow-wrap: break-word;
 }
 
 .App {
@@ -179,4 +192,31 @@ body {
   color: var(--text-color);
   transition: background-color 0.4s ease, color 0.4s ease;
   min-height: 100vh;
+  /* iOS: 100vh is the toolbar-less height; dvh follows the visible viewport. */
+  min-height: 100dvh;
+}
+
+/* Logo thumbnails (JimmyChops, Synchrony) are shown whole on a white tile:
+   object-fit: contain instead of the cards' cover crop (which cut the ends off
+   the JimmyChops wordmark and pressed Synchrony's mark against the tile's top
+   and bottom), and white behind the logo so black lettering on a transparent
+   PNG doesn't vanish on a dark card. Every light theme's card is white already,
+   so light mode only gains the uncropped logo. Add the class next to the card's
+   image class; `img.` outranks .feature-img / .project-img in any CSS order. */
+img.logo-on-white {
+  object-fit: contain;
+  background-color: #fff;
+}
+
+/* Visitors who ask for less motion get no entrance animations, slide-ins or
+   animated scrolling (one rule instead of one per component). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -78,8 +78,11 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.semi-hero-image img:hover {
-  transform: scale(1.03);
+/* Hover effects only where a pointer can hover (they stick after a tap on touch). */
+@media (hover: hover) {
+  .semi-hero-image img:hover {
+    transform: scale(1.03);
+  }
 }
 
 /* Dark Mode Enhancements */
@@ -132,9 +135,11 @@ body.dark-mode .semi-hero-image img {
   gap: 20px;
 }
 
-.semi-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 22px rgba(var(--accent-rgb), 0.15);
+@media (hover: hover) {
+  .semi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(var(--accent-rgb), 0.15);
+  }
 }
 
 /* Dark Mode */
@@ -160,6 +165,11 @@ body.dark-mode .semi-img {
   box-shadow: 0 3px 14px rgba(var(--accent-rgb), 0.1);
 }
 
+/* Lets the text column shrink below its longest word so text wraps inside the card. */
+.semi-info {
+  min-width: 0;
+}
+
 .semi-info h3 {
   color: var(--text-color);
   font-size: 1.4rem;
@@ -177,12 +187,8 @@ body.dark-mode .semi-img {
 
 /* ------------------------------
    BACK HOME BUTTON
+   (.back-home-container itself is styled in src/components/Footer.css.)
 ------------------------------ */
-.back-home-container {
-  text-align: center;
-  margin-top: 60px;
-}
-
 .btn.see-all {
   border: 2px solid var(--accent-color);
   color: var(--accent-color);
@@ -193,11 +199,13 @@ body.dark-mode .semi-img {
   transition: all 0.3s ease;
 }
 
-.btn.see-all:hover {
-  background: var(--accent-solid);
-  color: var(--accent-contrast);
-  border-color: var(--accent-solid);
-  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
+@media (hover: hover) {
+  .btn.see-all:hover {
+    background: var(--accent-solid);
+    color: var(--accent-contrast);
+    border-color: var(--accent-solid);
+    box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
+  }
 }
 
 /* ------------------------------
@@ -219,10 +227,18 @@ body.dark-mode .semi-img {
 }
 
 @media (max-width: 768px) {
+  .semi-page {
+    padding-bottom: 8px;
+  }
+
+  .semi-hero {
+    padding: 40px 20px 8px;
+  }
+
   .semi-hero-content {
     flex-direction: column;
     text-align: center;
-    gap: 30px;
+    gap: 24px;
   }
 
   .semi-hero-text {
@@ -231,20 +247,25 @@ body.dark-mode .semi-img {
   }
 
   .semi-hero-image {
-    margin-top: 20px;
+    margin-top: 0;
+    /* Full width (not shrink-to-fit), so the image's width/height attributes
+       reserve its space before it loads and nothing below it jumps. */
+    align-self: stretch;
   }
 
   .semi-list {
-    padding: 50px 20px;
+    padding: 40px 16px 24px;
   }
 
   .semi-card {
     flex-direction: column;
-    align-items: center;
+    /* stretch, not center: the text column always spans the card. */
+    align-items: stretch;
     text-align: center;
     width: 100%;
-    padding: 20px;
-    gap: 15px;
+    padding: 16px;
+    gap: 14px;
+    margin: 16px auto;
   }
 
   .semi-img {
@@ -254,6 +275,15 @@ body.dark-mode .semi-img {
 
   .semi-info {
     text-align: center;
+  }
+
+  .semi-info h3 {
+    margin-top: 4px;
+  }
+
+  /* Titles stay centered; running text reads left-aligned. */
+  .semi-info p {
+    text-align: left;
   }
 }
 
@@ -279,4 +309,10 @@ body.dark-mode .semi-img {
 .semi-list .divider {
   margin: 0 auto 40px auto;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .semi-list .divider {
+    margin-bottom: 28px;
+  }
 }

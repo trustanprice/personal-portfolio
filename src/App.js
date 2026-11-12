@@ -1,5 +1,11 @@
-import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState, useEffect, useLayoutEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+  useNavigationType,
+} from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -9,6 +15,19 @@ import Clubs from "./pages/Clubs";
 import SemiPro from "./pages/SemiPro";
 import Footer from "./components/Footer";
 import "./App.css";
+
+// A newly opened page starts at the top. Back/forward (POP) keeps the position the
+// browser restores, so returning to a page lands where the visitor left it.
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  const navigationType = useNavigationType();
+
+  useLayoutEffect(() => {
+    if (navigationType !== "POP") window.scrollTo(0, 0);
+  }, [pathname, navigationType]);
+
+  return null;
+}
 
 function App() {
   // Load saved preferences (dark/light mode + color theme)
@@ -31,15 +50,25 @@ function App() {
     localStorage.setItem("siteTheme", theme);
   }, [theme]);
 
+  // Phone browsers tint their toolbar with <meta name="theme-color">; keep it on
+  // the page background of the current theme and mode (runs after the two above).
+  useEffect(() => {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    const background = getComputedStyle(document.body).getPropertyValue("--bg-color").trim();
+    if (meta && background) meta.setAttribute("content", background);
+  }, [darkMode, theme]);
+
   return (
     <Router>
+      <ScrollToTop />
       <Navbar
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         theme={theme}
         setTheme={setTheme}
       />
-      <div className="App" style={{ backgroundColor: "var(--bg-color)", color: "var(--text-color)", minHeight: "100vh" }}>
+      {/* Background, text color and min-height come from .App in App.css. */}
+      <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />

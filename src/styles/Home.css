@@ -78,9 +78,13 @@
   box-shadow: 0 4px 14px rgba(var(--accent-rgb), 0.3);
 }
 
-.btn.primary:hover {
-  box-shadow: 0 6px 18px rgba(var(--accent-rgb), 0.45);
-  transform: translateY(-2px);
+/* Hover effects are wrapped in (hover: hover) throughout: on touch screens a tap
+   leaves :hover stuck on the element until the next tap elsewhere. */
+@media (hover: hover) {
+  .btn.primary:hover {
+    box-shadow: 0 6px 18px rgba(var(--accent-rgb), 0.45);
+    transform: translateY(-2px);
+  }
 }
 
 .btn.secondary {
@@ -103,10 +107,12 @@
   transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-.links a:hover {
-  color: var(--accent-dark-color);
-  border-bottom: 2px solid var(--accent-color, #2c7a7b);
-  padding-bottom: 2px;
+@media (hover: hover) {
+  .links a:hover {
+    color: var(--accent-dark-color);
+    border-bottom: 2px solid var(--accent-color, #2c7a7b);
+    padding-bottom: 2px;
+  }
 }
 
 .hero-image img {
@@ -183,13 +189,6 @@ body.dark-mode .hero-image img {
     background 0.4s ease, color 0.4s ease;
 }
 
-.icon-link:hover {
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 8px 20px rgba(var(--accent-rgb), 0.3);
-  background: linear-gradient(145deg, var(--accent-dark-color), var(--accent-color));
-  color: var(--accent-contrast);
-}
-
 /* Dark Mode tweaks */
 body.dark-mode .icon-link {
   color: var(--accent-color);
@@ -197,10 +196,19 @@ body.dark-mode .icon-link {
   box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.08);
 }
 
-body.dark-mode .icon-link:hover {
-  background: linear-gradient(145deg, var(--accent-color), var(--accent-dark-color));
-  color: var(--accent-contrast);
-  box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.4);
+@media (hover: hover) {
+  .icon-link:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(var(--accent-rgb), 0.3);
+    background: linear-gradient(145deg, var(--accent-dark-color), var(--accent-color));
+    color: var(--accent-contrast);
+  }
+
+  body.dark-mode .icon-link:hover {
+    background: linear-gradient(145deg, var(--accent-color), var(--accent-dark-color));
+    color: var(--accent-contrast);
+    box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.4);
+  }
 }
 
 /* ==============================
@@ -219,14 +227,19 @@ body.dark-mode .icon-link:hover {
   max-width: 1400px;
   width: 100%;
   box-shadow: 0 6px 20px var(--card-shadow);
-  transition: all 0.3s ease;
+  /* Only what actually changes (not `all`, which also animated padding/size
+     whenever the layout crossed a breakpoint). */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease,
+    background-color 0.3s ease;
   animation: fadeInUp 0.8s ease forwards;
 }
 
-.feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.18);
-  border-color: rgba(var(--accent-rgb), 0.3);
+@media (hover: hover) {
+  .feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.18);
+    border-color: rgba(var(--accent-rgb), 0.3);
+  }
 }
 
 .feature-img {
@@ -246,6 +259,9 @@ body.dark-mode .feature-img {
 
 .feature-info {
   flex: 1;
+  /* Lets the text column shrink below its longest word so text wraps inside
+     the card instead of pushing out of it. */
+  min-width: 0;
   text-align: left;
 }
 
@@ -275,10 +291,12 @@ body.dark-mode .feature-img {
   gap: 10px 24px;
 }
 
-.feature-info a:hover {
-  color: var(--accent-dark-color);
-  border-bottom: 2px solid var(--accent-color, #2c7a7b);
-  padding-bottom: 2px;
+@media (hover: hover) {
+  .feature-info a:hover {
+    color: var(--accent-dark-color);
+    border-bottom: 2px solid var(--accent-color, #2c7a7b);
+    padding-bottom: 2px;
+  }
 }
 
 /* See All Buttons */
@@ -297,11 +315,13 @@ body.dark-mode .feature-img {
   transition: all 0.3s ease;
 }
 
-.btn.see-all:hover {
-  background: var(--accent-solid);
-  color: var(--accent-contrast);
-  border-color: var(--accent-solid);
-  box-shadow: 0 4px 14px rgba(var(--accent-rgb), 0.35);
+@media (hover: hover) {
+  .btn.see-all:hover {
+    background: var(--accent-solid);
+    color: var(--accent-contrast);
+    border-color: var(--accent-solid);
+    box-shadow: 0 4px 14px rgba(var(--accent-rgb), 0.35);
+  }
 }
 
 /* ==============================
@@ -342,40 +362,75 @@ body.dark-mode .feature-img {
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 40px 20px;
+    padding: 32px 20px 8px;
+    gap: 24px;
   }
   .hero-text {
     padding-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
   .hero-text h1 {
     font-size: 2rem;
   }
   .hero-image img {
     width: 200px;
-    margin-top: 15px;
+    margin-top: 0;
   }
   .btn {
     width: 100%;
     text-align: center;
+    /* At least 44px tall for thumbs, label centered. */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
   }
   .featured {
-    padding: 30px 20px;
+    padding: 8px 16px 24px;
+  }
+  .section-divider {
+    margin: 32px 0;
+  }
+  .see-all-container {
+    margin-top: 20px;
   }
   .feature-card {
     flex-direction: column;
-    align-items: center;
+    /* stretch, not center: the text column always spans the card, so long
+       words can't widen it past the card's edges. */
+    align-items: stretch;
     text-align: center;
     width: 100%;
-    padding: 20px;
+    padding: 16px;
+    gap: 14px;
+    margin: 16px auto;
   }
   .feature-img {
     width: 100%;
     height: auto;
-    margin-bottom: 15px;
+    /* Square logos (Synchrony, SAM) would otherwise fill a whole phone screen;
+       wide thumbnails stay under this cap. SAM's cover crop only trims its black
+       margin (its lettering spans the full width, so it stays whole), and
+       Synchrony is contained on a white tile (.logo-on-white, App.css). */
+    max-height: 60vw;
+    margin-bottom: 0;
   }
   .feature-info {
     text-align: center;
+  }
+  .feature-info h3 {
+    margin-top: 4px;
+  }
+  /* Titles and links stay centered; running text and lists read left-aligned. */
+  .feature-info p,
+  .feature-info ul {
+    text-align: left;
+  }
+  .feature-info ul {
+    padding-left: 1.25em;
+  }
+  .feature-links {
+    justify-content: center;
   }
 }
 

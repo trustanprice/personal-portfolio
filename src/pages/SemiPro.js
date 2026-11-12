@@ -18,7 +18,7 @@ function SemiPro() {
           </div>
 
           <div className="semi-hero-image">
-            <img src="/semipro/semipro-hero.png" alt="Semi-Pro Life" />
+            <img src="/semipro/semipro-hero.png" alt="Semi-Pro Life" width="604" height="346" />
           </div>
         </div>
       </section>
@@ -35,6 +35,8 @@ function SemiPro() {
           <img
             src="/semipro/mcu-doomsday.png"
             alt="MCU Doomsday Prep"
+            width="738"
+            height="414"
             className="semi-img"
           />
           <div className="semi-info">
@@ -52,6 +54,8 @@ function SemiPro() {
           <img
             src="/semipro/futbol.png"
             alt="Recreational Sports"
+            width="678"
+            height="452"
             className="semi-img"
           />
           <div className="semi-info">
@@ -69,6 +73,8 @@ function SemiPro() {
           <img
             src="/semipro/manga.png"
             alt="Manga and Comics"
+            width="738"
+            height="369"
             className="semi-img"
           />
           <div className="semi-info">

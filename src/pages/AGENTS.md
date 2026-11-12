@@ -44,23 +44,53 @@ experience, club, and hobby entry is hardcoded directly in its page's JSX.
   Projects-page version of the same entry — keep both in sync when the
   underlying project changes, but don't just copy-paste the long version onto
   Home.
+- **On `Projects.js` the description goes inside `<ExpandableDetails>`**:
+  `<h3/>` first, then `<ExpandableDetails><p/>…<ul/>…</ExpandableDetails>`,
+  then the links (`.feature-links` or a bare `a.learn-more`) outside it. Wrap
+  every card, even short ones: the component measures the text and only
+  collapses it ("Show more ▾") when it is clearly longer than fits beside the
+  thumbnail; short ones render exactly as before. Home's cards are short and
+  don't use it. See [src/components/AGENTS.md](../components/AGENTS.md).
+- **Images get their intrinsic size as attributes** (`width="…" height="…"`,
+  the file's real pixel size, e.g. from `sips -g pixelWidth -g pixelHeight`)
+  on hero and card `<img>`s. CSS still sets the rendered size; the
+  attributes only let the browser reserve the space before the file loads,
+  so phones don't jump while scrolling. Fixed-size logos (Experiences, Clubs)
+  don't need them.
 - External links always get `target="_blank" rel="noopener noreferrer"`.
+- Icon-only links (Home's hero email/résumé/LinkedIn/GitHub icons) carry an
+  `aria-label` naming where they go; the icon alone gives screen readers
+  nothing to read.
+- A logo thumbnail that must show whole (JimmyChops, Synchrony) gets
+  `logo-on-white` next to its card class; see
+  [src/styles/AGENTS.md](../styles/AGENTS.md).
 - To add a new project: add an abridged `.feature-card` to `Home.js`'s
   Featured Projects (before the "See All Projects" `see-all-container`), add
-  the full version to `Projects.js`'s `projects-list`, drop its thumbnail in
-  `public/home/`, and add a line to the root `README.md` project bullet list.
+  the full version to `Projects.js`'s `projects-list` (description wrapped in
+  `<ExpandableDetails>`), drop its thumbnail in `public/home/` (with its
+  `width`/`height` on the `<img>`), and add a line to the root `README.md`
+  project bullet list.
 
 ## Current state
 
 All five pages implemented and building cleanly (`npm run build`, CRA/
-`react-scripts`). Most recently updated (2026-10-12): Home's Featured
-Projects swapped to LedgerOne + JimmyChops + Roster & Revenue Optimization
-Dashboard (Forward Data Lab and NBA Predictions dropped from Home, still on
-the full `Projects.js` list, which now has eight entries total), and
+`react-scripts`). Most recently updated (2026-11-12): Home's Featured
+Projects are JimmyChops, UIUC Statistics Datathon 2026 (call center
+forecasting) and Roster & Revenue Optimization Dashboard, in that order
+(LedgerOne left Home; it stays on `Projects.js`), and `Projects.js`'s
+eight entries are in order of when each project happened, most recent first
+(JimmyChops, Roster & Revenue, Forward Data Lab, Datathon, NBA Predictions,
+LedgerOne, AI Academic Advisor, Dementia Diagnosis). Earlier (2026-10-12),
 `Experiences.js` gained a UIUC Data & Business Intelligence Intern card
 (Aug 2026 – Present) describing the Roster & Revenue project in detail. See
 the root [AGENTS.md](../../AGENTS.md) "Current state" section for the full
 log, including which entries are deliberately excluded from
-`resume/resume.tex` and why JimmyChops/Roster & Revenue have no external
-links on their cards (real client app / undeployed + real athlete data,
-respectively).
+`resume/resume.tex`, why Roster & Revenue has no external links on its card
+(undeployed + real athlete data), and why JimmyChops links only to its App
+Store page (added 2026-11-12; no live booking page or private repo links).
+
+Also 2026-11-12 (phone-view pass, no wording changes): every `Projects.js`
+description is wrapped in `<ExpandableDetails>` (at 1280px six collapse; AI
+Academic Advisor and Dementia Diagnosis stay whole), and hero/card `<img>`s
+on all five pages got `width`/`height` attributes. Everything else in that
+pass was CSS (see [src/styles/AGENTS.md](../styles/AGENTS.md)).

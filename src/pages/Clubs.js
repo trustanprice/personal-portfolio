@@ -23,6 +23,8 @@ function Clubs() {
             <img
               src="/clubs/clubs-hero.png"
               alt="Campus Involvement"
+              width="246"
+              height="169"
             />
           </div>
         </div>

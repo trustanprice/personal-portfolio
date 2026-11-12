@@ -24,6 +24,8 @@ function Experiences() {
                         <img
                             src="/experiences/experiences-hero.png"
                             alt="Professional Journey"
+                            width="502"
+                            height="374"
                         />
                     </div>
                 </div>

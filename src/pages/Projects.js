@@ -1,4 +1,5 @@
 import React from "react";
+import ExpandableDetails from "../components/ExpandableDetails";
 import "../styles/Projects.css";
 
 function Projects() {
@@ -24,7 +25,7 @@ function Projects() {
 
                     {/* Right: Image */}
                     <div className="projects-hero-image">
-                        <img src="/projects/projects-hero.png" alt="Personal Projects" />
+                        <img src="/projects/projects-hero.png" alt="Personal Projects" width="558" height="364" />
                     </div>
                 </div>
             </section>
@@ -38,92 +39,100 @@ function Projects() {
 
                 <div className="projects-list">
 
+                    {/* JimmyChops – Barber Booking Platform */}
+                    <div className="project-card">
+                        <img
+                            src="/projects/jimmychops-thumbnail.png"
+                            alt="JimmyChops Barber Booking Platform"
+                            width="2168"
+                            height="992"
+                            className="project-img logo-on-white"
+                        />
+                        <div className="project-info">
+                            <h3>JimmyChops — Barber Booking Platform</h3>
+                            <ExpandableDetails>
+                                <p>
+                                    Built and scaled an end-to-end booking platform for a local barbershop
+                                    as a solo full-stack developer, replacing the owner's outdated, paid Wix
+                                    site and eliminating that recurring cost. Live on the App Store, now
+                                    serving 300+ monthly customers with a <strong>validated 10% increase in
+                                    new clientele</strong>. The platform spans a customer and admin iOS/Android
+                                    app (React Native via Expo), an admin analytics web dashboard (React/Vite),
+                                    a Supabase backend, and a public booking page embedded directly in the
+                                    owner's existing website.
+                                </p>
+
+                                <ul>
+                                    <li><strong>Postgres-first security:</strong> a 22-migration backend using row-level security as the real access boundary — all booking and messaging writes go through database functions rather than direct table access.</li>
+                                    <li><strong>Transactional booking logic:</strong> prevents double-booking at the database level, returning stable error codes that clients map to user-facing messages — a <strong>confirmed 0% double-booking rate</strong> in production.</li>
+                                    <li><strong>Owner time savings:</strong> in-app appointment management, Google/Apple Calendar sync, and direct messaging all but eliminate manual scheduling contact between cuts, saving an estimated <strong>5 hours a week</strong> and freeing up time for 1–2 additional cuts a day.</li>
+                                    <li><strong>Time-zone-safe scheduling:</strong> all times stored as <code>timestamptz</code> and bucketed in the shop's time zone, so daylight-saving changes and device settings never affect a booking.</li>
+                                    <li><strong>Real-time chat:</strong> customer–owner messaging with photo attachments, block/report tools, and retention, built on Supabase Realtime, push notifications, and a notification outbox with Edge Functions.</li>
+                                    <li><strong>Admin tooling:</strong> KPIs, analytics charts, and client-visit frequency alongside customer/service/availability management, plus an owner kill switch that locks out customers while admins retain access.</li>
+                                </ul>
+
+                                <p>
+                                    Built using a multi-agent workflow — specialist agents for backend,
+                                    mobile, web, and QA/release — coordinated through shared database
+                                    contracts and generated TypeScript types.
+                                </p>
+                            </ExpandableDetails>
+                            <div className="feature-links">
+                                <a
+                                    href="https://apps.apple.com/us/app/id6823379884"
+                                    className="btn learn-more"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View on App Store →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* Roster & Revenue Optimization Dashboard – Illinois Division of Intercollegiate Athletics */}
                     <div className="feature-card">
                         <img
                             src="/projects/roster-revenue-thumbnail.png"
                             alt="Roster & Revenue Optimization Dashboard"
+                            width="2990"
+                            height="1668"
                             className="feature-img"
                         />
                         <div className="feature-info">
                             <h3>Roster & Revenue Optimization Dashboard — Illinois Athletics</h3>
-                            <p>
-                                An interactive analytics dashboard built for the University of Illinois
-                                Division of Intercollegiate Athletics that shows how the NCAA's House v.
-                                NCAA revenue-sharing cap is allocated across football and basketball, and
-                                whether player pay tracks on-field production. The React and Recharts
-                                front end (with custom SVG) gives leadership linked highlighting,
-                                drill-down expandable charts, and a football-field map of spending.
-                            </p>
-                            <p>
-                                A multi-agent Python pipeline — data ingestion, financial modeling, and
-                                visualization — is orchestrated by a Fleet Manager that routes tasks,
-                                recovers from failures, and logs every assumption to a decision file.
-                                Internal contract data, snap counts, and PFF-style grades for 117 players
-                                were joined with scraped stats across all 68 Power 4 teams (3,750 players)
-                                to benchmark Illinois against national peers, using position-level
-                                "production vs. expectation" regression models. Nine automated test suites
-                                verify the in-browser and Python models agree across six scenarios, and
-                                statistical output (R², trend lines) is rewritten into plain-language,
-                                board-ready findings for a non-technical audience.
-                            </p>
-                            <p>
-                                Now integrated into the athletics department's internal backplane
-                                platform and confirmed for a production rollout targeted for January
-                                2027. The data pipeline is being automated end-to-end — pulling Illinois
-                                revenue-share statistics and PFF grading data directly via API — so that
-                                once a game ends, an automated run populates the dashboard with that
-                                game's data immediately, replacing a previously manual process of
-                                downloading Excel exports from SharePoint and building visualizations by
-                                hand.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* LedgerOne – FinTech Ledger, Analytics & Credit Risk Platform */}
-                    <div className="feature-card">
-                        <img
-                            src="/home/ledgerone-thumbnail.png"
-                            alt="LedgerOne FinTech Ledger, Analytics & Credit Risk Platform"
-                            className="feature-img"
-                        />
-                        <div className="feature-info">
-                            <h3>LedgerOne: FinTech Ledger, Analytics & Credit Risk Platform</h3>
-                            <p>
-                                An end-to-end fintech analytics platform built around a single-entry,
-                                append-only ledger: Python generates synthetic events, and a dbt-core/DuckDB
-                                pipeline transforms them into a star schema and five reporting marts, gated
-                                end-to-end by <code>dbt test</code>. A credit-risk module (vintage analysis,
-                                roll-rate matrices, CECL estimates) is validated within 0.19 percentage
-                                points of real Freddie Mac mortgage outcomes.
-                            </p>
-                            <p>
-                                The platform is also genuinely deployed to AWS: CloudFormation-managed
-                                stacks with GitHub OIDC auth (no long-lived credentials) run the pipeline on
-                                a real daily schedule against MotherDuck in dev and prod, verified by 136/136
-                                dbt tests plus a 16-test frontend suite. A six-tab dashboard — now showing
-                                live AWS cost data on its Infrastructure tab — spans methodology, data
-                                engineering, forecasting, infrastructure, and emerging techniques, deployed
-                                to Vercel and GitHub Pages.
-                            </p>
-                            <div className="feature-links">
-                                <a
-                                    href="https://ledgerone-green.vercel.app/"
-                                    className="btn learn-more"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    View Live Site →
-                                </a>
-                                <a
-                                    href="https://github.com/trustanprice/ledgerone"
-                                    className="btn learn-more"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    View Repository →
-                                </a>
-                            </div>
+                            <ExpandableDetails>
+                                <p>
+                                    An interactive analytics dashboard built for the University of Illinois
+                                    Division of Intercollegiate Athletics that shows how the NCAA's House v.
+                                    NCAA revenue-sharing cap is allocated across football and basketball, and
+                                    whether player pay tracks on-field production. The React and Recharts
+                                    front end (with custom SVG) gives leadership linked highlighting,
+                                    drill-down expandable charts, and a football-field map of spending.
+                                </p>
+                                <p>
+                                    A multi-agent Python pipeline — data ingestion, financial modeling, and
+                                    visualization — is orchestrated by a Fleet Manager that routes tasks,
+                                    recovers from failures, and logs every assumption to a decision file.
+                                    Internal contract data, snap counts, and PFF-style grades for 117 players
+                                    were joined with scraped stats across all 68 Power 4 teams (3,750 players)
+                                    to benchmark Illinois against national peers, using position-level
+                                    "production vs. expectation" regression models. Nine automated test suites
+                                    verify the in-browser and Python models agree across six scenarios, and
+                                    statistical output (R², trend lines) is rewritten into plain-language,
+                                    board-ready findings for a non-technical audience.
+                                </p>
+                                <p>
+                                    Now integrated into the athletics department's internal backplane
+                                    platform and confirmed for a production rollout targeted for January
+                                    2027. The data pipeline is being automated end-to-end — pulling Illinois
+                                    revenue-share statistics and PFF grading data directly via API — so that
+                                    once a game ends, an automated run populates the dashboard with that
+                                    game's data immediately, replacing a previously manual process of
+                                    downloading Excel exports from SharePoint and building visualizations by
+                                    hand.
+                                </p>
+                            </ExpandableDetails>
                         </div>
                     </div>
 
@@ -132,26 +141,30 @@ function Projects() {
                         <img
                             src="/home/forward-data-lab-thumbnail.png"
                             alt="Forward Data Lab Project"
+                            width="1200"
+                            height="798"
                             className="feature-img"
                         />
                         <div className="feature-info">
                             <h3>Forward Data Lab — Retrieval's Blind Spot</h3>
-                            <p>
-                                Independent research project for the Forward Data Lab: a systematic,
-                                criteria-scored comparison of Ai2's Asta against Google Scholar across five
-                                query archetypes, every citation independently verified. That surfaced
-                                Asta's central gap: it displays each source's citation count but never
-                                weights its synthesis by it, treating a 3-citation paper and a
-                                16,950-citation seminal paper as equally strong evidence.
-                            </p>
-                            <p>
-                                Built a minimal, inspectable RAG pipeline over 18 real papers that mirrors
-                                Asta's retrieve → rerank → cap → generate flow, then added two fixes: a
-                                relevance-confidence threshold that blocks synthesis when nothing clears a
-                                similarity bar, and citation-weighted reranking so well-established work
-                                outranks obscure preprints. Verified against six live queries, three
-                                on-topic and three off-topic.
-                            </p>
+                            <ExpandableDetails>
+                                <p>
+                                    Independent research project for the Forward Data Lab: a systematic,
+                                    criteria-scored comparison of Ai2's Asta against Google Scholar across five
+                                    query archetypes, every citation independently verified. That surfaced
+                                    Asta's central gap: it displays each source's citation count but never
+                                    weights its synthesis by it, treating a 3-citation paper and a
+                                    16,950-citation seminal paper as equally strong evidence.
+                                </p>
+                                <p>
+                                    Built a minimal, inspectable RAG pipeline over 18 real papers that mirrors
+                                    Asta's retrieve → rerank → cap → generate flow, then added two fixes: a
+                                    relevance-confidence threshold that blocks synthesis when nothing clears a
+                                    similarity bar, and citation-weighted reranking so well-established work
+                                    outranks obscure preprints. Verified against six live queries, three
+                                    on-topic and three off-topic.
+                                </p>
+                            </ExpandableDetails>
                             <div className="feature-links">
                                 <a
                                     href="https://forward-data-lab.vercel.app/"
@@ -186,24 +199,28 @@ function Projects() {
                         <img
                             src="/home/datathon-thumbnail.png"
                             alt="UIUC Statistics Datathon 2026 Project"
+                            width="3024"
+                            height="1702"
                             className="feature-img"
                         />
                         <div className="feature-info">
                             <h3>UIUC Statistics Datathon 2026 – 2nd Place (200+ Teams)</h3>
-                            <p>
-                                A competitive analytics project where I served as Project Lead, bringing together
-                                a team of minority students to compete in the UIUC Statistics Datathon. Our goal
-                                was not only to perform at a high level, but to represent students who are often
-                                underrepresented in spaces like this.
-                            </p>
-                            <p>
-                                Over a fast-paced development cycle, we engineered time-series features
-                                (lag variables, rolling statistics, calendar effects) and deployed LightGBM
-                                ensemble models to forecast call volume, customer care time, and abandon
-                                rate at 30-minute intervals, generating accurate workload forecasts across
-                                multiple portfolios. Our work earned 2nd place out of 200+ teams and gave us
-                                the opportunity to present our solution to industry leaders at Synchrony.
-                            </p>
+                            <ExpandableDetails>
+                                <p>
+                                    A competitive analytics project where I served as Project Lead, bringing together
+                                    a team of minority students to compete in the UIUC Statistics Datathon. Our goal
+                                    was not only to perform at a high level, but to represent students who are often
+                                    underrepresented in spaces like this.
+                                </p>
+                                <p>
+                                    Over a fast-paced development cycle, we engineered time-series features
+                                    (lag variables, rolling statistics, calendar effects) and deployed LightGBM
+                                    ensemble models to forecast call volume, customer care time, and abandon
+                                    rate at 30-minute intervals, generating accurate workload forecasts across
+                                    multiple portfolios. Our work earned 2nd place out of 200+ teams and gave us
+                                    the opportunity to present our solution to industry leaders at Synchrony.
+                                </p>
+                            </ExpandableDetails>
                             <div className="feature-links">
                                 <a
                                     href="https://github.com/DarylOkeke/datathon-final-submission/blob/main/datathon_team015_v1.pdf"
@@ -222,25 +239,29 @@ function Projects() {
                         <img
                             src="/home/nba-thumbnail.png"
                             alt="NBA Predictions"
+                            width="2536"
+                            height="1648"
                             className="project-img"
                         />
                         <div className="project-info">
                             <h3>NBA Predictions Application</h3>
-                            <p>
-                                An NBA analytics platform built around one core idea: every number should come with its own explanation, not just a value.
-                            </p>
+                            <ExpandableDetails>
+                                <p>
+                                    An NBA analytics platform built around one core idea: every number should come with its own explanation, not just a value.
+                                </p>
 
-                            <p>Three connected models:</p>
+                                <p>Three connected models:</p>
 
-                            <ul>
-                                <li><strong>Win-total predictor:</strong> benchmarks gradient boosting against KNN under honest walk-forward validation, refined by a schedule-aware Monte Carlo simulation — the one of five tested feature ideas that actually held up under a stacked test.</li>
-                                <li><strong>Player power rankings:</strong> transparent, z-scored composite ratings computed from real NBA.com data.</li>
-                                <li><strong>Coaching evaluation:</strong> measures actual win percentage against roster-talent expectation.</li>
-                            </ul>
+                                <ul>
+                                    <li><strong>Win-total predictor:</strong> benchmarks gradient boosting against KNN under honest walk-forward validation, refined by a schedule-aware Monte Carlo simulation — the one of five tested feature ideas that actually held up under a stacked test.</li>
+                                    <li><strong>Player power rankings:</strong> transparent, z-scored composite ratings computed from real NBA.com data.</li>
+                                    <li><strong>Coaching evaluation:</strong> measures actual win percentage against roster-talent expectation.</li>
+                                </ul>
 
-                            <p>
-                                Every prediction ships with its full methodology inline — the formula, the raw inputs, and the honest accuracy (recent backtests land in the same range as Vegas and ESPN's BPI), including where a technique doesn't help. Built with Python and FastAPI (a custom NBA.com data client with its own retry, caching, and schema-validation layer) and Next.js, deployed on Vercel and Render.
-                            </p>
+                                <p>
+                                    Every prediction ships with its full methodology inline — the formula, the raw inputs, and the honest accuracy (recent backtests land in the same range as Vegas and ESPN's BPI), including where a technique doesn't help. Built with Python and FastAPI (a custom NBA.com data client with its own retry, caching, and schema-validation layer) and Next.js, deployed on Vercel and Render.
+                                </p>
+                            </ExpandableDetails>
 
                             <div className="feature-links">
                                 <a
@@ -263,40 +284,54 @@ function Projects() {
                         </div>
                     </div>
 
-                    {/* JimmyChops – Barber Booking Platform */}
-                    <div className="project-card">
+                    {/* LedgerOne – FinTech Ledger, Analytics & Credit Risk Platform */}
+                    <div className="feature-card">
                         <img
-                            src="/projects/jimmychops-thumbnail.png"
-                            alt="JimmyChops Barber Booking Platform"
-                            className="project-img"
+                            src="/home/ledgerone-thumbnail.png"
+                            alt="LedgerOne FinTech Ledger, Analytics & Credit Risk Platform"
+                            width="1200"
+                            height="798"
+                            className="feature-img"
                         />
-                        <div className="project-info">
-                            <h3>JimmyChops — Barber Booking Platform</h3>
-                            <p>
-                                Built and scaled an end-to-end booking platform for a local barbershop
-                                as a solo full-stack developer, replacing the owner's outdated, paid Wix
-                                site and eliminating that recurring cost. Live on the App Store, now
-                                serving 300+ monthly customers with a <strong>validated 10% increase in
-                                new clientele</strong>. The platform spans a customer and admin iOS/Android
-                                app (React Native via Expo), an admin analytics web dashboard (React/Vite),
-                                a Supabase backend, and a public booking page embedded directly in the
-                                owner's existing website.
-                            </p>
-
-                            <ul>
-                                <li><strong>Postgres-first security:</strong> a 22-migration backend using row-level security as the real access boundary — all booking and messaging writes go through database functions rather than direct table access.</li>
-                                <li><strong>Transactional booking logic:</strong> prevents double-booking at the database level, returning stable error codes that clients map to user-facing messages — a <strong>confirmed 0% double-booking rate</strong> in production.</li>
-                                <li><strong>Owner time savings:</strong> in-app appointment management, Google/Apple Calendar sync, and direct messaging all but eliminate manual scheduling contact between cuts, saving an estimated <strong>5 hours a week</strong> and freeing up time for 1–2 additional cuts a day.</li>
-                                <li><strong>Time-zone-safe scheduling:</strong> all times stored as <code>timestamptz</code> and bucketed in the shop's time zone, so daylight-saving changes and device settings never affect a booking.</li>
-                                <li><strong>Real-time chat:</strong> customer–owner messaging with photo attachments, block/report tools, and retention, built on Supabase Realtime, push notifications, and a notification outbox with Edge Functions.</li>
-                                <li><strong>Admin tooling:</strong> KPIs, analytics charts, and client-visit frequency alongside customer/service/availability management, plus an owner kill switch that locks out customers while admins retain access.</li>
-                            </ul>
-
-                            <p>
-                                Built using a multi-agent workflow — specialist agents for backend,
-                                mobile, web, and QA/release — coordinated through shared database
-                                contracts and generated TypeScript types.
-                            </p>
+                        <div className="feature-info">
+                            <h3>LedgerOne: FinTech Ledger, Analytics & Credit Risk Platform</h3>
+                            <ExpandableDetails>
+                                <p>
+                                    An end-to-end fintech analytics platform built around a single-entry,
+                                    append-only ledger: Python generates synthetic events, and a dbt-core/DuckDB
+                                    pipeline transforms them into a star schema and five reporting marts, gated
+                                    end-to-end by <code>dbt test</code>. A credit-risk module (vintage analysis,
+                                    roll-rate matrices, CECL estimates) is validated within 0.19 percentage
+                                    points of real Freddie Mac mortgage outcomes.
+                                </p>
+                                <p>
+                                    The platform is also genuinely deployed to AWS: CloudFormation-managed
+                                    stacks with GitHub OIDC auth (no long-lived credentials) run the pipeline on
+                                    a real daily schedule against MotherDuck in dev and prod, verified by 136/136
+                                    dbt tests plus a 16-test frontend suite. A six-tab dashboard — now showing
+                                    live AWS cost data on its Infrastructure tab — spans methodology, data
+                                    engineering, forecasting, infrastructure, and emerging techniques, deployed
+                                    to Vercel and GitHub Pages.
+                                </p>
+                            </ExpandableDetails>
+                            <div className="feature-links">
+                                <a
+                                    href="https://ledgerone-green.vercel.app/"
+                                    className="btn learn-more"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Live Site →
+                                </a>
+                                <a
+                                    href="https://github.com/trustanprice/ledgerone"
+                                    className="btn learn-more"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Repository →
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -305,19 +340,23 @@ function Projects() {
                         <img
                             src="/home/ai-advisor-thumbnail.png"
                             alt="AI Academic Advisor"
+                            width="2020"
+                            height="1192"
                             className="project-img"
                         />
                         <div className="project-info">
                             <h3>AI Academic Advisor</h3>
-                            <p>
-                                An intelligent academic advising tool that helps students explore majors
-                                and build class schedules through natural-language input — describe your
-                                interests and goals in plain English instead of filling out a form. Built
-                                with a React frontend and a Flask backend, it parses each query with
-                                keyword extraction and rule-based reasoning, then matches the result
-                                against real course data from UIUC's catalog to generate concrete
-                                recommendations.
-                            </p>
+                            <ExpandableDetails>
+                                <p>
+                                    An intelligent academic advising tool that helps students explore majors
+                                    and build class schedules through natural-language input — describe your
+                                    interests and goals in plain English instead of filling out a form. Built
+                                    with a React frontend and a Flask backend, it parses each query with
+                                    keyword extraction and rule-based reasoning, then matches the result
+                                    against real course data from UIUC's catalog to generate concrete
+                                    recommendations.
+                                </p>
+                            </ExpandableDetails>
                             <a
                                 href="https://github.com/trustanprice/AI-Advisor"
                                 className="learn-more"
@@ -334,18 +373,22 @@ function Projects() {
                         <img
                             src="/home/dementia-diagnosis-thumbnail.png"
                             alt="Dementia Diagnosis"
+                            width="1632"
+                            height="920"
                             className="project-img"
                         />
                         <div className="project-info">
                             <h3>ML Dementia Diagnosis via MRI</h3>
-                            <p>
-                                A deep learning research project focused on early dementia detection:
-                                built a CNN with a full preprocessing pipeline for 4-class dementia
-                                staging from brain MRI scans, achieving 95% classification accuracy. The
-                                pipeline combines class balancing to handle imbalanced stage distributions
-                                with interpretability analysis, so predictions come with an explanation,
-                                not just a label.
-                            </p>
+                            <ExpandableDetails>
+                                <p>
+                                    A deep learning research project focused on early dementia detection:
+                                    built a CNN with a full preprocessing pipeline for 4-class dementia
+                                    staging from brain MRI scans, achieving 95% classification accuracy. The
+                                    pipeline combines class balancing to handle imbalanced stage distributions
+                                    with interpretability analysis, so predictions come with an explanation,
+                                    not just a label.
+                                </p>
+                            </ExpandableDetails>
                             <a
                                 href="/home/ml-dementia-diagnosis.pdf"
                                 className="learn-more"

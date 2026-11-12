@@ -1,0 +1,114 @@
+/* ==============================
+   EXPANDABLE DETAILS (collapsible long card descriptions)
+   Markup: .expandable > .expandable-content > .expandable-inner > (the <p>/<ul>s),
+   then the .expandable-toggle button when the text is long enough to collapse.
+   Until JS measures the text it is a set of plain, unstyled <div>s, so short
+   descriptions render exactly as if they weren't wrapped at all.
+============================== */
+.expandable {
+  /* Description height shown when collapsed, beside the 180px-tall thumbnail. */
+  --expandable-collapsed: 150px;
+  /* Only collapse when more than this much text would be hidden. */
+  --expandable-slack: 50px;
+  /* The fade blends into the card background. */
+  --expandable-fade: var(--bg-alt);
+}
+
+.expandable.is-collapsible > .expandable-content {
+  position: relative;
+  /* clip (unlike hidden) keeps margins collapsing through this box, so the gap
+     between the title and the first paragraph stays exactly what it was. */
+  overflow: hidden;
+  overflow: clip;
+  transition: max-height 0.35s ease;
+}
+
+/* --expandable-cut is set by the component: --expandable-collapsed moved to the
+   middle of the nearest line, so the fade never sits over an empty paragraph gap. */
+.expandable.is-collapsible:not(.is-expanded) > .expandable-content {
+  max-height: var(--expandable-cut, var(--expandable-collapsed));
+}
+
+/* Soft fade over the last lines while collapsed. */
+.expandable.is-collapsible > .expandable-content::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3.5em;
+  background: linear-gradient(to bottom, transparent, var(--expandable-fade));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.expandable.is-collapsible:not(.is-expanded) > .expandable-content::after {
+  opacity: 1;
+}
+
+/* "Show more ▾" / "Show less ▴": styled like the site's accent links. */
+.expandable-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  min-height: 44px;
+  margin: 2px -6px 0;
+  padding: 0 6px;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+  color: var(--accent-color);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.expandable-toggle-label {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.3s ease;
+}
+
+.expandable-toggle-caret {
+  font-size: 0.85em;
+}
+
+@media (hover: hover) {
+  .expandable-toggle:hover {
+    color: var(--accent-dark-color);
+  }
+
+  .expandable-toggle:hover .expandable-toggle-label {
+    text-decoration-color: var(--accent-color);
+  }
+}
+
+.expandable-toggle:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .expandable.is-collapsible > .expandable-content,
+  .expandable.is-collapsible > .expandable-content::after {
+    transition: none;
+  }
+}
+
+/* Printing shows every description in full. */
+@media print {
+  .expandable.is-collapsible > .expandable-content {
+    max-height: none !important;
+  }
+
+  .expandable.is-collapsible > .expandable-content::after,
+  .expandable-toggle {
+    display: none;
+  }
+}

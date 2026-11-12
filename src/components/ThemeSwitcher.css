@@ -14,13 +14,8 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.theme-switcher-toggle:hover {
-  background: var(--accent-solid);
-  color: var(--accent-contrast);
-  box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.5);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 body.dark-mode .theme-switcher-toggle {
@@ -42,6 +37,12 @@ body.dark-mode .theme-switcher-toggle {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
   z-index: 1100;
   min-width: 200px;
+  /* Never wider or taller than the screen; scrolls by itself if it must. */
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 90px);
+  max-height: calc(100dvh - 90px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   animation: themePanelIn 0.18s ease;
 }
 
@@ -63,8 +64,23 @@ body.dark-mode .theme-switcher-toggle {
   transition: background 0.2s ease;
 }
 
-.theme-swatch-btn:hover {
-  background: rgba(var(--accent-rgb), 0.1);
+/* Hover effects only for real pointers (they'd stick after a tap on touch). */
+@media (hover: hover) {
+  .theme-switcher-toggle:hover {
+    background: var(--accent-solid);
+    color: var(--accent-contrast);
+    box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.5);
+  }
+
+  /* Outranks the dark-mode color rule above, which would otherwise keep the
+     icon the same color as its hover fill. */
+  body.dark-mode .theme-switcher-toggle:hover {
+    color: var(--accent-contrast);
+  }
+
+  .theme-swatch-btn:hover {
+    background: rgba(var(--accent-rgb), 0.1);
+  }
 }
 
 .theme-swatch-btn.active {
@@ -85,19 +101,42 @@ body.dark-mode .theme-switcher-toggle {
   color: var(--text-color);
 }
 
+/* Narrow tablets: part of the tighter navbar in Navbar.css (769-900px). */
+@media (min-width: 769px) and (max-width: 900px) {
+  .theme-switcher {
+    margin-left: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .theme-switcher {
     margin-left: 0;
   }
 
   .theme-switcher-toggle {
+    position: relative;
     width: 34px;
     height: 34px;
+  }
+
+  /* 44px touch target around the 34px circle (same look). */
+  .theme-switcher-toggle::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50%;
   }
 
   .theme-switcher-panel {
     right: 0;
     left: auto;
     min-width: 180px;
+  }
+
+  .theme-swatch-btn {
+    min-height: 44px;
   }
 }

@@ -8,3 +8,23 @@
   border-top: 1px solid var(--border-color);
   transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
+
+/* "← Back to Home" wrapper. It used to be redefined in four page stylesheets;
+   these are the values that won there. */
+.back-home-container {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 24px;
+    padding: 20px 16px;
+  }
+
+  .back-home-container {
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+}

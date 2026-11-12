@@ -21,6 +21,8 @@
 /* Hide on scroll down, show on scroll up */
 .navbar.hide {
   transform: translateY(-100%);
+  /* No shadow peeking below the top edge while it's tucked away. */
+  box-shadow: none;
 }
 .navbar.show {
   transform: translateY(0);
@@ -34,10 +36,6 @@
   text-shadow: 0 0 6px rgba(var(--accent-rgb), 0.2);
   text-decoration: none;
   transition: transform 0.3s ease, color 0.4s ease;
-}
-.logo:hover {
-  transform: scale(1.05);
-  color: var(--accent-color);
 }
 
 /* Navigation Links */
@@ -71,13 +69,6 @@
   transition: width 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: var(--accent-color);
-}
-.nav-links a:hover::after {
-  width: 100%;
-}
-
 /* Controls cluster (dark toggle, theme picker, hamburger) */
 .navbar-controls {
   display: flex;
@@ -100,24 +91,13 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.theme-toggle:hover {
-  background: var(--accent-solid);
-  color: var(--accent-contrast);
-  box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.6);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 body.dark-mode .theme-toggle {
   border-color: var(--accent-color);
   color: var(--accent-color);
-}
-
-body.dark-mode .theme-toggle:hover {
-  background: var(--accent-solid);
-  color: var(--accent-contrast);
-  box-shadow: 0 0 14px rgba(var(--accent-rgb), 0.7);
 }
 
 /* ==============================
@@ -134,18 +114,71 @@ body.dark-mode .theme-toggle:hover {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.hamburger:hover {
-  background: var(--accent-solid);
-  color: var(--accent-contrast);
-  box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.6);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 body.dark-mode .hamburger {
   border-color: var(--accent-color);
   color: var(--accent-color);
+}
+
+/* Hover effects only where a real pointer can hover; on touch screens they
+   would stick after a tap. */
+@media (hover: hover) {
+  .logo:hover {
+    transform: scale(1.05);
+    color: var(--accent-color);
+  }
+
+  .nav-links a:hover {
+    color: var(--accent-color);
+  }
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .theme-toggle:hover,
+  .hamburger:hover {
+    background: var(--accent-solid);
+    color: var(--accent-contrast);
+    box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.6);
+  }
+
+  /* The dark-mode color rules above outrank a plain :hover, so restate the
+     hover color here (otherwise the icon matches its own hover fill). */
+  body.dark-mode .theme-toggle:hover,
+  body.dark-mode .hamburger:hover {
+    background: var(--accent-solid);
+    color: var(--accent-contrast);
+    box-shadow: 0 0 14px rgba(var(--accent-rgb), 0.7);
+  }
+}
+
+/* Backdrop behind the open mobile menu (rendered by Navbar.js, mobile only). */
+.nav-backdrop {
+  display: none;
+}
+
+/* Narrow tablets (769-900px, e.g. iPad Air portrait at 820px): the full desktop
+   bar needs 824px and used to push the whole page sideways, so tighten it here.
+   (ThemeSwitcher.css drops the switcher's extra margin in the same range.) */
+@media (min-width: 769px) and (max-width: 900px) {
+  .navbar {
+    padding: 16px 24px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .nav-links {
+    gap: 22px;
+  }
+
+  .navbar-controls {
+    margin-left: 20px;
+  }
 }
 
 /* ==============================
@@ -165,6 +198,9 @@ body.dark-mode .hamburger {
 
   .logo {
     font-size: 1.3rem;
+    /* Taller tap area without moving anything. */
+    padding: 10px 0;
+    margin: -10px 0;
   }
 
   .navbar-controls {
@@ -174,41 +210,99 @@ body.dark-mode .hamburger {
 
   .theme-toggle,
   .hamburger {
+    position: relative;
     width: 34px;
     height: 34px;
+  }
+
+  /* 44px touch targets around the 34px circles (they still look the same). */
+  .theme-toggle::before,
+  .hamburger::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50%;
   }
 
   .hamburger {
     display: flex;
   }
 
-  /* Links collapse into a dropdown panel toggled by the hamburger */
+  /* While the menu is open the bar takes the panel's opaque background, so bar
+     and panel read as one sheet above the dimmed page. */
+  .navbar.menu-open {
+    background: linear-gradient(rgba(var(--accent-rgb), 0.08), rgba(var(--accent-rgb), 0.08)),
+      var(--bg-color);
+  }
+
+  /* Links open as a panel over the page (nothing underneath moves), scroll on
+     their own if taller than the screen, and leave the tab order when closed. */
   .nav-links {
-    order: 3;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     text-align: center;
-    gap: 18px;
-    width: 100%;
+    gap: 0;
     margin: 0;
-    max-height: 0;
-    overflow: hidden;
+    padding: 8px 20px 16px;
+    max-height: calc(100vh - 100%);
+    max-height: calc(100dvh - 100%);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: linear-gradient(rgba(var(--accent-rgb), 0.08), rgba(var(--accent-rgb), 0.08)),
+      var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
     opacity: 0;
-    padding: 0;
+    visibility: hidden;
     transform: translateY(-8px);
-    transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease,
-      padding 0.35s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
   }
 
   .nav-links.open {
-    max-height: 400px;
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
-    padding: 20px 0 6px;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s;
   }
 
   .nav-links a {
+    display: block;
+    padding: 12px 16px;
+    border-radius: 10px;
     font-size: 1.1rem;
     font-weight: 700;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background: var(--scrim);
+    opacity: 0;
+    visibility: hidden;
+    /* A drag that starts on the dimmed page doesn't scroll it. */
+    touch-action: none;
+    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+  }
+
+  .nav-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.25s ease, visibility 0s;
   }
 }

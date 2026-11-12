@@ -30,6 +30,7 @@
 
 .projects-hero-text {
   flex: 1;
+  min-width: 0;
   text-align: left;
 }
 
@@ -66,8 +67,11 @@
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.projects-hero-image img:hover {
-  transform: scale(1.03);
+/* Hover effects only where a pointer can hover (they stick after a tap on touch). */
+@media (hover: hover) {
+  .projects-hero-image img:hover {
+    transform: scale(1.03);
+  }
 }
 
 /* Dark Mode Enhancements */
@@ -88,6 +92,9 @@ body.dark-mode .projects-hero-image img {
 
   .projects-hero-image {
     margin-top: 25px;
+    /* Full width (not shrink-to-fit), so the image's width/height attributes
+       reserve its space before it loads and nothing below it jumps. */
+    align-self: stretch;
   }
 }
 
@@ -135,6 +142,15 @@ body.dark-mode .projects-hero-image img {
   box-sizing: border-box;
 }
 
+/* Both card types sit in this list the same way: the list's gap is the only
+   spacing (Home's 30px .feature-card margin used to add to it, giving 40, 70
+   or 100px gaps depending on the neighbors) and they share one width (Home's
+   95% tablet rule used to make feature cards narrower than project cards). */
+.projects-list .feature-card {
+  margin: 0;
+  max-width: 1400px;
+}
+
 /* ------------------------------
    PROJECT CARD (FULL-WIDTH)
 ------------------------------ */
@@ -152,9 +168,11 @@ body.dark-mode .projects-hero-image img {
   gap: 40px;
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(var(--accent-rgb), 0.15);
+@media (hover: hover) {
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(var(--accent-rgb), 0.15);
+  }
 }
 
 /* Dark Mode */
@@ -180,6 +198,9 @@ body.dark-mode .project-img {
 
 .project-info {
   flex: 1;
+  /* Lets the text column shrink below its longest word ("customer/service/
+     availability"), so text wraps inside the card instead of spilling out. */
+  min-width: 0;
   text-align: left;
 }
 
@@ -206,10 +227,45 @@ body.dark-mode .project-img {
   transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-.learn-more:hover {
-  color: var(--accent-dark-color);
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 2px;
+@media (hover: hover) {
+  .learn-more:hover {
+    color: var(--accent-dark-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 2px;
+  }
+}
+
+/* Touch screens: 44px-tall tap areas for the plain text links (used here and
+   on Experiences). On an inline link the vertical padding enlarges the touch
+   area without moving anything; in a .feature-links row (flex items) it adds
+   real space around the links. */
+@media (pointer: coarse) {
+  .learn-more:not(.btn) {
+    padding: 13px 0;
+  }
+}
+
+/* ------------------------------
+   LONG DESCRIPTIONS (ExpandableDetails)
+   Beside the thumbnail, the defaults in ExpandableDetails.css apply (about
+   150px shown; collapse only when more than 50px would be hidden). Once a card
+   stacks (image above the text) more text is shown before the fade, and only
+   clearly long descriptions collapse (more than 160px hidden), so one-paragraph
+   cards such as AI Academic Advisor stay whole even at 320px. The breakpoints
+   match where each card type stacks.
+------------------------------ */
+@media (max-width: 768px) {
+  .projects-list .feature-card .expandable {
+    --expandable-collapsed: 240px;
+    --expandable-slack: 160px;
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-list .project-card .expandable {
+    --expandable-collapsed: 240px;
+    --expandable-slack: 160px;
+  }
 }
 
 /* ------------------------------
@@ -218,7 +274,8 @@ body.dark-mode .project-img {
 @media (max-width: 900px) {
   .project-card {
     flex-direction: column;
-    align-items: center;
+    /* stretch, not center: the text column always spans the card. */
+    align-items: stretch;
     text-align: center;
     padding: 20px;
     gap: 20px;
@@ -236,10 +293,76 @@ body.dark-mode .project-img {
   .project-info p {
     max-width: 100%;
   }
+
+  /* Titles and links stay centered; running text and lists read left-aligned. */
+  .project-info p,
+  .project-info ul {
+    text-align: left;
+  }
+
+  .project-info ul {
+    padding-left: 1.25em;
+  }
+
+  .project-info .feature-links {
+    justify-content: center;
+  }
 }
 
-.back-home-container {
-  text-align: center;
-  margin-top: 60px;
-  margin-bottom: 40px;
+@media (max-width: 768px) {
+  .projects-page {
+    padding-bottom: 8px;
+  }
+
+  .projects-hero {
+    padding: 40px 20px 8px;
+  }
+
+  .projects-hero-content {
+    gap: 24px;
+  }
+
+  .projects-hero-image {
+    margin-top: 0;
+  }
+
+  /* The 60px side padding plus the list's 5vw squeezed phone cards to ~200px. */
+  .projects-section {
+    padding: 40px 16px 24px;
+  }
+
+  .underline.teal {
+    margin-bottom: 28px;
+  }
+
+  .projects-list {
+    padding: 0;
+    gap: 24px;
+  }
+
+  /* Stacked cards span the screen on phones; on tablets they stop at a
+     comfortable reading width. */
+  .projects-list .project-card,
+  .projects-list .feature-card {
+    max-width: 600px;
+  }
+
+  .project-card {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .project-info h3 {
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .highlighted-title {
+    font-size: 1.5rem;
+  }
 }

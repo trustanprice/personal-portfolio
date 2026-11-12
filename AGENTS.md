@@ -20,7 +20,7 @@ components (no CMS, no data files) and all imagery served from `public/`.
 | Folder | Responsibility | AGENTS.md |
 |---|---|---|
 | `src/pages/` | One component per route (`/`, `/projects`, `/experiences`, `/clubs`, `/semipro`) — hero + card content for each section | [src/pages/AGENTS.md](src/pages/AGENTS.md) |
-| `src/components/` | Global chrome shared across every route: Navbar (incl. dark-mode toggle + hamburger menu), ThemeSwitcher (color-theme picker), Footer | [src/components/AGENTS.md](src/components/AGENTS.md) |
+| `src/components/` | Global chrome shared across every route: Navbar (incl. dark-mode toggle + hamburger menu), ThemeSwitcher (color-theme picker), Footer; plus ExpandableDetails (the "Show more" wrapper for long card descriptions on Projects) | [src/components/AGENTS.md](src/components/AGENTS.md) |
 | `src/styles/` | Per-page global CSS (plain stylesheets, not CSS modules) built on the CSS-variable theme engine defined in `src/App.css` | [src/styles/AGENTS.md](src/styles/AGENTS.md) |
 | `public/` | Static assets — one image subfolder per page (`home/`, `projects/`, `experiences/`, `clubs/`, `semipro/`), plus resume/presentation PDFs | [public/AGENTS.md](public/AGENTS.md) |
 | `resume/` | LaTeX source (`resume.tex`) for the downloadable CV linked from Home — the curated, capped-length counterpart to the full-detail portfolio pages | [resume/AGENTS.md](resume/AGENTS.md) |
@@ -60,29 +60,47 @@ components (no CMS, no data files) and all imagery served from `public/`.
   `resume/resume-<slug>.tex` rather than overwriting the base) — see
   [resume/AGENTS.md](resume/AGENTS.md)'s "Job-tailored resume workflow"
   section for the full process.
-- No test suite is actively maintained beyond the CRA-default
-  `src/App.test.js` smoke test.
+- **Phone layout** (since 2026-11-12, see the Current state entry): hover
+  effects live inside `@media (hover: hover)`; flex text columns get
+  `min-width: 0`; stacked cards keep titles/links centered and body text
+  left-aligned; page gutters are 16px on phones; hero and card `<img>`s carry
+  their intrinsic `width`/`height` attributes so nothing jumps while they
+  load. Every description on `/projects` sits inside `<ExpandableDetails>`.
+- Tests: `src/components/ExpandableDetails.test.js` (4 tests) passes. The
+  CRA-default `src/App.test.js` smoke test has been broken for a while and is
+  not maintained: Jest 27 (react-scripts 5) can't resolve react-router-dom
+  v7's package `exports`, and it still looks for CRA's "learn react" text.
 - Deployed via Vercel from this repo's `main` branch (no custom build config
   beyond CRA's default `npm run build`).
 
 ## Current state
 
 - Five routes live: Home, Projects, Experiences, Clubs, SemiPro.
-- Home's Featured Projects (updated 2026-10-12, by explicit user request):
-  **LedgerOne**, **JimmyChops**, **Roster & Revenue Optimization Dashboard**
-  — Forward Data Lab and NBA Predictions were swapped out entirely, not just
-  reordered; both are still on the full Projects-page list, just no longer
-  featured on Home. JimmyChops and Roster & Revenue reuse the
+- Home's Featured Projects (updated 2026-11-12, by explicit user request), in
+  this order: **JimmyChops**, **UIUC Statistics Datathon 2026** (the call
+  center forecasting project, abridged copy + its "View Presentation →"
+  link, thumbnail `/home/datathon-thumbnail.png`), **Roster & Revenue
+  Optimization Dashboard**. LedgerOne left Home then (it had been featured
+  since 2026-10-12); Forward Data Lab and NBA Predictions were dropped from
+  Home on 2026-10-12. All three are still on the full Projects-page list.
+  JimmyChops and Roster & Revenue reuse the
   `/projects/jimmychops-thumbnail.png` and
   `/projects/roster-revenue-thumbnail.png` images (not duplicated into
-  `/home/`) and their abridged Home copy omits all external links, matching
-  their Projects-page entries (no live site/repo links exist for either —
-  JimmyChops is a real client app not meant to be publicly linked without
-  permission, and Roster & Revenue isn't deployed).
-- The Projects page's Highlighted Projects list has all eight (updated
-  2026-10-12): Roster & Revenue Optimization Dashboard, LedgerOne, Forward
-  Data Lab, UIUC Datathon, NBA Predictions, JimmyChops, AI Academic Advisor,
-  and Dementia Diagnosis.
+  `/home/`). Roster & Revenue has no external links on either page (it isn't
+  deployed). JimmyChops links only to its public App Store page
+  (https://apps.apple.com/us/app/id6823379884, "View on App Store →", added
+  2026-11-12 on both Home and Projects by user request); it deliberately has
+  no live-site link (the booking page is a real client's calendar) and no
+  repository link (the repo is private).
+- The Projects page's Highlighted Projects list has all eight, in order of
+  when each project happened, most recent first (updated 2026-11-12 by user
+  request): JimmyChops (Oct 2026 –), Roster & Revenue Optimization Dashboard
+  (Aug 2026 –), Forward Data Lab (Aug 2026), UIUC Datathon (Mar–Apr 2026),
+  NBA Predictions (Sep 2025 – Aug 2026), LedgerOne (Sep 2025 – Aug 2026),
+  AI Academic Advisor (Jan 2025), and Dementia Diagnosis (Sep 2024). Dates
+  come from `resume/resume.tex` and the GitHub repositories' creation dates;
+  NBA Predictions sits above LedgerOne because it started a week later.
+  Keep new projects in this order.
 - **LedgerOne** (2026-08-18): description corrected — it's a *single-entry*,
   append-only ledger, not double-entry (the portfolio copy previously said
   double-entry; fixed to match the actual repo). Links out to both the live
@@ -440,3 +458,62 @@ components (no CMS, no data files) and all imagery served from `public/`.
   existing resumes left untouched pending the user's call on a broader
   sweep. Not independently verifiable (no sibling repo for this
   project) — taken at face value, same as the JimmyChops stats above.
+- **Collapsible Projects descriptions + phone-view pass** (2026-11-12, user
+  request: long descriptions get a drop-down so `/projects` isn't crowded,
+  and an update of the old phone code). No wording changed anywhere
+  (verified by comparing every page's rendered text before/after).
+  - `src/components/ExpandableDetails.js` wraps each Projects card's
+    `<p>`/`<ul>` description (never the `<h3>` or the links). It measures the
+    text (`useLayoutEffect` + `ResizeObserver`) and only when more than
+    `--expandable-slack` would be hidden does it collapse it to
+    `--expandable-collapsed` (cut at the middle of the nearest line), with a
+    fade into `var(--bg-alt)` and a "Show more ▾ / Show less ▴" button
+    (`aria-expanded`/`aria-controls`, focus ring, animated height, none under
+    reduced motion; collapsing scrolls back to the card if its top is off
+    screen). Side by side: about 150px shown, slack 50px (ExpandableDetails.css
+    defaults). Stacked: 240px shown, slack 160px (Projects.css). At 1280px,
+    JimmyChops, Roster & Revenue, Forward Data Lab, Datathon, NBA and LedgerOne
+    collapse; AI Academic Advisor and Dementia Diagnosis render exactly as
+    before (pixel-identical) with no button. Home doesn't use it.
+  - Phones: `/projects` cards used to be ~200px wide (60px section padding
+    plus 5vw) with text spilling past the card edges at 320-390px; now 16px
+    gutters and `min-width: 0` text columns. Body text and lists in stacked
+    cards are left-aligned (titles, logos and links stay centered). Hero, list
+    and footer spacing tightened on every page; image-to-title gaps reduced;
+    square logos on Home capped at 60vw tall. Tap targets are at least 44px
+    (navbar buttons via a bigger touch area, menu links, theme swatches,
+    `.btn`s, text links).
+  - Scrolling: the navbar's scroll handler is passive, rAF-throttled, has an
+    8px threshold and clamps iOS rubber-band values (no more flicker or
+    pop-in at the bottom). The mobile menu is an overlay with a dimming
+    backdrop: it locks page scroll, scrolls itself when taller than the
+    screen, closes on link taps, route changes (incl. back/forward), outside
+    taps and Escape, and its links leave the tab order when closed. New pages
+    start at the top (`ScrollToTop` in `App.js`; back/forward keeps the
+    restored position). Hover effects only apply on hover-capable devices;
+    `.App` uses `100dvh`; reduced motion turns animations off; hero/card
+    images have intrinsic `width`/`height` (load-time layout shift on a
+    throttled phone went from up to 0.09 to 0).
+  - Also fixed: between 769 and 823px wide (e.g. iPad Air portrait, 820px)
+    the desktop navbar needed 824px and pushed the whole page sideways
+    (tightened at 769-900px); the hamburger and palette icons were invisible
+    on hover in dark mode; the Projects list mixed 40/70/100px gaps and
+    narrower feature cards at tablet widths (both card types now share the
+    list's gap and width). `public/index.html` no longer blocks pinch-zoom,
+    and the browser toolbar color (`theme-color`) follows the theme.
+  - Desktop (1024px and up) is pixel-identical to before on Home,
+    Experiences, Clubs, SemiPro, the navbar and the footer (the one visible
+    difference: the navbar, once hidden on scroll, no longer leaves its
+    shadow along the top edge); `/projects` changes only through the
+    collapsed descriptions and the even card gaps.
+  - Follow-up the same day (user request: apply the recommended fixes to the
+    remaining review notes): logo thumbnails are shown whole on a white tile
+    (`img.logo-on-white` in `App.css`, `object-fit: contain`): JimmyChops on
+    Home and Projects, whose wordmark lost its ends at 280x180 on desktop and
+    almost vanished in dark mode, and Synchrony on Home, whose mark touched the
+    tile's top and bottom. `public/home/synchrony-thumbnail.png` was trimmed
+    from 246x238 to 240x238 to drop a 3px dark screenshot edge on both sides.
+    The four hero icon links on Home got `aria-label`s (Email, Résumé (PDF),
+    LinkedIn, GitHub). Kept on purpose: left-aligned body text in stacked
+    phone cards, the full-width Clubs hero on phones, and SAM's cover crop on
+    phones (it only trims black margin).

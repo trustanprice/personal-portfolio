@@ -76,8 +76,11 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.experiences-hero-image img:hover {
-  transform: scale(1.03);
+/* Hover effects only where a pointer can hover (they stick after a tap on touch). */
+@media (hover: hover) {
+  .experiences-hero-image img:hover {
+    transform: scale(1.03);
+  }
 }
 
 /* Dark Mode Enhancements for Image */
@@ -129,9 +132,11 @@ body.dark-mode .experiences-hero-image img {
   gap: 20px;
 }
 
-.experience-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 22px rgba(var(--accent-rgb), 0.15);
+@media (hover: hover) {
+  .experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(var(--accent-rgb), 0.15);
+  }
 }
 
 /* Dark Mode */
@@ -165,6 +170,11 @@ body.dark-mode .experience-logo {
 /* HXRI logo special sizing */
 .experience-logo[alt="HXRI Lab Logo"] {
   scale: 0.85;
+}
+
+/* Lets the text column shrink below its longest word so text wraps inside the card. */
+.experience-info {
+  min-width: 0;
 }
 
 /* Experience Header */
@@ -214,10 +224,18 @@ body.dark-mode .experience-logo {
 }
 
 @media (max-width: 768px) {
+  .experiences-page {
+    padding-bottom: 8px;
+  }
+
+  .experiences-hero {
+    padding: 40px 20px 8px;
+  }
+
   .experiences-hero-content {
     flex-direction: column;
     text-align: center;
-    gap: 30px;
+    gap: 24px;
   }
 
   .experiences-hero-text {
@@ -226,11 +244,14 @@ body.dark-mode .experience-logo {
   }
 
   .experiences-hero-image {
-    margin-top: 20px;
+    margin-top: 0;
+    /* Full width (not shrink-to-fit), so the image's width/height attributes
+       reserve its space before it loads and nothing below it jumps. */
+    align-self: stretch;
   }
 
   .experiences-list {
-    padding: 50px 20px;
+    padding: 40px 16px 24px;
   }
 
   .experience-card {
@@ -238,31 +259,37 @@ body.dark-mode .experience-logo {
     align-items: center;
     text-align: center;
     width: 100%;
-    padding: 20px;
-    gap: 15px;
+    padding: 20px 16px;
+    gap: 10px;
+    margin: 16px auto;
   }
 
   .experience-logo {
-    margin-bottom: 10px;
+    margin-bottom: 0;
     width: 70px;
     height: 70px;
   }
 
   .experience-info {
+    /* Full card width (a centered item can be pushed wider than the card). */
+    align-self: stretch;
     text-align: center;
   }
 
   .experience-header h3 {
     font-size: 1.2rem;
+    margin-top: 4px;
   }
 
   .role {
     font-size: 0.95rem;
   }
 
+  /* The header stays centered; the bullet lines read left-aligned. */
   .experience-desc {
     font-size: 0.95rem;
     line-height: 1.5;
+    text-align: left;
   }
 }
 
@@ -290,9 +317,11 @@ body.dark-mode .experience-logo {
   display: block;
 }
 
-/* Back to home container */
-.back-home-container {
-  text-align: center;
-  margin-top: 60px;
-  margin-bottom: 40px;
+@media (max-width: 768px) {
+  .experiences-list .divider {
+    margin-bottom: 28px;
+  }
 }
+
+/* .back-home-container (the footer's "Back to Home") is styled in
+   src/components/Footer.css. */

@@ -27,6 +27,7 @@ function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="icon-link"
+              aria-label="Email"
             >
               <FaEnvelope size={28} />
             </a>
@@ -35,6 +36,7 @@ function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="icon-link"
+              aria-label="Résumé (PDF)"
             >
               <FaFileAlt size={28} />
             </a>
@@ -43,6 +45,7 @@ function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="icon-link"
+              aria-label="LinkedIn"
             >
               <FaLinkedin size={28} />
             </a>
@@ -51,6 +54,7 @@ function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="icon-link"
+              aria-label="GitHub"
             >
               <FaGithub size={28} />
             </a>
@@ -59,7 +63,7 @@ function Home() {
         </div>
 
         <div className="hero-image">
-          <img src="/home/profile.png" alt="Profile" />
+          <img src="/home/profile.png" alt="Profile" width="818" height="1024" />
         </div>
       </section>
 
@@ -69,52 +73,14 @@ function Home() {
       <section className="featured">
         <h2 className="section-title">Featured Projects</h2>
 
-        {/* LedgerOne – FinTech Ledger, Analytics & Credit Risk Platform */}
-        <div className="feature-card">
-          <img
-            src="/home/ledgerone-thumbnail.png"
-            alt="LedgerOne FinTech Ledger, Analytics & Credit Risk Platform"
-            className="feature-img"
-          />
-          <div className="feature-info">
-            <h3>LedgerOne: FinTech Ledger, Analytics & Credit Risk Platform</h3>
-            <p>
-              A single-entry, append-only fintech ledger: Python generates immutable financial
-              events, and a dbt + DuckDB pipeline (staging → star schema → tested reporting marts)
-              turns them into auditable revenue, refund, and payout metrics. A companion credit-risk
-              module (vintage curves, roll-rate transition matrix, CECL-style reserve estimate) is
-              validated within 0.19 percentage points of real Freddie Mac mortgage outcomes, and the
-              whole platform is genuinely deployeed to AWS on a real daily schedule — CloudFormation,
-              OIDC-secured CI/CD, MotherDuck in the cloud, 136/136 dbt tests passing, live cost
-              monitoring — all covered by a modern interactive dashboard.
-            </p>
-            <div className="feature-links">
-              <a
-                href="https://ledgerone-green.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn learn-more"
-              >
-                View Live Site →
-              </a>
-              <a
-                href="https://github.com/trustanprice/ledgerone"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn learn-more"
-              >
-                View Repository →
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* JimmyChops – Barber Booking Platform */}
         <div className="feature-card">
           <img
             src="/projects/jimmychops-thumbnail.png"
             alt="JimmyChops Barber Booking Platform"
-            className="feature-img"
+            width="2168"
+            height="992"
+            className="feature-img logo-on-white"
           />
           <div className="feature-info">
             <h3>JimmyChops — Barber Booking Platform</h3>
@@ -125,6 +91,45 @@ function Home() {
               and an estimated 5 hours a week saved via in-app calendar sync and messaging that
               cuts out manual scheduling between cuts.
             </p>
+            <div className="feature-links">
+              <a
+                href="https://apps.apple.com/us/app/id6823379884"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn learn-more"
+              >
+                View on App Store →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* UIUC Statistics Datathon – Call Center Forecasting */}
+        <div className="feature-card">
+          <img
+            src="/home/datathon-thumbnail.png"
+            alt="UIUC Statistics Datathon 2026 Project"
+            width="3024"
+            height="1702"
+            className="feature-img"
+          />
+          <div className="feature-info">
+            <h3>UIUC Statistics Datathon 2026 – 2nd Place (200+ Teams)</h3>
+            <p>
+              Led a team of minority students to 2nd place out of 200+ teams. We engineered
+              time-series features (lag variables, rolling statistics, calendar effects) and
+              built LightGBM ensemble models that forecast call volume, customer care time, and
+              abandon rate at 30-minute intervals across multiple portfolios, then presented the
+              solution to industry leaders at Synchrony.
+            </p>
+            <a
+              href="https://github.com/DarylOkeke/datathon-final-submission/blob/main/datathon_team015_v1.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn learn-more"
+            >
+              View Presentation →
+            </a>
           </div>
         </div>
 
@@ -133,6 +138,8 @@ function Home() {
           <img
             src="/projects/roster-revenue-thumbnail.png"
             alt="Roster & Revenue Optimization Dashboard"
+            width="2990"
+            height="1668"
             className="feature-img"
           />
           <div className="feature-info">
@@ -165,7 +172,9 @@ function Home() {
           <img
             src="/home/synchrony-thumbnail.png"
             alt="Synchrony"
-            className="feature-img"
+            width="240"
+            height="238"
+            className="feature-img logo-on-white"
           />
           <div className="feature-info">
             <h3>Synchrony — Data Scientist Intern (2026)</h3>
@@ -181,6 +190,8 @@ function Home() {
           <img
             src="/home/caterpillar-thumbnail-2026.png"
             alt="Caterpillar Internship 2026"
+            width="684"
+            height="292"
             className="feature-img"
           />
           <div className="feature-info">
@@ -199,6 +210,8 @@ function Home() {
           <img
             src="/home/caterpillar-thumbnail.png"
             alt="Caterpillar Internship 2025"
+            width="960"
+            height="720"
             className="feature-img"
           />
           <div className="feature-info">
@@ -229,6 +242,8 @@ function Home() {
           <img
             src="/clubs/sas-logo.png"
             alt="Sports Analytics Society"
+            width="338"
+            height="156"
             className="feature-img"
           />
           <div className="feature-info">
@@ -250,6 +265,8 @@ function Home() {
           <img
             src="/clubs/sam-logo.png"
             alt="Sports Analytics by Minorities"
+            width="348"
+            height="348"
             className="feature-img"
           />
           <div className="feature-info">
